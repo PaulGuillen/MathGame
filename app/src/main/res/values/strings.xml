@@ -7,4 +7,6 @@
     <string name="juego">juego</string>
     <string name="avanzado">Avanzado</string>
     <string name="experto">Experto</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="textview">TextView</string>
 </resources>
