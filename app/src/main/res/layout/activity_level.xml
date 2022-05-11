@@ -175,7 +175,7 @@
                     tools:ignore="UseCompoundDrawables">
 
                     <ImageView
-                        android:background="@drawable/facil"
+                        android:background="@drawable/experto"
                         android:layout_width="78dp"
                         android:layout_height="78dp"
                         tools:ignore="ContentDescription" />
@@ -188,7 +188,7 @@
                         android:fontFamily="@font/monserrat_alternates_medium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/f_cil" />
+                        android:text="@string/experto" />
 
                 </LinearLayout>
 
