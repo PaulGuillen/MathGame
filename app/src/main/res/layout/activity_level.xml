@@ -69,22 +69,24 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
 
                     <ImageView
-
                         android:background="@drawable/facil"
                         android:layout_width="78dp"
-                        android:layout_height="78dp"/>
+                        android:layout_height="78dp"
+                        tools:ignore="ContentDescription" />
 
                     <TextView
-                        android:textSize="16sp"
+                        android:textSize="22sp"
                         android:textStyle="bold"
+                        android:padding="5dp"
                         android:textAlignment="center"
                         android:fontFamily="@font/monserrat_alternates_medium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Fácil" />
+                        android:text="@string/f_cil" />
 
                 </LinearLayout>
 

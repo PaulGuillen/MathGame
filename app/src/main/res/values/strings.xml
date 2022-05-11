@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Piensa Rapido</string>
     <string name="jugar">Jugar</string>
+    <string name="f_cil">Fácil</string>
 </resources>
