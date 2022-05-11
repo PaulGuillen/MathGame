@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PiensaRapido">
         <activity
+            android:name=".LevelActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

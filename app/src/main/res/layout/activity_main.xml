@@ -11,56 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!--
-                <com.google.android.material.appbar.AppBarLayout
-                    android:id="@+id/app_bar"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:theme="@style/ActionBarStyle">
-
-                    <androidx.appcompat.widget.Toolbar
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:layout_gravity="center"
-                            android:layout_width="wrap_content"
-                            android:textColor="@color/green_primary_dark"
-                            android:textSize="20sp"
-                            android:fontFamily="@font/monserrat_alternates_medium"
-                            android:layout_height="wrap_content"
-                            android:text="Piensa" />
-
-                        <TextView
-                            android:layout_gravity="center"
-                            android:layout_width="wrap_content"
-                            android:layout_marginStart="3dp"
-                            android:textColor="#DFDFDF"
-                            android:textStyle="bold"
-                            android:fontFamily="@font/monserrat_alternates_medium"
-                            android:textSize="20sp"
-                            android:layout_height="wrap_content"
-                            android:text="Rapido" />
-
-
-
-                    </androidx.appcompat.widget.Toolbar>
-
-                </com.google.android.material.appbar.AppBarLayout>
-        -->
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/cut_card_background"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:paddingTop="45dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:paddingTop="45dp">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/textView"
@@ -332,7 +291,6 @@
             </GridLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
