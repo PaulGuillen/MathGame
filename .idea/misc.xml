@@ -8,8 +8,11 @@
         <entry key="..\:/Proyectos/ProyectosAndroidStudio/PiensaRapido/app/src/main/res/drawable/cut_card_background.xml" value="0.33489583333333334" />
         <entry key="..\:/Proyectos/ProyectosAndroidStudio/PiensaRapido/app/src/main/res/drawable/cut_card_level.xml" value="0.21151315789473685" />
         <entry key="..\:/Proyectos/ProyectosAndroidStudio/PiensaRapido/app/src/main/res/drawable/ic_arrow.xml" value="0.21151315789473685" />
+        <entry key="..\:/Proyectos/ProyectosAndroidStudio/PiensaRapido/app/src/main/res/drawable/ic_check_green.xml" value="0.21151315789473685" />
         <entry key="..\:/Proyectos/ProyectosAndroidStudio/PiensaRapido/app/src/main/res/drawable/ic_email.xml" value="0.21151315789473685" />
+        <entry key="..\:/Proyectos/ProyectosAndroidStudio/PiensaRapido/app/src/main/res/drawable/ic_error.xml" value="0.21151315789473685" />
         <entry key="..\:/Proyectos/ProyectosAndroidStudio/PiensaRapido/app/src/main/res/drawable/ic_lock.xml" value="0.21151315789473685" />
+        <entry key="..\:/Proyectos/ProyectosAndroidStudio/PiensaRapido/app/src/main/res/drawable/ic_share.xml" value="0.21151315789473685" />
         <entry key="..\:/Proyectos/ProyectosAndroidStudio/PiensaRapido/app/src/main/res/drawable/indicator_selector.xml" value="0.21151315789473685" />
         <entry key="..\:/Proyectos/ProyectosAndroidStudio/PiensaRapido/app/src/main/res/drawable/progress_bar.xml" value="0.21151315789473685" />
         <entry key="..\:/Proyectos/ProyectosAndroidStudio/PiensaRapido/app/src/main/res/drawable/unselected.xml" value="0.21151315789473685" />
@@ -17,7 +20,7 @@
         <entry key="..\:/Proyectos/ProyectosAndroidStudio/PiensaRapido/app/src/main/res/layout/activity_login.xml" value="0.18782894736842104" />
         <entry key="..\:/Proyectos/ProyectosAndroidStudio/PiensaRapido/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Proyectos/ProyectosAndroidStudio/PiensaRapido/app/src/main/res/layout/activity_on_boarding.xml" value="0.1986842105263158" />
-        <entry key="..\:/Proyectos/ProyectosAndroidStudio/PiensaRapido/app/src/main/res/layout/activity_settings.xml" value="0.18782894736842104" />
+        <entry key="..\:/Proyectos/ProyectosAndroidStudio/PiensaRapido/app/src/main/res/layout/activity_settings.xml" value="0.25" />
         <entry key="..\:/Proyectos/ProyectosAndroidStudio/PiensaRapido/app/src/main/res/layout/charge_dialog.xml" value="0.1986842105263158" />
         <entry key="..\:/Proyectos/ProyectosAndroidStudio/PiensaRapido/app/src/main/res/layout/onboarding_screen_layout.xml" value="0.1986842105263158" />
         <entry key="..\:/Proyectos/ProyectosAndroidStudio/PiensaRapido/app/src/main/res/menu/menu.xml" value="0.3145833333333333" />

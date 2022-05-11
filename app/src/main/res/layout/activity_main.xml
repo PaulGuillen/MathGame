@@ -26,8 +26,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
+                android:textColor="@color/black"
                 android:fontFamily="@font/monserrat_alternates_medium"
-                android:text="Piensa Rápido"
+                android:text="@string/piensa_r_pido"
                 android:textSize="25sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:fontFamily="@font/monserrat_alternates_medium"
-                android:text="Empieza tu aventura"
+                android:text="@string/empieza_tu_aventura"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="@+id/textView"
                 app:layout_constraintStart_toStartOf="@+id/textView"
@@ -52,7 +53,8 @@
                 app:layout_constraintBottom_toBottomOf="@+id/textview_bottom"
                 app:layout_constraintEnd_toStartOf="@+id/textView"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView" />
+                app:layout_constraintTop_toTopOf="@+id/textView"
+                tools:ignore="ContentDescription,ImageContrastCheck" />
 
             <GridLayout
                 android:layout_width="match_parent"
@@ -97,7 +99,7 @@
                             android:textAlignment="center"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Sumar"
+                            android:text="@string/sumar"
                             android:textColor="@color/black"
                             android:textSize="16sp" />
 
@@ -137,7 +139,7 @@
                             android:fontFamily="@font/monserrat_alternates_medium"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Restar"
+                            android:text="@string/restar"
                             android:textColor="@color/black"
                             android:textSize="16sp" />
 

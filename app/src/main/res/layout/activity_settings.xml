@@ -1,10 +1,485 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.SettingsActivity">
+    tools:context=".activities.SettingsActivity"
+    android:fillViewport="true">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.AppBarLayout
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ActionBarStyle">
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/monserrat_alternates_medium"
+                    android:text="@string/piensa"
+                    android:textColor="#689F38"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="4dp"
+                    android:fontFamily="@font/monserrat_alternates_medium"
+                    android:text="@string/rapido"
+                    android:textColor="@color/color_primary_gray"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:ignore="TextContrastCheck" />
+
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_inside"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="30dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineuno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="110dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/app_bar"
+            app:strokeColor="@color/light_green_primary"
+            app:strokeWidth="2dp">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_layout_dos"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="30dp">
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_cardview_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="80dp" />
+
+                <LinearLayout
+                    android:id="@+id/linearlayout_corazon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.28"
+                        android:src="@drawable/corazon"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.90"
+                        android:fontFamily="@font/monserrat_alternates_medium"
+                        android:paddingEnd="15dp"
+                        android:text="@string/texto_card_view"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        tools:ignore="RtlSymmetry" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearlayout_exclamacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/linearlayout_corazon">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.28"
+                        android:src="@drawable/exclamacion"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.90"
+                        android:fontFamily="@font/monserrat_alternates_medium"
+                        android:text="@string/texto_exclamacion"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearlayout_check_uno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/linearlayout_exclamacion">
+
+                    <ImageView
+                        android:id="@+id/check"
+                        android:layout_width="0dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.28"
+                        android:src="@drawable/ic_check_green"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.90"
+                        android:fontFamily="@font/monserrat_alternates_medium"
+                        android:text="@string/texto_mantenimiento"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearlayout_check_dos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/linearlayout_check_uno">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.28"
+                        android:src="@drawable/ic_check_green"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.90"
+                        android:fontFamily="@font/monserrat_alternates_medium"
+                        android:gravity="center_vertical"
+                        android:text="@string/soporte_desarollador"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <View
+            android:id="@+id/view_uno"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="30dp"
+            android:background="#DFDFDF"
+            app:layout_constraintTop_toBottomOf="@id/cardview" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinedos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="380dp" />
+
+        <!--Mas-->
+        <TextView
+            android:id="@+id/mas"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="35dp"
+            android:layout_weight="0.90"
+            android:fontFamily="@font/monserrat_alternates_medium"
+            android:paddingEnd="15dp"
+            android:text="@string/m_s"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/guidelineuno"
+            app:layout_constraintTop_toBottomOf="@id/view_uno"
+            tools:ignore="RtlSymmetry" />
+
+        <!--ShareImage-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clinearlayout_share"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mas">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_uno_inside"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="110dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_cero_inside"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="30dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelinedos_inside"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="381dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_share"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/guideline_uno_inside"
+                app:layout_constraintStart_toStartOf="@+id/guideline_cero_inside"
+                app:layout_constraintTop_toTopOf="@+id/recomendar"
+                tools:ignore="ContentDescription" />
+
+            <!--ShareText-->
+            <TextView
+                android:id="@+id/recomendar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="0.90"
+                android:fontFamily="@font/monserrat_alternates_medium"
+                android:paddingEnd="15dp"
+                android:text="@string/texto_recomendar"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/guideline_uno_inside"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="RtlSymmetry" />
+
+            <!--ShareTextBelow-->
+            <TextView
+                android:id="@+id/recomendar_lima_segura"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="0.90"
+                android:fontFamily="@font/monserrat_alternates_medium"
+                android:text="@string/texto_seguro_recomendar"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="@id/guidelinedos_inside"
+                app:layout_constraintStart_toEndOf="@id/guideline_uno_inside"
+                app:layout_constraintTop_toBottomOf="@id/recomendar"
+                tools:ignore="RtlSymmetry" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clinearlayout_terms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clinearlayout_share">
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_terms_cero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="30dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_terms_uno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="110dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_terms_dos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="381dp" />
+
+            <!--TermImage-->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_error"
+                app:layout_constraintBottom_toBottomOf="@+id/terminos_servicio"
+                app:layout_constraintEnd_toStartOf="@id/guideline_terms_uno"
+                app:layout_constraintStart_toStartOf="@id/guideline_terms_cero"
+                app:layout_constraintTop_toTopOf="@+id/terminos_servicio"
+                tools:ignore="ContentDescription" />
+
+            <!--TermText-->
+            <TextView
+                android:id="@+id/terminos_servicio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="30dp"
+                android:layout_weight="0.90"
+                android:fontFamily="@font/monserrat_alternates_medium"
+                android:paddingEnd="15dp"
+                android:text="@string/terminos"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_terms_dos"
+                app:layout_constraintStart_toEndOf="@id/guideline_terms_uno"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="RtlSymmetry" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clinearlayout_policy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clinearlayout_terms">
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_policy_cero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="30dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_policy_uno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="110dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_policy_dos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="381dp" />
+
+            <!--PolicyImage-->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_error"
+                app:layout_constraintBottom_toBottomOf="@+id/politicas_privacidad"
+                app:layout_constraintEnd_toStartOf="@id/guideline_policy_uno"
+                app:layout_constraintStart_toStartOf="@id/guideline_policy_cero"
+                app:layout_constraintTop_toTopOf="@+id/politicas_privacidad"
+                tools:ignore="ContentDescription" />
+
+            <!--PolicyText-->
+            <TextView
+                android:id="@+id/politicas_privacidad"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="30dp"
+                android:layout_weight="0.90"
+                android:fontFamily="@font/monserrat_alternates_medium"
+                android:paddingEnd="15dp"
+                android:text="@string/politicas"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_policy_dos"
+                app:layout_constraintStart_toEndOf="@id/guideline_policy_uno"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="RtlSymmetry" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/view_dos"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="35dp"
+            android:background="#DFDFDF"
+            app:layout_constraintTop_toBottomOf="@id/clinearlayout_policy" />
+
+        <TextView
+            android:id="@+id/version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/monserrat_alternates_medium"
+            android:padding="20dp"
+            android:paddingEnd="15dp"
+            android:text="@string/v_0_0_1"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guidelinedos"
+            app:layout_constraintTop_toBottomOf="@+id/view_dos"
+            tools:ignore="RtlSymmetry" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
