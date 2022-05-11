@@ -16,4 +16,8 @@
     <string name="iniciar_sesi_n">Iniciar sesión</string>
     <string name="realizado_por_paul_guillen">Realizado por Paul Guillen</string>
     <string name="cargando">Cargando</string>
+    <string name="ajustes">Ajustes</string>
+    <string name="perfil">Perfil</string>
+    <string name="noticias">Noticias</string>
+    <string name="multiplicar">Multiplicar</string>
 </resources>
