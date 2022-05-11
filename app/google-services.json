@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "195835630652",
+    "project_id": "piensarapidogame",
+    "storage_bucket": "piensarapidogame.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:195835630652:android:23785fd9c9c35fc2a81f39",
+        "android_client_info": {
+          "package_name": "devpaul.business.piensarapido"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "195835630652-vun7vdb323tq2vuscocp24b2m2p5jkuu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "devpaul.business.piensarapido",
+            "certificate_hash": "75456fe498b5292c6439d4f1407b8c869b9292c9"
+          }
+        },
+        {
+          "client_id": "195835630652-98vvmjdfiouk4773j1j6cbq904gd32p2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKrdpEiZ5yj-YDaUxvcqNVUFDyBc_u_YM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "195835630652-98vvmjdfiouk4773j1j6cbq904gd32p2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

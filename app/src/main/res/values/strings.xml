@@ -9,4 +9,11 @@
     <string name="experto">Experto</string>
     <string name="siguiente">Siguiente</string>
     <string name="textview">TextView</string>
+    <string name="texto_largo_top_login">Ejercita tu mente con multiplicaciones, sumas, restas y divisiones.</string>
+    <string name="correo">Correo</string>
+    <string name="a_n_no_te_has_registrado">Aún no te has registrado?</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="iniciar_sesi_n">Iniciar sesión</string>
+    <string name="realizado_por_paul_guillen">Realizado por Paul Guillen</string>
+    <string name="cargando">Cargando</string>
 </resources>

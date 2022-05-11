@@ -1,7 +1,8 @@
-package devpaul.business.piensarapido
+package devpaul.business.piensarapido.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import devpaul.business.piensarapido.R
 
 class LevelActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

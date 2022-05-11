@@ -1,7 +1,8 @@
-package devpaul.business.piensarapido
+package devpaul.business.piensarapido.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import devpaul.business.piensarapido.R
 
 class MainActivity : AppCompatActivity() {
 

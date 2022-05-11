@@ -1,5 +1,6 @@
 package devpaul.business.piensarapido.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -28,6 +29,7 @@ class OnBoardingViewPagerAdapter(
         container.removeView(`object` as View)
     }
 
+    @SuppressLint("InflateParams")
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         val View = LayoutInflater.from(context).inflate(R.layout.onboarding_screen_layout, null)
         val imageView: ImageView
