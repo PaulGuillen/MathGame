@@ -29,7 +29,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:fontFamily="@font/monserrat_alternates_medium"
-                    android:text="Niveles del"
+                    android:text="@string/niveles_del"
                     android:textColor="@color/green_primary_dark"
                     android:textSize="20sp" />
 
@@ -39,7 +39,7 @@
                     android:layout_gravity="center"
                     android:fontFamily="@font/monserrat_alternates_medium"
                     android:paddingStart="5dp"
-                    android:text="juego"
+                    android:text="@string/juego"
                     android:textColor="@color/color_primary_gray"
                     android:textSize="20sp"
                     android:textStyle="bold"
@@ -100,14 +100,27 @@
                 app:cardElevation="10dp">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:background="@drawable/intermedio"
+                        android:layout_width="78dp"
+                        android:layout_height="78dp"
+                        tools:ignore="ContentDescription" />
 
                     <TextView
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:padding="5dp"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/monserrat_alternates_medium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Fácil" />
+                        android:text="@string/intermedio" />
 
                 </LinearLayout>
 
@@ -121,14 +134,27 @@
                 app:cardElevation="10dp">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:background="@drawable/facil"
+                        android:layout_width="78dp"
+                        android:layout_height="78dp"
+                        tools:ignore="ContentDescription" />
 
                     <TextView
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:padding="5dp"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/monserrat_alternates_medium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Fácil" />
+                        android:text="@string/f_cil" />
 
                 </LinearLayout>
 
@@ -142,14 +168,27 @@
                 app:cardElevation="10dp">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:background="@drawable/facil"
+                        android:layout_width="78dp"
+                        android:layout_height="78dp"
+                        tools:ignore="ContentDescription" />
 
                     <TextView
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:padding="5dp"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/monserrat_alternates_medium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Fácil" />
+                        android:text="@string/f_cil" />
 
                 </LinearLayout>
 

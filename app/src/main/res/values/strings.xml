@@ -2,4 +2,7 @@
     <string name="app_name">Piensa Rapido</string>
     <string name="jugar">Jugar</string>
     <string name="f_cil">Fácil</string>
+    <string name="intermedio">Intermedio</string>
+    <string name="niveles_del">Niveles del</string>
+    <string name="juego">juego</string>
 </resources>
