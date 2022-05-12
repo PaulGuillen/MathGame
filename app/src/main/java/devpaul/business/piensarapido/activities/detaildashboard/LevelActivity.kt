@@ -1,4 +1,4 @@
-package devpaul.business.piensarapido.activities
+package devpaul.business.piensarapido.activities.detaildashboard
 
 import android.annotation.SuppressLint
 import android.content.pm.ActivityInfo

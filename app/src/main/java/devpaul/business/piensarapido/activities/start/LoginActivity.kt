@@ -1,4 +1,4 @@
-package devpaul.business.piensarapido.activities
+package devpaul.business.piensarapido.activities.start
 
 
 import android.annotation.SuppressLint
@@ -16,6 +16,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import devpaul.business.piensarapido.R
+import devpaul.business.piensarapido.activities.MainActivity
 import java.util.*
 
 class LoginActivity : AppCompatActivity() {
