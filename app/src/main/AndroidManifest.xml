@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PiensaRapido">
         <activity
+            android:name=".activities.PerfilActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.SettingsActivity"
             android:exported="false" />
         <activity

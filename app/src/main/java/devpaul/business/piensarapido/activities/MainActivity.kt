@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     var layMultiplicar : CardView? = null
 
     var ibsettings : CardView? = null
+    var cardViewPerfil : CardView? = null
 
     @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +25,12 @@ class MainActivity : AppCompatActivity() {
 
         //desactivar rotacion pantalla
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+
+        cardViewPerfil = findViewById(R.id.cardview_perfil)
+        cardViewPerfil?.setOnClickListener {
+            val callInt = Intent(applicationContext, PerfilActivity::class.java)
+            startActivity(callInt)
+        }
 
         ibsettings = findViewById(R.id.cardview_ajustes)
         ibsettings?.setOnClickListener {
