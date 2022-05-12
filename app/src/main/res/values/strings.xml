@@ -13,7 +13,6 @@
     <string name="texto_registro">Al momento de registrarte podrás mantenerte al tanto de los cambios realizados</string>
     <string name="correo">Correo</string>
     <string name="a_n_no_te_has_registrado">Aún no te has registrado?</string>
-    <string name="contrase_a">Contraseña</string>
     <string name="iniciar_sesi_n">Iniciar sesión</string>
     <string name="cargando">Cargando</string>
     <string name="ajustes">Ajustes</string>
@@ -44,4 +43,9 @@
     <string name="ya_posees_una_cuenta">Ya posees una cuenta?</string>
     <string name="salir">Salir</string>
     <string name="nombre_completo">Nombre Completo</string>
+    <string name="correoprincipal_gmail_com">correoprincipal@gmail.com</string>
+    <string name="correo_electr_nico">Correo electrónico</string>
+    <string name="fecha_de_creaci_n">Última vez jugado</string>
+    <string name="_5_de_may_2022">5 de may 2022</string>
+    <string name="contrase_a">Contraseña</string>
 </resources>

@@ -14,7 +14,6 @@
         <activity
             android:name=".activities.detaildashboard.PerfilActivity"
             android:windowSoftInputMode="stateHidden"
-
             android:exported="false" />
         <activity
             android:name=".activities.detaildashboard.SettingsActivity"
