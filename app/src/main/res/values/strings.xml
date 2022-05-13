@@ -48,4 +48,10 @@
     <string name="fecha_de_creaci_n">Última vez jugado</string>
     <string name="_5_de_may_2022">5 de may 2022</string>
     <string name="contrase_a">Contraseña</string>
+    <string name="text_incognita">\?</string>
+    <string name="multi_example">1 x 2 =</string>
+    <string name="number_seven">7</string>
+    <string name="nivel">Nivel</string>
+    <string name="text_contador">30s</string>
+    <string name="text_division_puntaje">0/0</string>
 </resources>

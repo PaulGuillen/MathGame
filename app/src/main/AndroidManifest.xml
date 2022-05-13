@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="devpaul.business.piensarapido">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,22 +12,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PiensaRapido">
         <activity
-            android:name=".activities.detaildashboard.PerfilActivity"
-            android:windowSoftInputMode="stateHidden"
+            android:name=".activities.detaildashboard.game.mult.GameOverMultiplicacionActivity"
             android:exported="false" />
+        <activity
+            android:name=".activities.detaildashboard.game.mult.MultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.detaildashboard.game.rest.RestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.detaildashboard.game.sum.SumActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.detaildashboard.PerfilActivity"
+            android:exported="false"
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".activities.detaildashboard.SettingsActivity"
             android:exported="false" />
         <activity
             android:name=".activities.start.RegisterActivity"
-            android:windowSoftInputMode="stateHidden"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".activities.start.LoginActivity"
-            android:windowSoftInputMode="stateHidden"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".activities.detaildashboard.LevelActivity"
+            android:name=".activities.detaildashboard.game.LevelActivity"
             android:exported="false" />
         <activity
             android:name=".activities.MainActivity"

@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.cardview.widget.CardView
 import devpaul.business.piensarapido.R
-import devpaul.business.piensarapido.activities.detaildashboard.LevelActivity
+import devpaul.business.piensarapido.activities.detaildashboard.game.LevelActivity
 import devpaul.business.piensarapido.activities.detaildashboard.PerfilActivity
 import devpaul.business.piensarapido.activities.detaildashboard.SettingsActivity
 

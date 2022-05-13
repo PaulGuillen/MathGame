@@ -19,9 +19,11 @@
         <entry key="..\:/Proyectos/ProyectosAndroidStudio/PiensaRapido/app/src/main/res/drawable/indicator_selector.xml" value="0.21151315789473685" />
         <entry key="..\:/Proyectos/ProyectosAndroidStudio/PiensaRapido/app/src/main/res/drawable/progress_bar.xml" value="0.21151315789473685" />
         <entry key="..\:/Proyectos/ProyectosAndroidStudio/PiensaRapido/app/src/main/res/drawable/unselected.xml" value="0.21151315789473685" />
+        <entry key="..\:/Proyectos/ProyectosAndroidStudio/PiensaRapido/app/src/main/res/layout/activity_game_over_multiplicacion.xml" value="0.1986842105263158" />
         <entry key="..\:/Proyectos/ProyectosAndroidStudio/PiensaRapido/app/src/main/res/layout/activity_level.xml" value="0.18782894736842104" />
         <entry key="..\:/Proyectos/ProyectosAndroidStudio/PiensaRapido/app/src/main/res/layout/activity_login.xml" value="0.18782894736842104" />
         <entry key="..\:/Proyectos/ProyectosAndroidStudio/PiensaRapido/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Proyectos/ProyectosAndroidStudio/PiensaRapido/app/src/main/res/layout/activity_mult.xml" value="0.1986842105263158" />
         <entry key="..\:/Proyectos/ProyectosAndroidStudio/PiensaRapido/app/src/main/res/layout/activity_on_boarding.xml" value="0.1986842105263158" />
         <entry key="..\:/Proyectos/ProyectosAndroidStudio/PiensaRapido/app/src/main/res/layout/activity_perfil.xml" value="0.1986842105263158" />
         <entry key="..\:/Proyectos/ProyectosAndroidStudio/PiensaRapido/app/src/main/res/layout/activity_register.xml" value="0.1986842105263158" />
@@ -32,7 +34,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15_PREVIEW" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
