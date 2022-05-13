@@ -116,17 +116,17 @@ class RestActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     private fun generateQuestionEasy() {
         numberofQuestions++
-        op1 = random.nextInt(1,17)
-        op2 = random.nextInt(1,17)
-        rest = op1!! * op2!!
-        tvSum?.text = "$op1 * $op2 = "
+        op1 = random.nextInt(25,55)
+        op2 = random.nextInt(1,24)
+        rest = op1!! - op2!!
+        tvSum?.text = "$op1 - $op2 = "
         correctAnswerPosition = random.nextInt(4)
         (findViewById<View>(btnIds[correctAnswerPosition]) as Button).text = "" + rest
         while (true) {
             if (incorrectAnswers!!.size > 3) break
-            op1 = random.nextInt(1,17)
-            op2 = random.nextInt(1,17)
-            restOther = op1!! * op2!!
+            op1 = random.nextInt(25,55)
+            op2 = random.nextInt(1,24)
+            restOther = op1!! - op2!!
             if (restOther == rest) {
                 continue
             }
@@ -174,7 +174,6 @@ class RestActivity : AppCompatActivity() {
     //SecondLevel
     @SuppressLint("SetTextI18n")
     private fun intermediateLevel() {
-
         tvTimer?.text = "" + (millisUntilFinished!! / 1000) + "s"
         tvPoints?.text = "$points/$numberofQuestions"
         generateQuestionIntermediate()
@@ -200,17 +199,17 @@ class RestActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     private fun generateQuestionIntermediate() {
         numberofQuestions++
-        op1 = random.nextInt(12,45)
-        op2 = random.nextInt(12,45)
-        rest = op1!! * op2!!
-        tvSum?.text = "$op1 * $op2 = "
+        op1 = random.nextInt(50,99)
+        op2 = random.nextInt(12,49)
+        rest = op1!! - op2!!
+        tvSum?.text = "$op1 - $op2 = "
         correctAnswerPosition = random.nextInt(4)
         (findViewById<View>(btnIds[correctAnswerPosition]) as Button).text = "" + rest
         while (true) {
             if (incorrectAnswers!!.size > 3) break
-            op1 = random.nextInt(12,45)
-            op2 = random.nextInt(12,45)
-            restOther = op1!! * op2!!
+            op1 = random.nextInt(50,99)
+            op2 = random.nextInt(12,49)
+            restOther = op1!! - op2!!
             if (restOther == rest) {
                 continue
             }
@@ -255,21 +254,21 @@ class RestActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     private fun generateQuestionAdvanced() {
         numberofQuestions++
-        op1 = random.nextInt(20,59)
-        op2 = random.nextInt(20,59)
-        rest = op1!! * op2!!
-        tvSum?.text = "$op1 * $op2 = "
+        op1 = random.nextInt(105,180)
+        op2 = random.nextInt(30,104)
+        rest = op1!! - op2!!
+        tvSum?.text = "$op1 - $op2 = "
         correctAnswerPosition = random.nextInt(4)
         (findViewById<View>(btnIds[correctAnswerPosition]) as Button).text = "" + rest
         while (true) {
             if (incorrectAnswers!!.size > 3) break
-            op1 = random.nextInt(20,59)
-            op2 = random.nextInt(20,59)
-            restOther = op1!! * op2!!
+            op1 = random.nextInt(105,180)
+            op2 = random.nextInt(30,104)
+            restOther = op1!! - op2!!
             if (restOther == rest) {
                 continue
             }
-            incorrectAnswers?.add(rest!!)
+            incorrectAnswers?.add(restOther!!)
         }
 
         for (i in 0..2) {
@@ -310,17 +309,17 @@ class RestActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     private fun generateQuestionExpert() {
         numberofQuestions++
-        op1 = random.nextInt(65,195)
-        op2 = random.nextInt(65,195)
-        rest = op1!! * op2!!
-        tvSum?.text = "$op1 * $op2 = "
+        op1 = random.nextInt(199,310)
+        op2 = random.nextInt(55,190)
+        rest = op1!! - op2!!
+        tvSum?.text = "$op1 - $op2 = "
         correctAnswerPosition = random.nextInt(4)
         (findViewById<View>(btnIds[correctAnswerPosition]) as Button).text = "" + rest
         while (true) {
             if (incorrectAnswers!!.size > 3) break
-            op1 = random.nextInt(65,195)
-            op2 = random.nextInt(65,195)
-            restOther = op1!! * op2!!
+            op1 = random.nextInt(199,310)
+            op2 = random.nextInt(55,190)
+            restOther = op1!! - op2!!
             if (restOther == rest) {
                 continue
             }
