@@ -54,4 +54,10 @@
     <string name="nivel">Nivel</string>
     <string name="text_contador">30s</string>
     <string name="text_division_puntaje">0/0</string>
+    <string name="best">best</string>
+    <string name="mejor_puntaje_personal">Mejor puntaje personal:</string>
+    <string name="score">Score</string>
+    <string name="puntaje">Puntaje:</string>
+    <string name="suma_example">1 + 2 =</string>
+    <string name="texto_mult">5 - 2 =</string>
 </resources>

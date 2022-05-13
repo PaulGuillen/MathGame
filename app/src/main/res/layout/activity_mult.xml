@@ -55,7 +55,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     app:srcCompat="@drawable/star"
-                    tools:ignore="ContentDescription" />
+                    tools:ignore="ContentDescription,ImageContrastCheck" />
 
                 <TextView
                     android:id="@+id/tvPoints"
@@ -124,12 +124,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:padding="40dp"
-                    app:backgroundTint="#0093D1"
                     android:onClick="chooseAnswer"
+                    android:padding="40dp"
                     android:text="@string/number_seven"
-                    android:textSize="30sp"
-                    tools:ignore="ButtonStyle" />
+                    android:textSize="27sp"
+                    app:backgroundTint="#0093D1"
+                    tools:ignore="ButtonStyle,UsingOnClickInXml,DuplicateSpeakableTextCheck" />
 
                 <Button
                     android:id="@+id/btn1"
@@ -141,8 +141,8 @@
                     app:backgroundTint="#F2635F"
                     android:onClick="chooseAnswer"
                     android:text="@string/number_seven"
-                    android:textSize="30sp"
-                    tools:ignore="ButtonStyle" />
+                    android:textSize="27sp"
+                    tools:ignore="ButtonStyle,UsingOnClickInXml" />
             </LinearLayout>
 
             <LinearLayout
@@ -155,25 +155,27 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:padding="40dp"
-                    app:backgroundTint="#F4D00C"
                     android:onClick="chooseAnswer"
+                    android:padding="40dp"
                     android:text="@string/number_seven"
-                    android:textSize="30sp"
-                    tools:ignore="ButtonStyle" />
+                    android:textColor="@color/white"
+                    android:textSize="27sp"
+                    app:backgroundTint="#F4D00C"
+                    tools:ignore="ButtonStyle,UsingOnClickInXml" />
 
                 <Button
                     android:id="@+id/btn3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="40dp"
                     android:layout_marginStart="5dp"
-                    app:backgroundTint="#82E859"
                     android:layout_weight="1"
                     android:onClick="chooseAnswer"
+                    android:padding="40dp"
                     android:text="@string/number_seven"
-                    android:textSize="30sp"
-                    tools:ignore="ButtonStyle" />
+                    android:textColor="@color/white"
+                    android:textSize="27sp"
+                    app:backgroundTint="#82E859"
+                    tools:ignore="ButtonStyle,UsingOnClickInXml" />
 
             </LinearLayout>
 
@@ -183,7 +185,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 app:srcCompat="@drawable/loudspeaker"
-                tools:ignore="ContentDescription" />
+                tools:ignore="ContentDescription,ImageContrastCheck" />
 
             <TextView
                 android:id="@+id/tvResult"

@@ -1,11 +1,10 @@
-package devpaul.business.piensarapido.activities.detaildashboard.game.mult
+package devpaul.business.piensarapido.activities.detaildashboard.game.sum
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.ActivityInfo
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -21,19 +20,18 @@ import devpaul.business.piensarapido.activities.MainActivity
 import java.text.SimpleDateFormat
 import java.util.*
 
-class GameOverMultiplicacionActivity : AppCompatActivity() {
+class GameOverSumaActivity : AppCompatActivity() {
 
-
-    var TAG = "GameOverMultip"
+    var TAG = "GameOverSuma"
 
     var tvPoints: TextView? = null
     var sharedPreferences: SharedPreferences? = null
     var ivHighScore: ImageView? = null
     var tvHighScore: TextView? = null
+    var tvName: TextView? = null
+    var tvLastname: TextView? = null
 
-    var tvName : TextView? = null
-    var tvLastname : TextView? = null
-
+    //Firebase extensiones
     private lateinit var auth: FirebaseAuth
     private val db = Firebase.firestore
 
@@ -49,13 +47,13 @@ class GameOverMultiplicacionActivity : AppCompatActivity() {
 
         ivHighScore = findViewById(R.id.ivHighScore)
         tvHighScore = findViewById(R.id.tvHighScore)
-        val points = intent.extras!!.getInt("points")
         tvPoints = findViewById(R.id.tvPoints)
 
         tvName = findViewById(R.id.nombre)
         tvLastname = findViewById(R.id.apellido)
 
-        sharedPreferences = getSharedPreferences("prefmult", 0)
+        sharedPreferences = getSharedPreferences("prefsuma", 0)
+        val points = intent.extras!!.getInt("points")
         var pointsSP = sharedPreferences?.getInt("pointsSP", 0)
         val editor = sharedPreferences?.edit()
         if (points > pointsSP!!) {
@@ -66,6 +64,7 @@ class GameOverMultiplicacionActivity : AppCompatActivity() {
         }
         tvPoints?.text = "" + points
         tvHighScore?.text = "" + pointsSP
+
 
 /*        getUserData()*/
 
@@ -141,7 +140,7 @@ class GameOverMultiplicacionActivity : AppCompatActivity() {
 
 
     fun restart(view: View?) {
-        val intent = Intent(this@GameOverMultiplicacionActivity, MainActivity::class.java)
+        val intent = Intent(this@GameOverSumaActivity, MainActivity::class.java)
         startActivity(intent)
         finish()
     }

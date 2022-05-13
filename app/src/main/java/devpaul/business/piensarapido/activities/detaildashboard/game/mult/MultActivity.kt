@@ -41,12 +41,14 @@ class MultActivity : AppCompatActivity() {
 
     var textlevel : TextView? = null
 
+    @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mult)
 
         //desactivar rotacion pantalla
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+
         op1 = 0
         op2 = 0
         mult = 0
@@ -69,33 +71,33 @@ class MultActivity : AppCompatActivity() {
         incorrectAnswers = ArrayList()
 
         val level = intent.getStringExtra("level")
-        if (level == "one"){
-            fistlevelGame()
-            textlevel?.text = "Nivel 1"
+        if (level == "facil"){
+            easylevelgame()
+            textlevel?.text = "Nivel Fácil"
         }
-        if (level == "two"){
-            secondLevel()
-            textlevel?.text = "Nivel 2"
+        if (level == "intermedio"){
+            intermediateLevel()
+            textlevel?.text = "Nivel Intermedio"
         }
-        if (level == "third"){
-            thirdLevel()
-            textlevel?.text = "Nivel 3"
+        if (level == "avanzado"){
+            advancedlevel()
+            textlevel?.text = "Nivel Avanzado"
         }
 
-        if (level == "four") {
-            fourthLevel()
-            textlevel?.text = "Nivel 4"
+        if (level == "experto") {
+            expertlevel()
+            textlevel?.text = "Nivel Experto"
         }
 
 
     }
 
     @SuppressLint("SetTextI18n")
-    private fun fistlevelGame() {
+    private fun easylevelgame() {
 
         tvTimer?.text = "" + (millisUntilFinished!! / 1000) + "s"
         tvPoints?.text = "$points/$numberofQuestions"
-        generateQuestion()
+        generateQuestionEasy()
         countDownTimer = object : CountDownTimer(millisUntilFinished!!, 1000) {
             override fun onTick(time: Long) {
                 tvTimer?.text = "" + (time / 1000) + "s"
@@ -116,18 +118,18 @@ class MultActivity : AppCompatActivity() {
     }
 
     @SuppressLint("SetTextI18n")
-    private fun generateQuestion() {
+    private fun generateQuestionEasy() {
         numberofQuestions++
-        op1 = random.nextInt(10)
-        op2 = random.nextInt(10)
+        op1 = random.nextInt(1,17)
+        op2 = random.nextInt(1,17)
         mult = op1!! * op2!!
         tvSum?.text = "$op1 * $op2 = "
         correctAnswerPosition = random.nextInt(4)
         (findViewById<View>(btnIds[correctAnswerPosition]) as Button).text = "" + mult
         while (true) {
             if (incorrectAnswers!!.size > 3) break
-            op1 = random.nextInt(10)
-            op2 = random.nextInt(10)
+            op1 = random.nextInt(1,17)
+            op2 = random.nextInt(1,17)
             multOther = op1!! * op2!!
             if (multOther == mult) {
                 continue
@@ -154,31 +156,32 @@ class MultActivity : AppCompatActivity() {
         }
         tvPoints!!.text = "$points/$numberofQuestions"
         val level = intent.getStringExtra("level")
-        if (level == "one"){
-            generateQuestion()
+        if (level == "facil"){
+            generateQuestionEasy()
         }
 
-        if (level == "two"){
-            generateQuestion2()
+        if (level == "intermedio"){
+            generateQuestionIntermediate()
         }
 
-        if (level == "third"){
-            generateQuestion3()
+        if (level == "avanzado"){
+            generateQuestionAdvanced()
         }
 
-        if (level == "four"){
-            generateQuestion4()
+        if (level == "experto"){
+            generateQuestionExpert()
         }
 
     }
 
+
     //SecondLevel
     @SuppressLint("SetTextI18n")
-    private fun secondLevel() {
+    private fun intermediateLevel() {
 
         tvTimer?.text = "" + (millisUntilFinished!! / 1000) + "s"
         tvPoints?.text = "$points/$numberofQuestions"
-        generateQuestion2()
+        generateQuestionIntermediate()
         countDownTimer = object : CountDownTimer(millisUntilFinished!!, 1000) {
             override fun onTick(time: Long) {
                 tvTimer?.text = "" + (time / 1000) + "s"
@@ -199,18 +202,18 @@ class MultActivity : AppCompatActivity() {
     }
 
     @SuppressLint("SetTextI18n")
-    private fun generateQuestion2() {
+    private fun generateQuestionIntermediate() {
         numberofQuestions++
-        op1 = random.nextInt(8,15)
-        op2 = random.nextInt(8,15)
+        op1 = random.nextInt(12,45)
+        op2 = random.nextInt(12,45)
         mult = op1!! * op2!!
         tvSum?.text = "$op1 * $op2 = "
         correctAnswerPosition = random.nextInt(4)
         (findViewById<View>(btnIds[correctAnswerPosition]) as Button).text = "" + mult
         while (true) {
             if (incorrectAnswers!!.size > 3) break
-            op1 = random.nextInt(8,15)
-            op2 = random.nextInt(8,15)
+            op1 = random.nextInt(12,45)
+            op2 = random.nextInt(12,45)
             multOther = op1!! * op2!!
             if (multOther == mult) {
                 continue
@@ -229,11 +232,11 @@ class MultActivity : AppCompatActivity() {
 
     //ThirdLevel
     @SuppressLint("SetTextI18n")
-    private fun thirdLevel() {
+    private fun advancedlevel() {
 
         tvTimer?.text = "" + (millisUntilFinished!! / 1000) + "s"
         tvPoints?.text = "$points/$numberofQuestions"
-        generateQuestion3()
+        generateQuestionAdvanced()
         countDownTimer = object : CountDownTimer(millisUntilFinished!!, 1000) {
             override fun onTick(time: Long) {
                 tvTimer?.text = "" + (time / 1000) + "s"
@@ -254,18 +257,18 @@ class MultActivity : AppCompatActivity() {
     }
 
     @SuppressLint("SetTextI18n")
-    private fun generateQuestion3() {
+    private fun generateQuestionAdvanced() {
         numberofQuestions++
-        op1 = random.nextInt(15,25)
-        op2 = random.nextInt(15,25)
+        op1 = random.nextInt(20,59)
+        op2 = random.nextInt(20,59)
         mult = op1!! * op2!!
         tvSum?.text = "$op1 * $op2 = "
         correctAnswerPosition = random.nextInt(4)
         (findViewById<View>(btnIds[correctAnswerPosition]) as Button).text = "" + mult
         while (true) {
             if (incorrectAnswers!!.size > 3) break
-            op1 = random.nextInt(15,25)
-            op2 = random.nextInt(15,25)
+            op1 = random.nextInt(20,59)
+            op2 = random.nextInt(20,59)
             multOther = op1!! * op2!!
             if (multOther == mult) {
                 continue
@@ -284,11 +287,11 @@ class MultActivity : AppCompatActivity() {
 
     //FourthLevel
     @SuppressLint("SetTextI18n")
-    private fun fourthLevel() {
+    private fun expertlevel() {
 
         tvTimer?.text = "" + (millisUntilFinished!! / 1000) + "s"
         tvPoints?.text = "$points/$numberofQuestions"
-        generateQuestion4()
+        generateQuestionExpert()
         countDownTimer = object : CountDownTimer(millisUntilFinished!!, 1000) {
             override fun onTick(time: Long) {
                 tvTimer?.text = "" + (time / 1000) + "s"
@@ -309,18 +312,18 @@ class MultActivity : AppCompatActivity() {
     }
 
     @SuppressLint("SetTextI18n")
-    private fun generateQuestion4() {
+    private fun generateQuestionExpert() {
         numberofQuestions++
-        op1 = random.nextInt(20,30)
-        op2 = random.nextInt(15,19)
+        op1 = random.nextInt(65,195)
+        op2 = random.nextInt(65,195)
         mult = op1!! * op2!!
         tvSum?.text = "$op1 * $op2 = "
         correctAnswerPosition = random.nextInt(4)
         (findViewById<View>(btnIds[correctAnswerPosition]) as Button).text = "" + mult
         while (true) {
             if (incorrectAnswers!!.size > 3) break
-            op1 = random.nextInt(20,30)
-            op2 = random.nextInt(15,19)
+            op1 = random.nextInt(65,195)
+            op2 = random.nextInt(65,195)
             multOther = op1!! * op2!!
             if (multOther == mult) {
                 continue

@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PiensaRapido">
         <activity
+            android:name=".activities.detaildashboard.game.rest.GameOverRestActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.detaildashboard.game.mult.GameOverMultiplicacionActivity"
             android:exported="false" />
         <activity
@@ -19,6 +22,9 @@
             android:exported="false" />
         <activity
             android:name=".activities.detaildashboard.game.rest.RestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.detaildashboard.game.sum.GameOverSumaActivity"
             android:exported="false" />
         <activity
             android:name=".activities.detaildashboard.game.sum.SumActivity"
