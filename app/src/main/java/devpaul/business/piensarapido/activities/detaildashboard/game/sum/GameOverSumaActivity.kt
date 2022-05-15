@@ -131,7 +131,7 @@ class GameOverSumaActivity : AppCompatActivity() {
                 "name" to name,
                 "lastname" to lastname,
                 "pointsDataSum" to arrayListOf(lastTry, bestPoints),
-                "dateInString" to dateInString
+                "lastTimePlayed" to dateInString
             )
             val nestedData = hashMapOf(
                 "lastTry" to lastTry,

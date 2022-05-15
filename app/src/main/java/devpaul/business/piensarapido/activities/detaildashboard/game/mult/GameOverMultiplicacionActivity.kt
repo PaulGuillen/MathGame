@@ -68,7 +68,7 @@ class GameOverMultiplicacionActivity : AppCompatActivity() {
         tvPoints?.text = "" + points
         tvHighScore?.text = "" + pointsSP
 
-/*        getUserData()*/
+        getUserData()
 
     }
 
@@ -131,15 +131,15 @@ class GameOverMultiplicacionActivity : AppCompatActivity() {
                 "uiduser" to uiduser,
                 "name" to name,
                 "lastname" to lastname,
-                "pointsDataRest" to arrayListOf(lastTry,bestPoints),
-                "dateInString" to dateInString
+                "pointsDataMult" to arrayListOf(lastTry,bestPoints),
+                "lastTimePlayed" to dateInString
             )
             val nestedData = hashMapOf(
                 "lastTry" to lastTry,
                 "bestPoints" to bestPoints
             )
 
-            docData["restData"] = nestedData
+            docData["multData"] = nestedData
 
 
             db.collection(Constants.PATH_POINTS).document("MultDatabase").collection("Mult").document(uiduser.toString())
