@@ -18,6 +18,7 @@ import com.google.firebase.ktx.Firebase
 import devpaul.business.piensarapido.Constants
 import devpaul.business.piensarapido.R
 import devpaul.business.piensarapido.activities.MainActivity
+import devpaul.business.piensarapido.activities.detaildashboard.game.LevelActivity
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -128,7 +129,7 @@ class GameOverRestActivity : AppCompatActivity() {
             docData["restData"] = nestedData
 
 
-            db.collection(Constants.PATH_POINTS).document(uiduser.toString())
+            db.collection(Constants.PATH_POINTS).document("RestDatabase").collection("Rest").document(uiduser.toString())
                 .set(docData)
                 .addOnSuccessListener {
 
@@ -137,6 +138,7 @@ class GameOverRestActivity : AppCompatActivity() {
                 .addOnFailureListener { e ->
                     Log.v(TAG,"Error : $e")
                 }
+
         }
 
     }
@@ -152,7 +154,7 @@ class GameOverRestActivity : AppCompatActivity() {
 
 
     fun restart(view: View?) {
-        val intent = Intent(this@GameOverRestActivity, MainActivity::class.java)
+        val intent = Intent(this@GameOverRestActivity, LevelActivity::class.java)
         startActivity(intent)
         finish()
     }

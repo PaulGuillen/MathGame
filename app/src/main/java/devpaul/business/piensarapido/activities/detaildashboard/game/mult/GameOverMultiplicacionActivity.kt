@@ -18,6 +18,7 @@ import com.google.firebase.ktx.Firebase
 import devpaul.business.piensarapido.Constants
 import devpaul.business.piensarapido.R
 import devpaul.business.piensarapido.activities.MainActivity
+import devpaul.business.piensarapido.activities.detaildashboard.game.LevelActivity
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -125,6 +126,32 @@ class GameOverMultiplicacionActivity : AppCompatActivity() {
                     Log.v(TAG,"Error : $e")
                 }
 */
+
+            val docData = hashMapOf(
+                "uiduser" to uiduser,
+                "name" to name,
+                "lastname" to lastname,
+                "pointsDataRest" to arrayListOf(lastTry,bestPoints),
+                "dateInString" to dateInString
+            )
+            val nestedData = hashMapOf(
+                "lastTry" to lastTry,
+                "bestPoints" to bestPoints
+            )
+
+            docData["restData"] = nestedData
+
+
+            db.collection(Constants.PATH_POINTS).document("MultDatabase").collection("Mult").document(uiduser.toString())
+                .set(docData)
+                .addOnSuccessListener {
+
+                    Log.v(TAG,"Success : $it")
+                }
+                .addOnFailureListener { e ->
+                    Log.v(TAG,"Error : $e")
+                }
+
         }
 
     }
@@ -141,7 +168,7 @@ class GameOverMultiplicacionActivity : AppCompatActivity() {
 
 
     fun restart(view: View?) {
-        val intent = Intent(this@GameOverMultiplicacionActivity, MainActivity::class.java)
+        val intent = Intent(this@GameOverMultiplicacionActivity, LevelActivity::class.java)
         startActivity(intent)
         finish()
     }

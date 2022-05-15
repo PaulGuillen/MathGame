@@ -27,8 +27,8 @@ import com.google.firebase.firestore.QuerySnapshot
 import androidx.annotation.NonNull
 
 import com.google.android.gms.tasks.OnCompleteListener
-
-
+import devpaul.business.piensarapido.activities.detaildashboard.game.LevelActivity
+import java.util.logging.Level
 
 
 class GameOverSumaActivity : AppCompatActivity() {
@@ -141,7 +141,7 @@ class GameOverSumaActivity : AppCompatActivity() {
             docData["sumData"] = nestedData
 
 
-        db.collection(Constants.PATH_POINTS).document(uiduser.toString())
+        db.collection(Constants.PATH_POINTS).document("SumDatabase").collection("Sum").document(uiduser.toString())
                 .set(docData)
                 .addOnSuccessListener {
 
@@ -166,7 +166,7 @@ class GameOverSumaActivity : AppCompatActivity() {
 
 
     fun restart(view: View?) {
-        val intent = Intent(this@GameOverSumaActivity, MainActivity::class.java)
+        val intent = Intent(this@GameOverSumaActivity, LevelActivity::class.java)
         startActivity(intent)
         finish()
     }
