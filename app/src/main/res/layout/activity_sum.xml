@@ -101,7 +101,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/monserrat_alternates_medium"
                     android:text="@string/suma_example"
-                    android:textSize="55sp" />
+                    android:textSize="50sp" />
 
                 <TextView
                     android:id="@+id/textView5"
@@ -176,6 +176,7 @@
                     android:textSize="27sp"
                     app:backgroundTint="#82E859"
                     tools:ignore="ButtonStyle,UsingOnClickInXml" />
+
 
             </LinearLayout>
 

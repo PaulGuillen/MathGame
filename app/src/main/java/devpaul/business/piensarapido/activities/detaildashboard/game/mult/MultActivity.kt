@@ -127,7 +127,7 @@ class MultActivity : AppCompatActivity() {
         correctAnswerPosition = random.nextInt(4)
         (findViewById<View>(btnIds[correctAnswerPosition]) as Button).text = "" + mult
         while (true) {
-            if (incorrectAnswers!!.size > 3) break
+            if (incorrectAnswers!!.size > 4) break
             op1 = random.nextInt(1,17)
             op2 = random.nextInt(1,17)
             multOther = op1!! * op2!!
@@ -137,7 +137,7 @@ class MultActivity : AppCompatActivity() {
             incorrectAnswers?.add(multOther!!)
         }
 
-        for (i in 0..2) {
+        for (i in 0..3) {
             if (i == correctAnswerPosition){
                 continue
             }
@@ -210,7 +210,7 @@ class MultActivity : AppCompatActivity() {
         correctAnswerPosition = random.nextInt(4)
         (findViewById<View>(btnIds[correctAnswerPosition]) as Button).text = "" + mult
         while (true) {
-            if (incorrectAnswers!!.size > 3) break
+            if (incorrectAnswers!!.size > 4) break
             op1 = random.nextInt(12,45)
             op2 = random.nextInt(12,45)
             multOther = op1!! * op2!!
@@ -220,7 +220,7 @@ class MultActivity : AppCompatActivity() {
             incorrectAnswers?.add(multOther!!)
         }
 
-        for (i in 0..2) {
+        for (i in 0..3) {
             if (i == correctAnswerPosition){
                 continue
             }
@@ -265,7 +265,7 @@ class MultActivity : AppCompatActivity() {
         correctAnswerPosition = random.nextInt(4)
         (findViewById<View>(btnIds[correctAnswerPosition]) as Button).text = "" + mult
         while (true) {
-            if (incorrectAnswers!!.size > 3) break
+            if (incorrectAnswers!!.size > 4) break
             op1 = random.nextInt(20,59)
             op2 = random.nextInt(20,59)
             multOther = op1!! * op2!!
@@ -275,7 +275,7 @@ class MultActivity : AppCompatActivity() {
             incorrectAnswers?.add(multOther!!)
         }
 
-        for (i in 0..2) {
+        for (i in 0..3) {
             if (i == correctAnswerPosition){
                 continue
             }
@@ -320,7 +320,7 @@ class MultActivity : AppCompatActivity() {
         correctAnswerPosition = random.nextInt(4)
         (findViewById<View>(btnIds[correctAnswerPosition]) as Button).text = "" + mult
         while (true) {
-            if (incorrectAnswers!!.size > 3) break
+            if (incorrectAnswers!!.size > 4) break
             op1 = random.nextInt(65,195)
             op2 = random.nextInt(65,195)
             multOther = op1!! * op2!!
@@ -330,7 +330,7 @@ class MultActivity : AppCompatActivity() {
             incorrectAnswers?.add(multOther!!)
         }
 
-        for (i in 0..2) {
+        for (i in 0..3) {
             if (i == correctAnswerPosition){
                 continue
             }

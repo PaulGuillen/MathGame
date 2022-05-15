@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.ActivityInfo
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -19,6 +20,16 @@ import devpaul.business.piensarapido.R
 import devpaul.business.piensarapido.activities.MainActivity
 import java.text.SimpleDateFormat
 import java.util.*
+import com.google.firebase.firestore.DocumentSnapshot
+
+import com.google.firebase.firestore.QuerySnapshot
+
+import androidx.annotation.NonNull
+
+import com.google.android.gms.tasks.OnCompleteListener
+
+
+
 
 class GameOverSumaActivity : AppCompatActivity() {
 
@@ -38,7 +49,7 @@ class GameOverSumaActivity : AppCompatActivity() {
     @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_game_over_multiplicacion)
+        setContentView(R.layout.activity_game_over_suma)
 
         //desactivar rotacion pantalla
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
@@ -66,7 +77,7 @@ class GameOverSumaActivity : AppCompatActivity() {
         tvHighScore?.text = "" + pointsSP
 
 
-/*        getUserData()*/
+        getUserData()
 
     }
 
@@ -100,8 +111,8 @@ class GameOverSumaActivity : AppCompatActivity() {
         FirebaseAuth.getInstance().currentUser?.metadata?.apply {
 
             val uiduser = auth.currentUser?.uid
-            val bestPoints = tvHighScore?.text.toString() + "\r" + "puntos"
-            val lastTry = tvPoints?.text.toString() + "\r" + "puntos"
+            val bestPoints = tvHighScore?.text
+            val lastTry = tvPoints?.text
             val name = tvName?.text.toString()
             val lastname = tvLastname?.text.toString()
 
@@ -113,17 +124,32 @@ class GameOverSumaActivity : AppCompatActivity() {
             val date = getCurrentDateTime()
             val dateInString = date.toString("yyyy/MM/dd")
 
-    /*        val dataPoints = Points(uiduser.toString(),name,lastname,bestPoints,lastTry, dateInString, lastTimeAccess)
+            /*        val dataPoints = Points(uiduser.toString(),name,lastname,bestPoints,lastTry, dateInString)*/
 
-            db.collection(Constants.PATH_POINTS_MUL).document(uiduser.toString())
-                .set(dataPoints)
+            val docData = hashMapOf(
+                "uiduser" to uiduser,
+                "name" to name,
+                "lastname" to lastname,
+                "pointsDataSum" to arrayListOf(lastTry, bestPoints),
+                "dateInString" to dateInString
+            )
+            val nestedData = hashMapOf(
+                "lastTry" to lastTry,
+                "bestPoints" to bestPoints
+            )
+
+            docData["sumData"] = nestedData
+
+
+        db.collection(Constants.PATH_POINTS).document(uiduser.toString())
+                .set(docData)
                 .addOnSuccessListener {
+
                     Log.v(TAG,"Success : $it")
                 }
                 .addOnFailureListener { e ->
                     Log.v(TAG,"Error : $e")
                 }
-*/
         }
 
     }

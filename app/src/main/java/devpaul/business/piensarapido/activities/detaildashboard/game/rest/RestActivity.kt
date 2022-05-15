@@ -123,7 +123,7 @@ class RestActivity : AppCompatActivity() {
         correctAnswerPosition = random.nextInt(4)
         (findViewById<View>(btnIds[correctAnswerPosition]) as Button).text = "" + rest
         while (true) {
-            if (incorrectAnswers!!.size > 3) break
+            if (incorrectAnswers!!.size > 4) break
             op1 = random.nextInt(25,55)
             op2 = random.nextInt(1,24)
             restOther = op1!! - op2!!
@@ -133,7 +133,7 @@ class RestActivity : AppCompatActivity() {
             incorrectAnswers?.add(restOther!!)
         }
 
-        for (i in 0..2) {
+        for (i in 0..3) {
             if (i == correctAnswerPosition){
                 continue
             }
@@ -206,7 +206,7 @@ class RestActivity : AppCompatActivity() {
         correctAnswerPosition = random.nextInt(4)
         (findViewById<View>(btnIds[correctAnswerPosition]) as Button).text = "" + rest
         while (true) {
-            if (incorrectAnswers!!.size > 3) break
+            if (incorrectAnswers!!.size > 4) break
             op1 = random.nextInt(50,99)
             op2 = random.nextInt(12,49)
             restOther = op1!! - op2!!
@@ -216,7 +216,7 @@ class RestActivity : AppCompatActivity() {
             incorrectAnswers?.add(restOther!!)
         }
 
-        for (i in 0..2) {
+        for (i in 0..3) {
             if (i == correctAnswerPosition){
                 continue
             }
@@ -261,7 +261,7 @@ class RestActivity : AppCompatActivity() {
         correctAnswerPosition = random.nextInt(4)
         (findViewById<View>(btnIds[correctAnswerPosition]) as Button).text = "" + rest
         while (true) {
-            if (incorrectAnswers!!.size > 3) break
+            if (incorrectAnswers!!.size > 4) break
             op1 = random.nextInt(105,180)
             op2 = random.nextInt(30,104)
             restOther = op1!! - op2!!
@@ -271,7 +271,7 @@ class RestActivity : AppCompatActivity() {
             incorrectAnswers?.add(restOther!!)
         }
 
-        for (i in 0..2) {
+        for (i in 0..3) {
             if (i == correctAnswerPosition){
                 continue
             }
@@ -316,7 +316,7 @@ class RestActivity : AppCompatActivity() {
         correctAnswerPosition = random.nextInt(4)
         (findViewById<View>(btnIds[correctAnswerPosition]) as Button).text = "" + rest
         while (true) {
-            if (incorrectAnswers!!.size > 3) break
+            if (incorrectAnswers!!.size > 4) break
             op1 = random.nextInt(199,310)
             op2 = random.nextInt(55,190)
             restOther = op1!! - op2!!
@@ -326,7 +326,7 @@ class RestActivity : AppCompatActivity() {
             incorrectAnswers?.add(restOther!!)
         }
 
-        for (i in 0..2) {
+        for (i in 0..3) {
             if (i == correctAnswerPosition){
                 continue
             }

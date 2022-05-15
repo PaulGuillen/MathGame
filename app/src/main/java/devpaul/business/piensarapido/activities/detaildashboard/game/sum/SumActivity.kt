@@ -123,7 +123,7 @@ class SumActivity : AppCompatActivity() {
         correctAnswerPosition = random.nextInt(4)
         (findViewById<View>(btnIds[correctAnswerPosition]) as Button).text = "" + sum
         while (true) {
-            if (incorrectAnswers!!.size > 3) break
+            if (incorrectAnswers!!.size > 4) break
             op1 = random.nextInt(10,45)
             op2 = random.nextInt(10,45)
             sumOther = op1!! + op2!!
@@ -133,7 +133,7 @@ class SumActivity : AppCompatActivity() {
             incorrectAnswers?.add(sumOther!!)
         }
 
-        for (i in 0..2) {
+        for (i in 0..3) {
             if (i == correctAnswerPosition) {
                 continue
             }
@@ -206,7 +206,7 @@ class SumActivity : AppCompatActivity() {
         correctAnswerPosition = random.nextInt(4)
         (findViewById<View>(btnIds[correctAnswerPosition]) as Button).text = "" + sum
         while (true) {
-            if (incorrectAnswers!!.size > 3) break
+            if (incorrectAnswers!!.size > 4) break
             op1 = random.nextInt(35,75)
             op2 = random.nextInt(35,75)
             sumOther = op1!! + op2!!
@@ -216,7 +216,7 @@ class SumActivity : AppCompatActivity() {
             incorrectAnswers?.add(sumOther!!)
         }
 
-        for (i in 0..2) {
+        for (i in 0..3) {
             if (i == correctAnswerPosition) {
                 continue
             }
@@ -261,7 +261,7 @@ class SumActivity : AppCompatActivity() {
         correctAnswerPosition = random.nextInt(4)
         (findViewById<View>(btnIds[correctAnswerPosition]) as Button).text = "" + sum
         while (true) {
-            if (incorrectAnswers!!.size > 3) break
+            if (incorrectAnswers!!.size > 4) break
             op1 = random.nextInt(65,120)
             op2 = random.nextInt(65,120)
             sumOther = op1!! + op2!!
@@ -271,7 +271,7 @@ class SumActivity : AppCompatActivity() {
             incorrectAnswers?.add(sumOther!!)
         }
 
-        for (i in 0..2) {
+        for (i in 0..3) {
             if (i == correctAnswerPosition) {
                 continue
             }
@@ -316,7 +316,7 @@ class SumActivity : AppCompatActivity() {
         correctAnswerPosition = random.nextInt(4)
         (findViewById<View>(btnIds[correctAnswerPosition]) as Button).text = "" + sum
         while (true) {
-            if (incorrectAnswers!!.size > 3) break
+            if (incorrectAnswers!!.size > 4) break
             op1 = random.nextInt(120,323)
             op2 = random.nextInt(120,323)
             sumOther = op1!! + op2!!
@@ -326,7 +326,7 @@ class SumActivity : AppCompatActivity() {
             incorrectAnswers?.add(sumOther!!)
         }
 
-        for (i in 0..2) {
+        for (i in 0..3) {
             if (i == correctAnswerPosition) {
                 continue
             }
