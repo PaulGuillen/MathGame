@@ -60,4 +60,11 @@
     <string name="puntaje">Puntaje:</string>
     <string name="suma_example">1 + 2 =</string>
     <string name="texto_mult">5 - 2 =</string>
+    <string name="number_last_point">18</string>
+    <string name="ultimo_puntaje">Ultimo puntaje</string>
+    <string name="best_points">24</string>
+    <string name="mejor_puntaje">Mejor puntaje</string>
+    <string name="suma">Suma</string>
+    <string name="resta">Resta</string>
+    <string name="multiplicaci_n">Multiplicación</string>
 </resources>

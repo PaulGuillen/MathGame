@@ -19,6 +19,7 @@ import devpaul.business.piensarapido.Constants
 import devpaul.business.piensarapido.R
 import devpaul.business.piensarapido.activities.MainActivity
 import devpaul.business.piensarapido.activities.detaildashboard.game.LevelActivity
+import devpaul.business.piensarapido.model.Points
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -102,8 +103,8 @@ class GameOverMultiplicacionActivity : AppCompatActivity() {
         FirebaseAuth.getInstance().currentUser?.metadata?.apply {
 
             val uiduser = auth.currentUser?.uid
-            val bestPoints = tvHighScore?.text.toString() + "\r" + "puntos"
-            val lastTry = tvPoints?.text.toString() + "\r" + "puntos"
+            val bestPoints = tvHighScore?.text
+            val lastTry = tvPoints?.text
             val name = tvName?.text.toString()
             val lastname = tvLastname?.text.toString()
 
@@ -115,19 +116,10 @@ class GameOverMultiplicacionActivity : AppCompatActivity() {
             val date = getCurrentDateTime()
             val dateInString = date.toString("yyyy/MM/dd")
 
-    /*        val dataPoints = Points(uiduser.toString(),name,lastname,bestPoints,lastTry, dateInString, lastTimeAccess)
+            val dataPoints = Points(uiduser.toString(),name,lastname, bestPoints as String, lastTry as String, dateInString)
 
-            db.collection(Constants.PATH_POINTS_MUL).document(uiduser.toString())
-                .set(dataPoints)
-                .addOnSuccessListener {
-                    Log.v(TAG,"Success : $it")
-                }
-                .addOnFailureListener { e ->
-                    Log.v(TAG,"Error : $e")
-                }
-*/
 
-            val docData = hashMapOf(
+/*            val docData = hashMapOf(
                 "uiduser" to uiduser,
                 "name" to name,
                 "lastname" to lastname,
@@ -139,11 +131,11 @@ class GameOverMultiplicacionActivity : AppCompatActivity() {
                 "bestPoints" to bestPoints
             )
 
-            docData["multData"] = nestedData
+            docData["multData"] = nestedData*/
 
 
             db.collection(Constants.PATH_POINTS).document("MultDatabase").collection("Mult").document(uiduser.toString())
-                .set(docData)
+                .set(dataPoints)
                 .addOnSuccessListener {
 
                     Log.v(TAG,"Success : $it")
@@ -168,12 +160,17 @@ class GameOverMultiplicacionActivity : AppCompatActivity() {
 
 
     fun restart(view: View?) {
-        val intent = Intent(this@GameOverMultiplicacionActivity, LevelActivity::class.java)
+        val intent = Intent(this@GameOverMultiplicacionActivity, MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK // Eliminar el historial de pantallas
         startActivity(intent)
         finish()
     }
 
     fun exit(view: View?) {
+        val intent = Intent(this@GameOverMultiplicacionActivity, MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK // Eliminar el historial de pantallas
+        startActivity(intent)
         finish()
     }
+
 }

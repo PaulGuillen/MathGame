@@ -19,6 +19,7 @@ import devpaul.business.piensarapido.Constants
 import devpaul.business.piensarapido.R
 import devpaul.business.piensarapido.activities.MainActivity
 import devpaul.business.piensarapido.activities.detaildashboard.game.LevelActivity
+import devpaul.business.piensarapido.model.Points
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -112,8 +113,9 @@ class GameOverRestActivity : AppCompatActivity() {
             val date = getCurrentDateTime()
             val dateInString = date.toString("yyyy/MM/dd")
 
-            /*        val dataPoints = Points(uiduser.toString(),name,lastname,bestPoints,lastTry, dateInString)*/
+            val dataPoints = Points(uiduser.toString(),name,lastname, bestPoints as String, lastTry as String, dateInString)
 
+/*
             val docData = hashMapOf(
                 "uiduser" to uiduser,
                 "name" to name,
@@ -126,11 +128,11 @@ class GameOverRestActivity : AppCompatActivity() {
                 "bestPoints" to bestPoints
             )
 
-            docData["restData"] = nestedData
+            docData["restData"] = nestedData*/
 
 
             db.collection(Constants.PATH_POINTS).document("RestDatabase").collection("Rest").document(uiduser.toString())
-                .set(docData)
+                .set(dataPoints)
                 .addOnSuccessListener {
 
                     Log.v(TAG,"Success : $it")
@@ -154,12 +156,16 @@ class GameOverRestActivity : AppCompatActivity() {
 
 
     fun restart(view: View?) {
-        val intent = Intent(this@GameOverRestActivity, LevelActivity::class.java)
+        val intent = Intent(this@GameOverRestActivity, MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK // Eliminar el historial de pantallas
         startActivity(intent)
         finish()
     }
 
     fun exit(view: View?) {
+        val intent = Intent(this@GameOverRestActivity, MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK // Eliminar el historial de pantallas
+        startActivity(intent)
         finish()
     }
 

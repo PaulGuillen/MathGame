@@ -28,6 +28,7 @@ import androidx.annotation.NonNull
 
 import com.google.android.gms.tasks.OnCompleteListener
 import devpaul.business.piensarapido.activities.detaildashboard.game.LevelActivity
+import devpaul.business.piensarapido.model.Points
 import java.util.logging.Level
 
 
@@ -124,27 +125,12 @@ class GameOverSumaActivity : AppCompatActivity() {
             val date = getCurrentDateTime()
             val dateInString = date.toString("yyyy/MM/dd")
 
-            /*        val dataPoints = Points(uiduser.toString(),name,lastname,bestPoints,lastTry, dateInString)*/
-
-            val docData = hashMapOf(
-                "uiduser" to uiduser,
-                "name" to name,
-                "lastname" to lastname,
-                "pointsDataSum" to arrayListOf(lastTry, bestPoints),
-                "lastTimePlayed" to dateInString
-            )
-            val nestedData = hashMapOf(
-                "lastTry" to lastTry,
-                "bestPoints" to bestPoints
-            )
-
-            docData["sumData"] = nestedData
+            val dataPoints = Points(uiduser.toString(),name,lastname, bestPoints as String, lastTry as String, dateInString)
 
 
         db.collection(Constants.PATH_POINTS).document("SumDatabase").collection("Sum").document(uiduser.toString())
-                .set(docData)
+                .set(dataPoints)
                 .addOnSuccessListener {
-
                     Log.v(TAG,"Success : $it")
                 }
                 .addOnFailureListener { e ->
@@ -166,12 +152,16 @@ class GameOverSumaActivity : AppCompatActivity() {
 
 
     fun restart(view: View?) {
-        val intent = Intent(this@GameOverSumaActivity, LevelActivity::class.java)
+        val intent = Intent(this@GameOverSumaActivity, MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK // Eliminar el historial de pantallas
         startActivity(intent)
         finish()
     }
 
     fun exit(view: View?) {
+        val intent = Intent(this@GameOverSumaActivity, MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK // Eliminar el historial de pantallas
+        startActivity(intent)
         finish()
     }
 }
