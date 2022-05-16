@@ -250,7 +250,7 @@ class PerfilActivity : AppCompatActivity() {
                 } else {
                     textBestPoints?.text = "0"
                     textLastTry?.text = "0"
-                    textlastTimePlayed?.text = "00/00/0000"
+                    textlastTimePlayed?.text = "0000/00/00"
                 }
             } else {
                 Log.d(TAG, "get failed with ", task.exception)
@@ -264,7 +264,7 @@ class PerfilActivity : AppCompatActivity() {
         super.onStart()
         textBestPoints?.text = "0"
         textLastTry?.text = "0"
-        textlastTimePlayed?.text = "00/00/0000"
+        textlastTimePlayed?.text = "0000/00/00"
     }
 
 }
