@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Piensa Rapido</string>
+    <string name="app_name">Piensa Rápido</string>
     <string name="jugar">Jugar</string>
     <string name="f_cil">Fácil</string>
     <string name="intermedio">Intermedio</string>
@@ -14,7 +14,7 @@
     <string name="correo">Correo</string>
     <string name="a_n_no_te_has_registrado">Aún no te has registrado?</string>
     <string name="iniciar_sesi_n">Iniciar sesión</string>
-    <string name="cargando">Cargando</string>
+    <string name="cargando">Cargando..</string>
     <string name="ajustes">Ajustes</string>
     <string name="perfil">Perfil</string>
     <string name="noticias">Noticias</string>
