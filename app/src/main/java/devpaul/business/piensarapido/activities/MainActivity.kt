@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.cardview.widget.CardView
 import devpaul.business.piensarapido.R
+import devpaul.business.piensarapido.activities.detaildashboard.NewsGameActivity
 import devpaul.business.piensarapido.activities.detaildashboard.game.LevelActivity
 import devpaul.business.piensarapido.activities.detaildashboard.PerfilActivity
 import devpaul.business.piensarapido.activities.detaildashboard.SettingsActivity
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
 
     var ibsettings : CardView? = null
     var cardViewPerfil : CardView? = null
+    var carViewNews : CardView? = null
 
     @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +33,12 @@ class MainActivity : AppCompatActivity() {
         cardViewPerfil = findViewById(R.id.cardview_perfil)
         cardViewPerfil?.setOnClickListener {
             val callInt = Intent(applicationContext, PerfilActivity::class.java)
+            startActivity(callInt)
+        }
+
+        carViewNews = findViewById(R.id.cardview_noticias)
+        carViewNews?.setOnClickListener {
+            val callInt = Intent(applicationContext, NewsGameActivity::class.java)
             startActivity(callInt)
         }
 

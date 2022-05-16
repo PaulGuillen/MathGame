@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PiensaRapido">
         <activity
+            android:name=".activities.detaildashboard.NewsGameActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.detaildashboard.game.rest.GameOverRestActivity"
             android:exported="false" />
         <activity
