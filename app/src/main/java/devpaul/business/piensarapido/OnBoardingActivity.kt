@@ -59,8 +59,8 @@ class OnBoardingActivity : AppCompatActivity() {
 
         //Data
         val onBoardingData:  MutableList<OnBoardingData> = ArrayList()
-        onBoardingData.add(OnBoardingData("Matemáticas Básicas","Permanecerás cautivo con esta aplicación que ofrece niveles básicos, que serivarán para ejercitar tu mente",R.drawable.first_view))
-        onBoardingData.add(OnBoardingData("Niveles Selectivos","Selección del nivel que desees, además de contar con tiempo limitado para resolver la mayor cantidad de problemas.",R.drawable.second_view))
+        onBoardingData.add(OnBoardingData("Matemáticas Básicas","Permanecerás cautivo con esta aplicación que ofrece niveles básicos, que servirán para ejercitar tu mente",R.drawable.first_view))
+        onBoardingData.add(OnBoardingData("Niveles Selectivos","Selección del nivel que desees, además de contar con tiempo limitado para resolver la mayor cantidad de operaciones.",R.drawable.second_view))
         onBoardingData.add(OnBoardingData("Mente Activa","Mantén tu mente ocupada con estas pruebas de rapidez mental, piensa rápido.",R.drawable.third_view))
 
         setOnBoardingViewPagerAdapter(onBoardingData)
