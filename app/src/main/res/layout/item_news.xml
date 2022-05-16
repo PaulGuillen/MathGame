@@ -20,7 +20,7 @@
             android:textColor="@color/black"
             android:textSize="18sp"
             android:padding="5dp"
-            android:text="Titulo noticia"
+            android:text="@string/titulo_noticia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
@@ -50,7 +50,7 @@
             android:fontFamily="@font/monserrat_alternates_medium"
             android:textSize="17sp"
             android:padding="5dp"
-            android:text="Descripcion de la noticia"
+            android:text="@string/descripcion_de_la_noticia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
@@ -61,10 +61,9 @@
             android:textSize="14sp"
             android:padding="8dp"
             android:gravity="end"
-            android:text="Fecha de la noticia"
+            android:text="@string/fecha_de_la_noticia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-
 
     </LinearLayout>
 

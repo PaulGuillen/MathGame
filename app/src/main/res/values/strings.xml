@@ -67,4 +67,7 @@
     <string name="suma">Suma</string>
     <string name="resta">Resta</string>
     <string name="multiplicaci_n">Multiplicación</string>
+    <string name="titulo_noticia">Titulo noticia</string>
+    <string name="descripcion_de_la_noticia">Descripcion de la noticia</string>
+    <string name="fecha_de_la_noticia">Fecha de la noticia</string>
 </resources>
