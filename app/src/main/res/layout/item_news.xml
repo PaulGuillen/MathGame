@@ -15,7 +15,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/name_station"
+            android:id="@+id/titulo_new"
             android:fontFamily="@font/monserrat_alternates_medium"
             android:textColor="@color/black"
             android:textSize="18sp"
@@ -46,7 +46,7 @@
             android:layout_height="2dp"/>
 
         <TextView
-            android:id="@+id/district_station"
+            android:id="@+id/description_new"
             android:fontFamily="@font/monserrat_alternates_medium"
             android:textSize="17sp"
             android:padding="5dp"
@@ -56,7 +56,7 @@
 
 
         <TextView
-            android:id="@+id/fecha_publicacion"
+            android:id="@+id/fecha_new"
             android:fontFamily="@font/monserrat_alternates_medium"
             android:textSize="14sp"
             android:padding="8dp"
