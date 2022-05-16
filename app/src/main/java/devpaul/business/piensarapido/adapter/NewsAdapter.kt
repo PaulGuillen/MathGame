@@ -38,11 +38,11 @@ class NewsAdapter(
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .priority(Priority.HIGH)
         holder.imageView?.let {
-            Glide.with(context).load(newsSection.image).apply(options).into(it)
+            Glide.with(context).load(newsSection.imagen).apply(options).into(it)
         }
 
         holder.textViewTitulo?.text = newsSection.titulo
-        holder.textViewDescription?.text = newsSection.description
+        holder.textViewDescription?.text = newsSection.descripcion
         holder.textViewFecha?.text = newsSection.fecha
 
     }
