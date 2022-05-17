@@ -6,9 +6,6 @@ _Este proyecto consta de un juego de matemáticas que tiene las operaciones bás
 
 _Mira **Usuario test** para conocer el usuario asignado para esta prueba de diseños._
 
-_Puedes visualziar la app en Google Play [Lima Segura](https://play.google.com/store/apps/details?id=devpaul.business.safetylima)_
-
-
 ### Pre-requisitos 📋
 
 _Tener instalado Android Studio, conocer sobre kotlin, consultas con firestore_
