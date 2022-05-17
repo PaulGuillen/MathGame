@@ -8,6 +8,7 @@ _Mira **Usuario test** para conocer el usuario asignado para esta prueba de dise
 
 _Puedes visualziar la app en Google Play [Lima Segura](https://play.google.com/store/apps/details?id=devpaul.business.safetylima)_
 
+
 ### Pre-requisitos 📋
 
 _Tener instalado Android Studio, conocer sobre kotlin, consultas con firestore_
@@ -32,7 +33,6 @@ _En este caso usaremos el usuario TEST_
 <p align="center">
  <img src="https://i.postimg.cc/W3f7bTK2/Usuario.png"/>
 </p>
-
 
 
 ## Contribuyendo 🖇️
