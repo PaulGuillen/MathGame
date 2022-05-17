@@ -1,3 +1,3 @@
 # Game-Think-Fast
 
-Proyecto en progreso.....
+_En este proyecto mostraré_
