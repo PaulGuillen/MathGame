@@ -77,6 +77,15 @@ _Aca observamos la lógica del juego el cual cuenta con un contador y la cantida
 
 ---
 
+_Perfil del usuario y Ajustes, como podemos observar en el perfil del usuario podemos ver nuestros puntajes registrados por cada juego._
+
+<p align="center">
+ <img src="https://i.postimg.cc/qRTrW49j/Screenshot-1652891264.png"/>
+ <img src="https://i.postimg.cc/9XkX15Lw/Screenshot-1652891220.png"/>
+</p>
+
+---
+
 
 ## Video 📄
 
