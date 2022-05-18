@@ -32,6 +32,8 @@ _En este caso usaremos el usuario TEST_
 </p>
 
 
+## Ejecutando los diseños ⚙️
+
 ## Contribuyendo 🖇️
 
 _Agradecer a las personas que participaron en este proyecto, ya que fueron parte esenciales para el maquetado de esta aplicación móvil._
