@@ -45,13 +45,21 @@ _Procederemos a mostrar las vistas del registro e inicio de sesión_
 
  ---
  
- 
 _Dashboard principal de la app._
 
 <p align="center">
  <img src="https://i.postimg.cc/85PkX18M/Screenshot-1652891208.png"/>
 </p>
 
+---
+
+_La aplicación movil cuenta con 4 niveles, los cuales se muestran en la siguiente imagen._
+
+<p align="center">
+ <img src="https://i.postimg.cc/xCxfWWY7/Screenshot-1652891210.png"/>
+</p>
+
+---
 ## Video 📄
 
 _En este video se mostrará las demas funcionalidades de la app._
