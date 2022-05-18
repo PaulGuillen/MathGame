@@ -34,8 +34,6 @@ _En este caso usaremos el usuario TEST_
 
 ## Ejecutando los diseños ⚙️
 
-_Vista Login y Registro_
-
 _Procederemos a mostrar las vistas del registro e inicio de sesión_
 
 <p align="center">
