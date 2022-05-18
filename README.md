@@ -34,6 +34,8 @@ _En este caso usaremos el usuario TEST_
 
 ## Ejecutando los diseños ⚙️
 
+_Mostrando todos los diseños de la aplicación móvil._
+
 ## Video 📄
 
 _En este video se mostrará las demas funcionalidades de la app._
