@@ -45,7 +45,7 @@ _Procederemos a mostrar las vistas del registro e inicio de sesión_
 
  ---
  
-_Dashboard principal de la app._
+_Dashboard principal de la app, se usó cardviews para realizar este diseño con una base en ConstraintLayout._
 
 <p align="center">
  <img src="https://i.postimg.cc/85PkX18M/Screenshot-1652891208.png"/>
