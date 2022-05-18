@@ -34,7 +34,23 @@ _En este caso usaremos el usuario TEST_
 
 ## Ejecutando los diseños ⚙️
 
-_Mostrando todos los diseños de la aplicación móvil._
+_Vista Login y Registro_
+
+_Procederemos a mostrar las vistas del registro e inicio de sesión_
+
+<p align="center">
+ <img src="https://i.postimg.cc/nhBLCRYj/Screenshot-1652891156.png"/>
+ <img src="https://i.postimg.cc/VNFLFJhz/Screenshot-1652891164.png"/>
+</p>
+
+ ---
+ 
+ 
+_Dashboard principal de la app._
+
+<p align="center">
+ <img src="https://i.postimg.cc/85PkX18M/Screenshot-1652891208.png"/>
+</p>
 
 ## Video 📄
 
