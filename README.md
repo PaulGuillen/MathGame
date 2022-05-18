@@ -68,6 +68,16 @@ _Esta sección es de noticias, el cual nos muestra si existe noticias en la app 
 
 ---
 
+_Aca observamos la lógica del juego el cual cuenta con un contador y la cantidad de respuestas correctas e incorrectas, ádemas de ver los resultados por juego._
+
+<p align="center">
+ <img src="https://i.postimg.cc/x8g9Khpg/Screenshot-1652891228.png"/>
+ <img src="https://i.postimg.cc/2jxjRLjv/Screenshot-1652891259.png"/>
+</p>
+
+---
+
+
 ## Video 📄
 
 _En este video se mostrará las demas funcionalidades de la app._
