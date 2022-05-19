@@ -59,7 +59,7 @@ _La aplicación movil cuenta con 4 niveles, los cuales se muestran en la siguien
 
 ---
 
-_Esta sección es de noticias, el cual nos muestra si existe noticias en la app o como podemos observar en la segunda imagen no hay noticias en la base de datos._
+_Esta sección es de noticias, el cual nos muestra si existe o no existen noticias en la app o como podemos observar en la segunda imagen no hay noticias en la base de datos._
 
 <p align="center">
  <img src="https://i.postimg.cc/ZnXTqpWx/Screenshot-1652891218.png"/>
