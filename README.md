@@ -86,7 +86,6 @@ _Perfil del usuario y ajustes, como podemos observar en el perfil del usuario po
 
 ---
 
-
 ## Video 📄
 
 _En este video se mostrará las demas funcionalidades de la app._
