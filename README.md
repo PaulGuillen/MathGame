@@ -4,7 +4,7 @@ _Este proyecto consta de un juego de matemáticas que tiene las operaciones bás
 
 ## Comenzando 🚀
 
-_Mira **Usuario test** para conocer el usuario asignado para esta prueba de diseños_
+_Mira **Usuario test** para conocer el usuario asignado para esta prueba de diseños._
 
 ### Pre-requisitos 📋
 
