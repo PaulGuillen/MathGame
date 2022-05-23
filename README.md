@@ -34,7 +34,7 @@ _En este caso usaremos el usuario TEST_
 
 ## Ejecutando los diseños ⚙️
 
-_Procederemos a mostrar las vistas del registro e inicio de sesión_
+_Procederemos a mostrar las vistas del registro e inicio de sesión._
 
 <p align="center">
  <img src="https://i.postimg.cc/nhBLCRYj/Screenshot-1652891156.png"/>
