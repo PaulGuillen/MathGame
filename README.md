@@ -10,7 +10,7 @@ _Mira **Usuario test** para conocer el usuario asignado para esta prueba de dise
 
 ### Pre-requisitos 📋
 
-_Tener instalado Android Studio, conocer sobre kotlin, consultas con firestore._
+_Tener instalado Android Studio, conocer sobre kotlin, consultas con firestore, gráfico de pastel._
 
 ```
 . MinSdk =  22
