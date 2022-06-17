@@ -22,7 +22,7 @@ _Tener instalado Android Studio, conocer sobre kotlin, consultas con firestore, 
 
 ## Usuario test 🖇️
 
-_En este caso usaremos el usuario TEST._
+_En este caso usaremos el usuario TEST, para que ustedes puedan realizar sus pruebas._
 
 ```
 . correo = test@gmail.com
