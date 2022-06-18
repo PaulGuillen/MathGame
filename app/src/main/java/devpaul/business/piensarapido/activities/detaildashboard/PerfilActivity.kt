@@ -32,9 +32,6 @@ import com.google.android.gms.tasks.OnCompleteListener
 
 import com.google.firebase.firestore.DocumentReference
 
-
-
-
 class PerfilActivity : AppCompatActivity() {
 
     var TAG = "PerfilActivity"

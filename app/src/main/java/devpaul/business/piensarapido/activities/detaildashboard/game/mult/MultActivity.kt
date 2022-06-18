@@ -339,7 +339,6 @@ class MultActivity : AppCompatActivity() {
         incorrectAnswers!!.clear()
     }
 
-
     override fun onBackPressed() {
         super.onBackPressed()
         countDownTimer?.cancel()

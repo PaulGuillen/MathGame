@@ -170,7 +170,6 @@ class RestActivity : AppCompatActivity() {
 
     }
 
-
     //SecondLevel
     @SuppressLint("SetTextI18n")
     private fun intermediateLevel() {

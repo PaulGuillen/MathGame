@@ -300,6 +300,8 @@
                             android:textAlignment="center"
                             android:fontFamily="@font/monserrat_alternates_medium"
                             android:layout_width="match_parent"
+                            android:ellipsize="end"
+                            android:singleLine="true"
                             android:layout_height="wrap_content"
                             android:text="@string/ajustes"
                             android:textColor="@color/black"
