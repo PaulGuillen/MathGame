@@ -83,7 +83,7 @@
                         tools:ignore="ContentDescription" />
 
                     <TextView
-                        android:textSize="22sp"
+                        android:textSize="21sp"
                         android:textStyle="bold"
                         android:padding="5dp"
                         android:textAlignment="center"
