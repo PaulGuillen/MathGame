@@ -14,11 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "195835630652-vun7vdb323tq2vuscocp24b2m2p5jkuu.apps.googleusercontent.com",
+          "client_id": "195835630652-3m1nep580pa5508i4t813e72ps2lhha5.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "devpaul.business.piensarapido",
-            "certificate_hash": "75456fe498b5292c6439d4f1407b8c869b9292c9"
+            "certificate_hash": "d36b9fc108f60d14668f2435d59dd51fc6f310c2"
           }
         },
         {
