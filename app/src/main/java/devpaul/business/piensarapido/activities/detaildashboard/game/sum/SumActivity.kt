@@ -105,7 +105,12 @@ class SumActivity : AppCompatActivity() {
                 btn2?.isClickable = false
                 btn3?.isClickable = false
                 val intent = Intent(this@SumActivity, GameOverSumaActivity::class.java)
+                val incorrectAnswers = numberofQuestions - points
+                val level = intent.getStringExtra("level")
+                intent.putExtra("level", "Facil")
                 intent.putExtra("points", points)
+                intent.putExtra("incorrectAnswers", incorrectAnswers)
+                intent.putExtra("numberQuestions", numberofQuestions)
                 startActivity(intent)
                 finish()
             }
@@ -188,7 +193,12 @@ class SumActivity : AppCompatActivity() {
                 btn2?.isClickable = false
                 btn3?.isClickable = false
                 val intent = Intent(this@SumActivity, GameOverSumaActivity::class.java)
+                val incorrectAnswers = numberofQuestions - points
+                val level = intent.getStringExtra("level")
+                intent.putExtra("level", "Intermedio")
                 intent.putExtra("points", points)
+                intent.putExtra("incorrectAnswers", incorrectAnswers)
+                intent.putExtra("numberQuestions", numberofQuestions)
                 startActivity(intent)
                 finish()
             }
@@ -243,7 +253,12 @@ class SumActivity : AppCompatActivity() {
                 btn2?.isClickable = false
                 btn3?.isClickable = false
                 val intent = Intent(this@SumActivity, GameOverSumaActivity::class.java)
+                val incorrectAnswers = numberofQuestions - points
+                val level = intent.getStringExtra("level")
+                intent.putExtra("level", "Avanzado")
                 intent.putExtra("points", points)
+                intent.putExtra("incorrectAnswers", incorrectAnswers)
+                intent.putExtra("numberQuestions", numberofQuestions)
                 startActivity(intent)
                 finish()
             }
@@ -298,7 +313,12 @@ class SumActivity : AppCompatActivity() {
                 btn2?.isClickable = false
                 btn3?.isClickable = false
                 val intent = Intent(this@SumActivity, GameOverSumaActivity::class.java)
+                val incorrectAnswers = numberofQuestions - points
+                val level = intent.getStringExtra("level")
+                intent.putExtra("level", "Experto")
                 intent.putExtra("points", points)
+                intent.putExtra("incorrectAnswers", incorrectAnswers)
+                intent.putExtra("numberQuestions", numberofQuestions)
                 startActivity(intent)
                 finish()
             }

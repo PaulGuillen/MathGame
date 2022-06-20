@@ -27,6 +27,7 @@ import com.google.firebase.firestore.QuerySnapshot
 import androidx.annotation.NonNull
 
 import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.database.ktx.database
 import devpaul.business.piensarapido.activities.detaildashboard.game.LevelActivity
 import devpaul.business.piensarapido.model.Points
 import java.util.logging.Level
@@ -46,6 +47,10 @@ class GameOverSumaActivity : AppCompatActivity() {
     //Firebase extensiones
     private lateinit var auth: FirebaseAuth
     private val db = Firebase.firestore
+
+    private val database = Firebase.database
+    private val myref = database.getReference("Users")
+
 
     @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
