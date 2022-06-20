@@ -41,7 +41,7 @@ class MultActivity : AppCompatActivity() {
 
     var textlevel : TextView? = null
 
-    @SuppressLint("SourceLockedOrientationActivity")
+    @SuppressLint("SourceLockedOrientationActivity", "SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mult)
@@ -110,7 +110,6 @@ class MultActivity : AppCompatActivity() {
                 btn3?.isClickable = false
                 val intent = Intent(this@MultActivity, GameOverMultiplicacionActivity::class.java)
                 val incorrectAnswers = numberofQuestions - points
-                val level = intent.getStringExtra("level")
                 intent.putExtra("level", "Facil")
                 intent.putExtra("points", points)
                 intent.putExtra("incorrectAnswers", incorrectAnswers)
@@ -125,16 +124,16 @@ class MultActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     private fun generateQuestionEasy() {
         numberofQuestions++
-        op1 = random.nextInt(1,17)
-        op2 = random.nextInt(1,17)
+        op1 = random.nextInt(10,25)
+        op2 = random.nextInt(1,9)
         mult = op1!! * op2!!
         tvSum?.text = "$op1 * $op2 = "
         correctAnswerPosition = random.nextInt(4)
         (findViewById<View>(btnIds[correctAnswerPosition]) as Button).text = "" + mult
         while (true) {
             if (incorrectAnswers!!.size > 4) break
-            op1 = random.nextInt(1,17)
-            op2 = random.nextInt(1,17)
+            op1 = random.nextInt(10,25)
+            op2 = random.nextInt(1,9)
             multOther = op1!! * op2!!
             if (multOther == mult) {
                 continue
@@ -151,6 +150,7 @@ class MultActivity : AppCompatActivity() {
         incorrectAnswers!!.clear()
     }
 
+    @SuppressLint("SetTextI18n")
     fun chooseAnswer(view: View) {
         val answer = (view as Button).text.toString().toInt()
         if (answer == mult) {
@@ -198,7 +198,6 @@ class MultActivity : AppCompatActivity() {
                 btn3?.isClickable = false
                 val intent = Intent(this@MultActivity, GameOverMultiplicacionActivity::class.java)
                 val incorrectAnswers = numberofQuestions - points
-                val level = intent.getStringExtra("level")
                 intent.putExtra("level", "Intermedio")
                 intent.putExtra("points", points)
                 intent.putExtra("incorrectAnswers", incorrectAnswers)
@@ -213,16 +212,16 @@ class MultActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     private fun generateQuestionIntermediate() {
         numberofQuestions++
-        op1 = random.nextInt(12,45)
-        op2 = random.nextInt(12,45)
+        op1 = random.nextInt(25,45)
+        op2 = random.nextInt(8,25)
         mult = op1!! * op2!!
         tvSum?.text = "$op1 * $op2 = "
         correctAnswerPosition = random.nextInt(4)
         (findViewById<View>(btnIds[correctAnswerPosition]) as Button).text = "" + mult
         while (true) {
             if (incorrectAnswers!!.size > 4) break
-            op1 = random.nextInt(12,45)
-            op2 = random.nextInt(12,45)
+            op1 = random.nextInt(25,45)
+            op2 = random.nextInt(8,25)
             multOther = op1!! * op2!!
             if (multOther == mult) {
                 continue
@@ -258,7 +257,6 @@ class MultActivity : AppCompatActivity() {
                 btn3?.isClickable = false
                 val intent = Intent(this@MultActivity, GameOverMultiplicacionActivity::class.java)
                 val incorrectAnswers = numberofQuestions - points
-                val level = intent.getStringExtra("level")
                 intent.putExtra("level", "Avanzado")
                 intent.putExtra("points", points)
                 intent.putExtra("incorrectAnswers", incorrectAnswers)
@@ -273,16 +271,16 @@ class MultActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     private fun generateQuestionAdvanced() {
         numberofQuestions++
-        op1 = random.nextInt(20,59)
-        op2 = random.nextInt(20,59)
+        op1 = random.nextInt(45,60)
+        op2 = random.nextInt(20,44)
         mult = op1!! * op2!!
         tvSum?.text = "$op1 * $op2 = "
         correctAnswerPosition = random.nextInt(4)
         (findViewById<View>(btnIds[correctAnswerPosition]) as Button).text = "" + mult
         while (true) {
             if (incorrectAnswers!!.size > 4) break
-            op1 = random.nextInt(20,59)
-            op2 = random.nextInt(20,59)
+            op1 = random.nextInt(45,60)
+            op2 = random.nextInt(20,44)
             multOther = op1!! * op2!!
             if (multOther == mult) {
                 continue
@@ -318,7 +316,6 @@ class MultActivity : AppCompatActivity() {
                 btn3?.isClickable = false
                 val intent = Intent(this@MultActivity, GameOverMultiplicacionActivity::class.java)
                 val incorrectAnswers = numberofQuestions - points
-                val level = intent.getStringExtra("level")
                 intent.putExtra("level", "Experto")
                 intent.putExtra("points", points)
                 intent.putExtra("incorrectAnswers", incorrectAnswers)
@@ -333,16 +330,16 @@ class MultActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     private fun generateQuestionExpert() {
         numberofQuestions++
-        op1 = random.nextInt(65,195)
-        op2 = random.nextInt(65,195)
+        op1 = random.nextInt(62,120)
+        op2 = random.nextInt(25,60)
         mult = op1!! * op2!!
         tvSum?.text = "$op1 * $op2 = "
         correctAnswerPosition = random.nextInt(4)
         (findViewById<View>(btnIds[correctAnswerPosition]) as Button).text = "" + mult
         while (true) {
             if (incorrectAnswers!!.size > 4) break
-            op1 = random.nextInt(65,195)
-            op2 = random.nextInt(65,195)
+            op1 = random.nextInt(62,120)
+            op2 = random.nextInt(25,60)
             multOther = op1!! * op2!!
             if (multOther == mult) {
                 continue
