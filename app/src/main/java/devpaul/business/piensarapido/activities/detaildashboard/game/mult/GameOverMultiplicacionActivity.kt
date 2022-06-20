@@ -137,8 +137,8 @@ class GameOverMultiplicacionActivity : AppCompatActivity() {
             db.collection(Constants.PATH_POINTS_MUL).document(uiduser.toString())
                 .set(dataPoints)
                 .addOnSuccessListener {
-                    db.collection("AllResultsSum").document(randomUUID).set(dataPoints);
-                    myref.child("AllResultsSum").child(randomUUID).setValue(dataPoints)
+                    db.collection("AllResultsMul").document(randomUUID).set(dataPoints);
+                    myref.child("AllResultsMul").child(randomUUID).setValue(dataPoints)
                     Log.v(TAG, "Success : $it")
                 }
                 .addOnFailureListener { e ->

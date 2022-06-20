@@ -39,7 +39,7 @@
                     android:text="@string/text_contador"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="30sp" />
+                    android:textSize="25sp" />
 
             </LinearLayout>
 
@@ -65,7 +65,7 @@
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:text="@string/text_division_puntaje"
-                    android:textSize="30sp" />
+                    android:textSize="25sp" />
 
             </LinearLayout>
 
@@ -100,8 +100,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/monserrat_alternates_medium"
-                    android:text="@string/texto_mult"
-                    android:textSize="55sp" />
+                    android:text="@string/resta_example"
+                    android:textSize="50sp" />
 
                 <TextView
                     android:id="@+id/textView5"
@@ -177,6 +177,7 @@
                     app:backgroundTint="#82E859"
                     tools:ignore="ButtonStyle,UsingOnClickInXml" />
 
+
             </LinearLayout>
 
             <ImageView
@@ -192,10 +193,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
                 android:text=""
-                android:textSize="48sp" />
+                android:textColor="@color/black"
+                android:textSize="35sp"
+                android:textStyle="bold" />
 
 
         </LinearLayout>

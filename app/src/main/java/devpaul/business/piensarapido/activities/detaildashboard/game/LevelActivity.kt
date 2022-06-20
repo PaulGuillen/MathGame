@@ -8,6 +8,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import devpaul.business.piensarapido.R
+import devpaul.business.piensarapido.activities.MainActivity
 import devpaul.business.piensarapido.activities.detaildashboard.game.mult.MultActivity
 import devpaul.business.piensarapido.activities.detaildashboard.game.rest.RestActivity
 import devpaul.business.piensarapido.activities.detaildashboard.game.sum.SumActivity
@@ -19,6 +20,7 @@ class LevelActivity : AppCompatActivity() {
     var btnintermedio : CardView? = null
     var btnavanzado : CardView? = null
     var btnexperto : CardView? = null
+    var btnVolver : Button? = null
 
     @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +28,12 @@ class LevelActivity : AppCompatActivity() {
         setContentView(R.layout.activity_level)
         //desactivar rotacion pantalla
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+
+        btnVolver = findViewById(R.id.btn_volver_dashboard)
+        btnVolver?.setOnClickListener {
+            val intent = Intent(this@LevelActivity, MainActivity::class.java)
+            startActivity(intent)
+        }
 
         btnfacil = findViewById(R.id.cardview_facil)
         btnfacil?.setOnClickListener {

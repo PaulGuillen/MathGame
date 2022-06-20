@@ -134,8 +134,8 @@ class GameOverRestActivity : AppCompatActivity() {
             db.collection(Constants.PATH_POINTS_RES).document(uiduser.toString())
                 .set(dataPoints)
                 .addOnSuccessListener {
-                    db.collection("AllResultsSum").document(randomUUID).set(dataPoints);
-                    myref.child("AllResultsSum").child(randomUUID).setValue(dataPoints)
+                    db.collection("AllResultsRest").document(randomUUID).set(dataPoints);
+                    myref.child("AllResultsRest").child(randomUUID).setValue(dataPoints)
                     Log.v(TAG, "Success : $it")
                 }
                 .addOnFailureListener { e ->
