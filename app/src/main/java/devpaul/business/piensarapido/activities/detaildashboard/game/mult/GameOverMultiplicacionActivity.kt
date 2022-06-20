@@ -12,6 +12,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.ktx.database
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -38,6 +39,9 @@ class GameOverMultiplicacionActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     private val db = Firebase.firestore
+
+    private val database = Firebase.database
+    private val myref = database.getReference("Users")
 
     @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -98,13 +102,13 @@ class GameOverMultiplicacionActivity : AppCompatActivity() {
     }
 
     @SuppressLint("SimpleDateFormat")
-    private fun sendData(){
+    private fun sendData() {
 
         FirebaseAuth.getInstance().currentUser?.metadata?.apply {
 
             val uiduser = auth.currentUser?.uid
-            val bestPoints = tvHighScore?.text
-            val lastTry = tvPoints?.text
+            val bestPoints = tvHighScore?.text.toString() + "\r" + "puntos"
+            val lastTry = tvPoints?.text.toString() + "\r" + "puntos"
             val name = tvName?.text.toString()
             val lastname = tvLastname?.text.toString()
 
@@ -112,42 +116,38 @@ class GameOverMultiplicacionActivity : AppCompatActivity() {
             val lastSignInDate = Date(lastSignInTimestamp)
             val lastTimeAccess = SimpleDateFormat("yyyy/MM/dd").format(lastSignInDate)
 
-            // lastTimePlayed
+            // LastTimePLayed
             val date = getCurrentDateTime()
             val dateInString = date.toString("yyyy/MM/dd")
 
-            val dataPoints = Points(uiduser.toString(),name,lastname, bestPoints as String, lastTry as String, dateInString)
+            val randomUUID = UUID.randomUUID().toString()
 
+            val timePlayed = 30
+            val type = "Multiplicacion"
 
-/*            val docData = hashMapOf(
-                "uiduser" to uiduser,
-                "name" to name,
-                "lastname" to lastname,
-                "pointsDataMult" to arrayListOf(lastTry,bestPoints),
-                "lastTimePlayed" to dateInString
-            )
-            val nestedData = hashMapOf(
-                "lastTry" to lastTry,
-                "bestPoints" to bestPoints
-            )
+            val level = intent.getStringExtra("level")
 
-            docData["multData"] = nestedData*/
+            val incorrectAnswers = intent.extras!!.getInt("incorrectAnswers")
+            val correctAnswers = intent.extras!!.getInt("points")
+            val numberofQuestions = intent.extras!!.getInt("numberQuestions")
 
+            val dataPoints = Points(uiduser.toString(), name, lastname, bestPoints, lastTry, dateInString, lastTimeAccess, incorrectAnswers
+                ,numberofQuestions, correctAnswers,timePlayed, type, level)
 
-            db.collection(Constants.PATH_POINTS).document("MultDatabase").collection("Mult").document(uiduser.toString())
+            db.collection(Constants.PATH_POINTS_MUL).document(uiduser.toString())
                 .set(dataPoints)
                 .addOnSuccessListener {
-
-                    Log.v(TAG,"Success : $it")
+                    db.collection("AllResultsSum").document(randomUUID).set(dataPoints);
+                    myref.child("AllResultsSum").child(randomUUID).setValue(dataPoints)
+                    Log.v(TAG, "Success : $it")
                 }
                 .addOnFailureListener { e ->
-                    Log.v(TAG,"Error : $e")
+                    Log.v(TAG, "Error : $e")
                 }
 
         }
 
     }
-
 
     private fun Date.toString(format: String, locale: Locale = Locale.getDefault()): String {
         val formatter = SimpleDateFormat(format, locale)
@@ -160,9 +160,10 @@ class GameOverMultiplicacionActivity : AppCompatActivity() {
 
 
     fun restart(view: View?) {
-        val intent = Intent(this@GameOverMultiplicacionActivity, MainActivity::class.java)
+        val callInt = Intent(applicationContext, LevelActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK // Eliminar el historial de pantallas
-        startActivity(intent)
+        callInt.putExtra("mult","*")
+        startActivity(callInt)
         finish()
     }
 

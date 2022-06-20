@@ -167,7 +167,7 @@ class PerfilActivity : AppCompatActivity() {
 
         val uiduser = auth.currentUser?.uid
 
-        val docRef = db.collection(Constants.PATH_POINTS).document("SumDatabase").collection("Sum").document(uiduser.toString())
+        val docRef = db.collection(Constants.PATH_POINTS_SUM).document(uiduser.toString())
 
         docRef.get().addOnCompleteListener { task ->
             if (task.isSuccessful) {
@@ -198,7 +198,7 @@ class PerfilActivity : AppCompatActivity() {
 
         val uiduser = auth.currentUser?.uid
 
-        val docRef =  db.collection(Constants.PATH_POINTS).document("RestDatabase").collection("Rest").document(uiduser.toString())
+        val docRef =  db.collection(Constants.PATH_POINTS_RES).document(uiduser.toString())
 
         docRef.get().addOnCompleteListener { task ->
             if (task.isSuccessful) {
@@ -229,7 +229,7 @@ class PerfilActivity : AppCompatActivity() {
 
         val uiduser = auth.currentUser?.uid
 
-        val docRef = db.collection(Constants.PATH_POINTS).document("MultDatabase").collection("Mult").document(uiduser.toString())
+        val docRef = db.collection(Constants.PATH_POINTS_MUL).document(uiduser.toString())
 
         docRef.get().addOnCompleteListener { task ->
             if (task.isSuccessful) {

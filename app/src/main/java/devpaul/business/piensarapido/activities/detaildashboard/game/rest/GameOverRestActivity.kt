@@ -12,6 +12,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.ktx.database
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -33,9 +34,12 @@ class GameOverRestActivity : AppCompatActivity() {
     var tvHighScore: TextView? = null
     var tvName: TextView? = null
     var tvLastname: TextView? = null
+
     private lateinit var auth: FirebaseAuth
     private val db = Firebase.firestore
 
+    private val database = Firebase.database
+    private val myref = database.getReference("Users")
 
     @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -95,13 +99,13 @@ class GameOverRestActivity : AppCompatActivity() {
         return true
     }
 
-    @SuppressLint("SimpleDateFormat")
-    private fun sendData(){
+    private fun sendData() {
 
         FirebaseAuth.getInstance().currentUser?.metadata?.apply {
+
             val uiduser = auth.currentUser?.uid
-            val bestPoints = tvHighScore?.text
-            val lastTry = tvPoints?.text
+            val bestPoints = tvHighScore?.text.toString() + "\r" + "puntos"
+            val lastTry = tvPoints?.text.toString() + "\r" + "puntos"
             val name = tvName?.text.toString()
             val lastname = tvLastname?.text.toString()
 
@@ -109,36 +113,33 @@ class GameOverRestActivity : AppCompatActivity() {
             val lastSignInDate = Date(lastSignInTimestamp)
             val lastTimeAccess = SimpleDateFormat("yyyy/MM/dd").format(lastSignInDate)
 
-            // lastTimePlayed
+            // LastTimePLayed
             val date = getCurrentDateTime()
             val dateInString = date.toString("yyyy/MM/dd")
 
-            val dataPoints = Points(uiduser.toString(),name,lastname, bestPoints as String, lastTry as String, dateInString)
+            val randomUUID = UUID.randomUUID().toString()
 
-/*
-            val docData = hashMapOf(
-                "uiduser" to uiduser,
-                "name" to name,
-                "lastname" to lastname,
-                "pointsDataRest" to arrayListOf(lastTry,bestPoints),
-                "lastTimePlayed" to dateInString
-            )
-            val nestedData = hashMapOf(
-                "lastTry" to lastTry,
-                "bestPoints" to bestPoints
-            )
+            val timePlayed = 30
+            val type = "Resta"
 
-            docData["restData"] = nestedData*/
+            val level = intent.getStringExtra("level")
 
+            val incorrectAnswers = intent.extras!!.getInt("incorrectAnswers")
+            val correctAnswers = intent.extras!!.getInt("points")
+            val numberofQuestions = intent.extras!!.getInt("numberQuestions")
 
-            db.collection(Constants.PATH_POINTS).document("RestDatabase").collection("Rest").document(uiduser.toString())
+            val dataPoints = Points(uiduser.toString(), name, lastname, bestPoints, lastTry, dateInString, lastTimeAccess, incorrectAnswers
+                ,numberofQuestions, correctAnswers,timePlayed, type, level)
+
+            db.collection(Constants.PATH_POINTS_RES).document(uiduser.toString())
                 .set(dataPoints)
                 .addOnSuccessListener {
-
-                    Log.v(TAG,"Success : $it")
+                    db.collection("AllResultsSum").document(randomUUID).set(dataPoints);
+                    myref.child("AllResultsSum").child(randomUUID).setValue(dataPoints)
+                    Log.v(TAG, "Success : $it")
                 }
                 .addOnFailureListener { e ->
-                    Log.v(TAG,"Error : $e")
+                    Log.v(TAG, "Error : $e")
                 }
 
         }
@@ -156,9 +157,10 @@ class GameOverRestActivity : AppCompatActivity() {
 
 
     fun restart(view: View?) {
-        val intent = Intent(this@GameOverRestActivity, MainActivity::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK // Eliminar el historial de pantallas
-        startActivity(intent)
+        val callInt = Intent(applicationContext, LevelActivity::class.java)
+        callInt.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK // Eliminar el historial de pantallas
+        callInt.putExtra("rest","-")
+        startActivity(callInt)
         finish()
     }
 

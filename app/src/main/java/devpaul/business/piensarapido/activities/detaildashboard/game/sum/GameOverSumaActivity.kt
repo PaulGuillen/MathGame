@@ -112,13 +112,13 @@ class GameOverSumaActivity : AppCompatActivity() {
     }
 
     @SuppressLint("SimpleDateFormat")
-    private fun sendData(){
+    private fun sendData() {
 
         FirebaseAuth.getInstance().currentUser?.metadata?.apply {
 
             val uiduser = auth.currentUser?.uid
-            val bestPoints = tvHighScore?.text
-            val lastTry = tvPoints?.text
+            val bestPoints = tvHighScore?.text.toString() + "\r" + "puntos"
+            val lastTry = tvPoints?.text.toString() + "\r" + "puntos"
             val name = tvName?.text.toString()
             val lastname = tvLastname?.text.toString()
 
@@ -126,27 +126,40 @@ class GameOverSumaActivity : AppCompatActivity() {
             val lastSignInDate = Date(lastSignInTimestamp)
             val lastTimeAccess = SimpleDateFormat("yyyy/MM/dd").format(lastSignInDate)
 
-            // lastTimePlayed
+            // LastTimePLayed
             val date = getCurrentDateTime()
             val dateInString = date.toString("yyyy/MM/dd")
 
-            val dataPoints = Points(uiduser.toString(),name,lastname, bestPoints as String, lastTry as String, dateInString)
+            val randomUUID = UUID.randomUUID().toString()
 
+            val timePlayed = 30
+            val type = "Suma"
 
-        db.collection(Constants.PATH_POINTS).document("SumDatabase").collection("Sum").document(uiduser.toString())
+            val level = intent.getStringExtra("level")
+
+            val incorrectAnswers = intent.extras!!.getInt("incorrectAnswers")
+            val correctAnswers = intent.extras!!.getInt("points")
+            val numberofQuestions = intent.extras!!.getInt("numberQuestions")
+
+            val dataPoints = Points(uiduser.toString(), name, lastname, bestPoints, lastTry, dateInString, lastTimeAccess, incorrectAnswers
+                ,numberofQuestions, correctAnswers,timePlayed, type, level)
+
+            db.collection(Constants.PATH_POINTS_SUM).document(uiduser.toString())
                 .set(dataPoints)
                 .addOnSuccessListener {
-                    Log.v(TAG,"Success : $it")
+                    db.collection("AllResultsSum").document(randomUUID).set(dataPoints);
+                    myref.child("AllResultsSum").child(randomUUID).setValue(dataPoints)
+                    Log.v(TAG, "Success : $it")
                 }
                 .addOnFailureListener { e ->
-                    Log.v(TAG,"Error : $e")
+                    Log.v(TAG, "Error : $e")
                 }
+
         }
 
     }
 
-
-    private fun Date.toString(format: String, locale: Locale = Locale.getDefault()): String {
+    fun Date.toString(format: String, locale: Locale = Locale.getDefault()): String {
         val formatter = SimpleDateFormat(format, locale)
         return formatter.format(this)
     }
@@ -157,9 +170,10 @@ class GameOverSumaActivity : AppCompatActivity() {
 
 
     fun restart(view: View?) {
-        val intent = Intent(this@GameOverSumaActivity, MainActivity::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK // Eliminar el historial de pantallas
-        startActivity(intent)
+        val callInt = Intent(applicationContext, LevelActivity::class.java)
+        callInt.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK // Eliminar el historial de pantallas
+        callInt.putExtra("sum","+")
+        startActivity(callInt)
         finish()
     }
 
