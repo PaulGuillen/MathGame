@@ -73,4 +73,5 @@
     <string name="noticias_nodata">En estos momentos no contamos con nuevas noticias que mostrar</string>
     <string name="resta_example">5 - 2 =</string>
     <string name="mul_example">5 x 2 =</string>
+    <string name="ver_panel">Ver panel</string>
 </resources>

@@ -17,6 +17,7 @@ import com.google.firebase.ktx.Firebase
 import devpaul.business.piensarapido.Constants
 import devpaul.business.piensarapido.R
 import devpaul.business.piensarapido.activities.login.LoginActivity
+import devpaul.business.piensarapido.model.User
 import java.util.*
 
 class PerfilActivity : AppCompatActivity() {
@@ -32,6 +33,7 @@ class PerfilActivity : AppCompatActivity() {
     var textfullname : TextView? = null
     var textemail : TextView? = null
     var textpassword : TextView? = null
+    var textuserId : TextView? = null
 
     @Suppress("DEPRECATION")
     var progressDialog: ProgressDialog? = null
@@ -77,6 +79,7 @@ class PerfilActivity : AppCompatActivity() {
         textfullname = findViewById(R.id.text_full_name)
         textemail = findViewById(R.id.text_email)
         textpassword = findViewById(R.id.text_password)
+        textuserId = findViewById(R.id.userId)
 
         btnLogout = findViewById(R.id.btn_salir)
         btnLogout?.setOnClickListener {
@@ -125,11 +128,14 @@ class PerfilActivity : AppCompatActivity() {
                         val lastname = document.getString("lastname")
                         val email = document.getString("email")
                         val password = document.getString("password")
+                        val userId = document.getString("userId")
 
                         textfullname?.text = name.toString() +"\r"+lastname.toString()
                         textemail?.text = email.toString()
                         textpassword?.text = password.toString()
+                        textuserId?.text = userId.toString()
                         progressDialog?.dismiss()
+
 
                     } else {
                         textBestPoints?.text = "0"
@@ -148,6 +154,10 @@ class PerfilActivity : AppCompatActivity() {
                 progressDialog?.dismiss()
                 Log.w(TAG, "Error: Usuario no encontrado")
             }
+    }
+
+    private fun sumView(){
+
     }
 
     private fun sumData(){

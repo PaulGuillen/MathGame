@@ -79,7 +79,7 @@ class RegisterActivity : AppCompatActivity() {
         val email = edtEmail?.text.toString()
         val password = edtPassword?.text.toString()
         val confirmPassword = edtConfirmPassword?.text.toString()
-
+        val rol = "alumno"
 
         if (isValidForm(
                 name = name,
@@ -91,8 +91,10 @@ class RegisterActivity : AppCompatActivity() {
         ) {
 
             val user = User(
+                userId = "",
                 name = name,
                 lastname = lastname,
+                rol = rol,
                 email = email,
                 password = password
             )
@@ -100,6 +102,7 @@ class RegisterActivity : AppCompatActivity() {
             progressDialog!!.show()
             progressDialog?.setContentView(R.layout.charge_dialog)
             Objects.requireNonNull(progressDialog!!.window)?.setBackgroundDrawableResource(android.R.color.transparent)
+
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
@@ -109,6 +112,11 @@ class RegisterActivity : AppCompatActivity() {
                                 .set(user)
                                 .addOnSuccessListener {
                                     Toast.makeText(baseContext, "Registro exitoso", Toast.LENGTH_SHORT).show()
+                                    val usesRef = db.collection("Users").document(auth.uid!!)
+                                    usesRef
+                                        .update("userId", auth.uid)
+                                        .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully updated!") }
+                                        .addOnFailureListener { e -> Log.w(TAG, "Error updating document", e) }
                                     progressDialog?.dismiss()
                                     goToPrincipalView()
                                 }
