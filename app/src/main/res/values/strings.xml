@@ -81,4 +81,5 @@
     <string name="texto_largo_no_data">Lamentablemente el alumno no registra avances en esta operación.</string>
     <string name="total_de_preguntas">Total de preguntas:</string>
     <string name="total_de_incorrectas">Total de incorrectas :</string>
+    <string name="total_de_correctas">Total de correctas :</string>
 </resources>
