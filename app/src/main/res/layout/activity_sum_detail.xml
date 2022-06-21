@@ -615,7 +615,7 @@
                             android:fontFamily="@font/monserrat_alternates_medium"
                             android:gravity="center"
                             android:padding="5dp"
-                            android:text="Total jugado :"
+                            android:text="@string/total_jugado"
                             android:textAlignment="center"
                             android:textSize="18sp" />
 

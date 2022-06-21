@@ -82,4 +82,5 @@
     <string name="total_de_preguntas">Total de preguntas:</string>
     <string name="total_de_incorrectas">Total de incorrectas :</string>
     <string name="total_de_correctas">Total de correctas :</string>
+    <string name="total_jugado">Total jugado :</string>
 </resources>
