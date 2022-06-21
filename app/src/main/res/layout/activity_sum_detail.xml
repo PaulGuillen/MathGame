@@ -500,7 +500,7 @@
                             android:fontFamily="@font/monserrat_alternates_medium"
                             android:gravity="center"
                             android:padding="5dp"
-                            android:text="Total de preguntas :"
+                            android:text="@string/total_de_preguntas"
                             android:textAlignment="center"
                             android:textSize="18sp" />
 
