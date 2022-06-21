@@ -74,4 +74,8 @@
     <string name="resta_example">5 - 2 =</string>
     <string name="mul_example">5 x 2 =</string>
     <string name="ver_panel">Ver panel</string>
+    <string name="ltimo_intento">Último intento</string>
+    <string name="estad_stica">Estadística</string>
+    <string name="datos">Datos:</string>
+    <string name="ltima_vez_jugado">última vez jugado:</string>
 </resources>
