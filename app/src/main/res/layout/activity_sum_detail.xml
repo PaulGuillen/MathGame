@@ -538,7 +538,7 @@
                             android:fontFamily="@font/monserrat_alternates_medium"
                             android:gravity="center"
                             android:padding="5dp"
-                            android:text="Total de incorrectas :"
+                            android:text="@string/total_de_incorrectas"
                             android:textAlignment="center"
                             android:textSize="18sp" />
 
