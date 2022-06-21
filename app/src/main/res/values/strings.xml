@@ -78,4 +78,5 @@
     <string name="estad_stica">Estadística</string>
     <string name="datos">Datos:</string>
     <string name="ltima_vez_jugado">última vez jugado:</string>
+    <string name="texto_largo_no_data">Lamentablemente el alumno no registra avances en esta operación.</string>
 </resources>
