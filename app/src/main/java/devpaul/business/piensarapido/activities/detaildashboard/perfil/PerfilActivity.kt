@@ -1,16 +1,11 @@
-package devpaul.business.piensarapido.activities.detaildashboard
+package devpaul.business.piensarapido.activities.detaildashboard.perfil
 
 import android.annotation.SuppressLint
 import android.app.ProgressDialog
 import android.content.Intent
 import android.content.pm.ActivityInfo
-import android.net.Uri
 import android.os.Bundle
-import android.text.InputType
-import android.text.method.HideReturnsTransformationMethod
-import android.text.method.PasswordTransformationMethod
 import android.util.Log
-import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import cn.pedant.SweetAlert.SweetAlertDialog
@@ -21,16 +16,8 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import devpaul.business.piensarapido.Constants
 import devpaul.business.piensarapido.R
-import devpaul.business.piensarapido.activities.MainActivity
-import devpaul.business.piensarapido.activities.start.LoginActivity
+import devpaul.business.piensarapido.activities.login.LoginActivity
 import java.util.*
-import com.google.firebase.firestore.DocumentSnapshot
-
-import androidx.annotation.NonNull
-
-import com.google.android.gms.tasks.OnCompleteListener
-
-import com.google.firebase.firestore.DocumentReference
 
 class PerfilActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package devpaul.business.piensarapido.activities.detaildashboard
+package devpaul.business.piensarapido.activities.detaildashboard.news
 
 
 import android.annotation.SuppressLint
@@ -8,7 +8,6 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.LinearLayout
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView

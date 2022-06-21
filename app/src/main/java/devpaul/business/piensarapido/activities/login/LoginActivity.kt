@@ -1,4 +1,4 @@
-package devpaul.business.piensarapido.activities.start
+package devpaul.business.piensarapido.activities.login
 
 
 import android.annotation.SuppressLint

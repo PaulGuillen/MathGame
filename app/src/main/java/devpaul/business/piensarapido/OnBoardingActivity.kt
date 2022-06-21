@@ -14,7 +14,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
-import devpaul.business.piensarapido.activities.start.LoginActivity
+import devpaul.business.piensarapido.activities.login.LoginActivity
 import devpaul.business.piensarapido.adapter.OnBoardingViewPagerAdapter
 import devpaul.business.piensarapido.model.OnBoardingData
 import java.util.ArrayList

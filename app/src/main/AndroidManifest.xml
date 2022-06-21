@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PiensaRapido">
         <activity
-            android:name=".activities.detaildashboard.NewsGameActivity"
+            android:name=".activities.detaildashboard.news.NewsGameActivity"
             android:exported="false" />
         <activity
             android:name=".activities.detaildashboard.game.rest.GameOverRestActivity"
@@ -33,18 +33,18 @@
             android:name=".activities.detaildashboard.game.sum.SumActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.detaildashboard.PerfilActivity"
+            android:name=".activities.detaildashboard.perfil.PerfilActivity"
             android:exported="false"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".activities.detaildashboard.SettingsActivity"
+            android:name="devpaul.business.piensarapido.activities.detaildashboard.settings.SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.start.RegisterActivity"
+            android:name=".activities.login.RegisterActivity"
             android:exported="false"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".activities.start.LoginActivity"
+            android:name=".activities.login.LoginActivity"
             android:exported="false"
             android:windowSoftInputMode="stateHidden" />
         <activity

@@ -1,15 +1,12 @@
-package devpaul.business.piensarapido.activities.detaildashboard
+package devpaul.business.piensarapido.activities.detaildashboard.settings
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.net.Uri
 import android.os.Bundle
-import android.widget.ImageView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.google.firebase.auth.FirebaseAuth
 import devpaul.business.piensarapido.BuildConfig
 import devpaul.business.piensarapido.R
 
