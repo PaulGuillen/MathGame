@@ -16,10 +16,7 @@
             android:id="@+id/app_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/ActionBarStyle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:theme="@style/ActionBarStyle">
 
             <androidx.appcompat.widget.Toolbar
                 android:layout_width="match_parent"
@@ -58,11 +55,9 @@
             android:paddingTop="20dp"
             android:paddingEnd="15dp"
             android:paddingBottom="10dp"
-            android:text="Tu puntaje"
+            android:text="@string/tu_puntaje"
             android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/app_bar" />
+            android:textStyle="bold" />
 
         <View
             android:id="@+id/view_bottom_text_top"
@@ -84,10 +79,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             app:cardCornerRadius="10dp"
-            app:cardElevation="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view_bottom_text_top">
+            app:cardElevation="20dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -287,8 +279,6 @@
             android:layout_height="match_parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:visibility="gone"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view_bottom_text_bottom"
             tools:listitem="@layout/item_sum_detail" />
 
         <com.facebook.shimmer.ShimmerFrameLayout
@@ -296,9 +286,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view_bottom_text_bottom">
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"

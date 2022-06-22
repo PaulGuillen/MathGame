@@ -84,4 +84,5 @@
     <string name="total_de_correctas">Total de correctas :</string>
     <string name="total_jugado">Total jugado :</string>
     <string name="volver">Volver</string>
+    <string name="tu_puntaje">Tu puntaje</string>
 </resources>
