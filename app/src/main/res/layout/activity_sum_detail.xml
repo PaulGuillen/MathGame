@@ -232,6 +232,40 @@
 
         </androidx.cardview.widget.CardView>
 
+        <LinearLayout
+            android:id="@+id/linear_mid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardview_top">
+
+            <View
+                android:background="@color/colorGrey"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+
+
+            <TextView
+                android:fontFamily="@font/monserrat_alternates_medium"
+                android:textSize="16sp"
+                android:layout_margin="5dp"
+                android:text="Selecciona un nivel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:background="@color/colorGrey"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+
+        </LinearLayout>
+
         <HorizontalScrollView
             android:id="@+id/horizomtal_scroll"
             android:layout_width="match_parent"
@@ -241,7 +275,7 @@
             android:layout_marginEnd="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardview_top">
+            app:layout_constraintTop_toBottomOf="@+id/linear_mid">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -254,7 +288,7 @@
                     android:layout_width="100dp"
                     android:layout_height="90dp"
                     android:layout_margin="3dp"
-                    android:elevation="25dp"
+                    app:cardElevation="25dp"
                     app:cardCornerRadius="10dp">
 
                     <LinearLayout
@@ -288,7 +322,7 @@
                     android:layout_width="100dp"
                     android:layout_height="90dp"
                     android:layout_margin="3dp"
-                    android:elevation="25dp"
+                    app:cardElevation="25dp"
                     app:cardCornerRadius="10dp">
 
                     <LinearLayout
@@ -322,7 +356,7 @@
                     android:layout_width="100dp"
                     android:layout_height="90dp"
                     android:layout_margin="3dp"
-                    android:elevation="25dp"
+                    app:cardElevation="25dp"
                     app:cardCornerRadius="10dp">
 
                     <LinearLayout
@@ -356,7 +390,7 @@
                     android:layout_width="100dp"
                     android:layout_height="90dp"
                     android:layout_margin="3dp"
-                    android:elevation="25dp"
+                    app:cardElevation="25dp"
                     app:cardCornerRadius="10dp">
 
                     <LinearLayout
@@ -404,8 +438,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:visibility="gone"
                 android:orientation="vertical"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -430,250 +464,265 @@
 
             </LinearLayout>
 
-            <com.github.mikephil.charting.charts.PieChart
-                android:id="@+id/pieChart"
+            <LinearLayout
+                android:id="@+id/linear_data_exists"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_margin="32dp" />
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="10dp"
-                android:layout_marginBottom="20dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:visibility="gone"
+                android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/pieChart">
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="UseCompoundDrawables,UselessParent">
 
-                <LinearLayout
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/pieChart"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:layout_height="250dp"
+                    android:layout_margin="32dp" />
 
-                    <TextView
-                        android:id="@+id/text_tipo_operacion"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:layout_marginEnd="30dp"
-                        android:fontFamily="@font/monserrat_alternates_medium"
-                        android:gravity="center"
-                        android:padding="10dp"
-                        android:textAlignment="center"
-                        android:textColor="@color/light_blue_primary_dark"
-                        android:textSize="18sp"
-                        tools:text="Tipo" />
-
-                    <TextView
-                        android:id="@+id/text_fullname"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/monserrat_alternates_medium"
-                        android:gravity="center"
-                        android:padding="5dp"
-                        android:textAlignment="center"
-                        android:textSize="18sp"
-                        tools:text="Nombre Completo" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginStart="40dp"
-                        android:layout_marginEnd="40dp"
-                        android:background="@color/colorGrey" />
-
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:layout_marginBottom="20dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/pieChart">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:gravity="center"
-                        android:orientation="horizontal">
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/text_tipo_operacion"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginEnd="30dp"
                             android:fontFamily="@font/monserrat_alternates_medium"
                             android:gravity="center"
-                            android:padding="5dp"
-                            android:text="@string/total_de_preguntas"
+                            android:padding="10dp"
                             android:textAlignment="center"
-                            android:textSize="18sp" />
+                            android:textColor="@color/light_blue_primary_dark"
+                            android:textSize="18sp"
+                            tools:text="Tipo" />
 
                         <TextView
-                            android:id="@+id/text_number_questions"
-                            android:layout_width="wrap_content"
+                            android:id="@+id/text_fullname"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/monserrat_alternates_medium"
                             android:gravity="center"
                             android:padding="5dp"
                             android:textAlignment="center"
                             android:textSize="18sp"
-                            tools:text="Puntos" />
+                            tools:text="Nombre Completo" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginEnd="40dp"
+                            android:background="@color/colorGrey" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/monserrat_alternates_medium"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:text="@string/total_de_preguntas"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/text_number_questions"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/monserrat_alternates_medium"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                tools:text="Puntos" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginEnd="40dp"
+                            android:background="@color/colorGrey" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/monserrat_alternates_medium"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:text="@string/total_de_incorrectas"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/text_incorrect_general"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/monserrat_alternates_medium"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                tools:text="Puntos" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginEnd="40dp"
+                            android:background="@color/colorGrey" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/monserrat_alternates_medium"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:text="@string/total_de_correctas"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/text_correct_general"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/monserrat_alternates_medium"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                tools:text="Puntos" />
+
+                        </LinearLayout>
+
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginEnd="40dp"
+                            android:background="@color/colorGrey" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/monserrat_alternates_medium"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:text="@string/total_jugado"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/text_time_played"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/monserrat_alternates_medium"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                tools:text="Tiempo" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginEnd="40dp"
+                            android:background="@color/colorGrey" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/monserrat_alternates_medium"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:text="@string/mejor_puntaje"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/text_best_point"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/monserrat_alternates_medium"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                tools:text="Tiempo" />
+
+                        </LinearLayout>
+
 
                     </LinearLayout>
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginStart="40dp"
-                        android:layout_marginEnd="40dp"
-                        android:background="@color/colorGrey" />
+                </androidx.cardview.widget.CardView>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/monserrat_alternates_medium"
-                            android:gravity="center"
-                            android:padding="5dp"
-                            android:text="@string/total_de_incorrectas"
-                            android:textAlignment="center"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:id="@+id/text_incorrect_general"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/monserrat_alternates_medium"
-                            android:gravity="center"
-                            android:padding="5dp"
-                            android:textAlignment="center"
-                            android:textSize="18sp"
-                            tools:text="Puntos" />
-
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginStart="40dp"
-                        android:layout_marginEnd="40dp"
-                        android:background="@color/colorGrey" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/monserrat_alternates_medium"
-                            android:gravity="center"
-                            android:padding="5dp"
-                            android:text="@string/total_de_correctas"
-                            android:textAlignment="center"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:id="@+id/text_correct_general"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/monserrat_alternates_medium"
-                            android:gravity="center"
-                            android:padding="5dp"
-                            android:textAlignment="center"
-                            android:textSize="18sp"
-                            tools:text="Puntos" />
-
-                    </LinearLayout>
-
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginStart="40dp"
-                        android:layout_marginEnd="40dp"
-                        android:background="@color/colorGrey" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/monserrat_alternates_medium"
-                            android:gravity="center"
-                            android:padding="5dp"
-                            android:text="@string/total_jugado"
-                            android:textAlignment="center"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:id="@+id/text_time_played"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/monserrat_alternates_medium"
-                            android:gravity="center"
-                            android:padding="5dp"
-                            android:textAlignment="center"
-                            android:textSize="18sp"
-                            tools:text="Tiempo" />
-
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginStart="40dp"
-                        android:layout_marginEnd="40dp"
-                        android:background="@color/colorGrey" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/monserrat_alternates_medium"
-                            android:gravity="center"
-                            android:padding="5dp"
-                            android:text="@string/mejor_puntaje"
-                            android:textAlignment="center"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:id="@+id/text_best_point"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/monserrat_alternates_medium"
-                            android:gravity="center"
-                            android:padding="5dp"
-                            android:textAlignment="center"
-                            android:textSize="18sp"
-                            tools:text="Tiempo" />
-
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
+            </LinearLayout>
 
         </LinearLayout>
 
