@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,9 +7,10 @@
     android:fillViewport="true"
     tools:context=".activities.detaildashboard.perfil.operations.sum.SumDetailActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/app_bar"
@@ -27,29 +28,53 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="15dp"
                     android:fontFamily="@font/monserrat_alternates_medium"
-                    android:text="@string/estad_stica"
+                    android:text="@string/suma"
                     android:textColor="#689F38"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-                <TextView
+                <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="4dp"
-                    android:fontFamily="@font/monserrat_alternates_medium"
-                    android:text="@string/suma"
-                    android:textColor="@color/color_primary_gray"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    tools:ignore="TextContrastCheck" />
+                    android:layout_gravity="start"
+                    android:backgroundTint="#689F38"
+                    android:text="@string/volver"
+                    android:textAllCaps="false"
+                    android:textStyle="bold" />
 
 
             </androidx.appcompat.widget.Toolbar>
 
         </com.google.android.material.appbar.AppBarLayout>
+
+        <TextView
+            android:id="@+id/text_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="15dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="10dp"
+            android:text="Tu puntaje"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/app_bar" />
+
+        <View
+            android:id="@+id/view_bottom_text_top"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/colorGrey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_top" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardview_top"
@@ -62,7 +87,7 @@
             app:cardElevation="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/app_bar">
+            app:layout_constraintTop_toBottomOf="@+id/view_bottom_text_top">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -113,7 +138,7 @@
                     android:paddingStart="5dp"
                     android:paddingTop="10dp"
                     android:paddingBottom="10dp"
-                    android:text="@string/datos"
+                    android:text="@string/nombre"
                     app:layout_constraintStart_toStartOf="@id/guidelineuno"
                     app:layout_constraintTop_toBottomOf="@+id/text_base"
                     tools:ignore="RtlSymmetry" />
@@ -132,7 +157,6 @@
                     app:layout_constraintStart_toEndOf="@id/textInicial"
                     app:layout_constraintTop_toTopOf="@id/textInicial"
                     tools:ignore="RtlSymmetry" />
-
 
                 <TextView
                     android:id="@+id/textInicialSecond"
@@ -229,502 +253,79 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-
         </androidx.cardview.widget.CardView>
 
-        <LinearLayout
-            android:id="@+id/linear_mid"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/textview_bottom"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:layout_marginTop="5dp"
-            android:orientation="vertical"
+            android:paddingStart="15dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="10dp"
+            android:text="Todos los puntajes"
+            android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardview_top">
+            app:layout_constraintTop_toBottomOf="@id/cardview_top" />
 
-            <View
-                android:background="@color/colorGrey"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"/>
-
-
-            <TextView
-                android:fontFamily="@font/monserrat_alternates_medium"
-                android:textSize="16sp"
-                android:layout_margin="5dp"
-                android:text="Selecciona un nivel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <View
-                android:background="@color/colorGrey"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"/>
-
-        </LinearLayout>
-
-        <HorizontalScrollView
-            android:id="@+id/horizomtal_scroll"
+        <View
+            android:id="@+id/view_bottom_text_bottom"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
+            android:layout_height="2dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/colorGrey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linear_mid">
+            app:layout_constraintTop_toBottomOf="@+id/textview_bottom" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:orientation="horizontal">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/btnPeru"
-                    android:layout_width="100dp"
-                    android:layout_height="90dp"
-                    android:layout_margin="3dp"
-                    app:cardElevation="25dp"
-                    app:cardCornerRadius="10dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        tools:ignore="UseCompoundDrawables">
-
-                        <ImageView
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:background="@drawable/facil"
-                            tools:ignore="ContentDescription" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/monserrat_alternates_medium"
-                            android:padding="5dp"
-                            android:text="@string/f_cil"
-                            android:textAlignment="center"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/btnArgentina"
-                    android:layout_width="100dp"
-                    android:layout_height="90dp"
-                    android:layout_margin="3dp"
-                    app:cardElevation="25dp"
-                    app:cardCornerRadius="10dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        tools:ignore="UseCompoundDrawables">
-
-                        <ImageView
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:background="@drawable/intermedio"
-                            tools:ignore="ContentDescription" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/monserrat_alternates_medium"
-                            android:padding="5dp"
-                            android:text="@string/intermedio"
-                            android:textAlignment="center"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/btnColombia"
-                    android:layout_width="100dp"
-                    android:layout_height="90dp"
-                    android:layout_margin="3dp"
-                    app:cardElevation="25dp"
-                    app:cardCornerRadius="10dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        tools:ignore="UseCompoundDrawables">
-
-                        <ImageView
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:background="@drawable/avanzado"
-                            tools:ignore="ContentDescription" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/monserrat_alternates_medium"
-                            android:padding="5dp"
-                            android:text="@string/avanzado"
-                            android:textAlignment="center"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/btnCuba"
-                    android:layout_width="100dp"
-                    android:layout_height="90dp"
-                    android:layout_margin="3dp"
-                    app:cardElevation="25dp"
-                    app:cardCornerRadius="10dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        tools:ignore="UseCompoundDrawables">
-
-                        <ImageView
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:background="@drawable/experto"
-                            tools:ignore="ContentDescription" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/monserrat_alternates_medium"
-                            android:padding="5dp"
-                            android:text="@string/experto"
-                            android:textAlignment="center"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-            </LinearLayout>
-
-        </HorizontalScrollView>
-
-        <LinearLayout
-            android:id="@+id/linear_nodata"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_bottom_text_bottom"
+            tools:listitem="@layout/item_sum_detail" />
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmerFrameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/horizomtal_scroll">
+            app:layout_constraintTop_toBottomOf="@+id/view_bottom_text_bottom">
 
             <LinearLayout
-                android:id="@+id/linearlayout_nodata"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="UseCompoundDrawables,UselessParent">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical">
 
-                <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:background="@drawable/warning_person"
-                    tools:ignore="ContentDescription" />
+                <include layout="@layout/item_sum_detail_shimmer" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/monserrat_alternates_medium"
-                    android:padding="10dp"
-                    android:text="@string/texto_largo_no_data"
-                    android:textAlignment="center"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
+                <include layout="@layout/item_sum_detail_shimmer" />
+
+                <include layout="@layout/item_sum_detail_shimmer" />
+
+                <include layout="@layout/item_sum_detail_shimmer" />
+
+                <include layout="@layout/item_sum_detail_shimmer" />
+
+                <include layout="@layout/item_sum_detail_shimmer" />
+
+                <include layout="@layout/item_sum_detail_shimmer" />
+
 
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/linear_data_exists"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="UseCompoundDrawables,UselessParent">
-
-                <com.github.mikephil.charting.charts.PieChart
-                    android:id="@+id/pieChart"
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp"
-                    android:layout_margin="32dp" />
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="15dp"
-                    android:layout_marginBottom="20dp"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="10dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/pieChart">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/text_tipo_operacion"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:layout_marginEnd="30dp"
-                            android:fontFamily="@font/monserrat_alternates_medium"
-                            android:gravity="center"
-                            android:padding="10dp"
-                            android:textAlignment="center"
-                            android:textColor="@color/light_blue_primary_dark"
-                            android:textSize="18sp"
-                            tools:text="Tipo" />
-
-                        <TextView
-                            android:id="@+id/text_fullname"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/monserrat_alternates_medium"
-                            android:gravity="center"
-                            android:padding="5dp"
-                            android:textAlignment="center"
-                            android:textSize="18sp"
-                            tools:text="Nombre Completo" />
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_marginStart="40dp"
-                            android:layout_marginEnd="40dp"
-                            android:background="@color/colorGrey" />
+        </com.facebook.shimmer.ShimmerFrameLayout>
 
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:gravity="center"
-                            android:orientation="horizontal">
+    </LinearLayout>
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/monserrat_alternates_medium"
-                                android:gravity="center"
-                                android:padding="5dp"
-                                android:text="@string/total_de_preguntas"
-                                android:textAlignment="center"
-                                android:textSize="18sp" />
-
-                            <TextView
-                                android:id="@+id/text_number_questions"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/monserrat_alternates_medium"
-                                android:gravity="center"
-                                android:padding="5dp"
-                                android:textAlignment="center"
-                                android:textSize="18sp"
-                                tools:text="Puntos" />
-
-                        </LinearLayout>
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_marginStart="40dp"
-                            android:layout_marginEnd="40dp"
-                            android:background="@color/colorGrey" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/monserrat_alternates_medium"
-                                android:gravity="center"
-                                android:padding="5dp"
-                                android:text="@string/total_de_incorrectas"
-                                android:textAlignment="center"
-                                android:textSize="18sp" />
-
-                            <TextView
-                                android:id="@+id/text_incorrect_general"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/monserrat_alternates_medium"
-                                android:gravity="center"
-                                android:padding="5dp"
-                                android:textAlignment="center"
-                                android:textSize="18sp"
-                                tools:text="Puntos" />
-
-                        </LinearLayout>
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_marginStart="40dp"
-                            android:layout_marginEnd="40dp"
-                            android:background="@color/colorGrey" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/monserrat_alternates_medium"
-                                android:gravity="center"
-                                android:padding="5dp"
-                                android:text="@string/total_de_correctas"
-                                android:textAlignment="center"
-                                android:textSize="18sp" />
-
-                            <TextView
-                                android:id="@+id/text_correct_general"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/monserrat_alternates_medium"
-                                android:gravity="center"
-                                android:padding="5dp"
-                                android:textAlignment="center"
-                                android:textSize="18sp"
-                                tools:text="Puntos" />
-
-                        </LinearLayout>
-
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_marginStart="40dp"
-                            android:layout_marginEnd="40dp"
-                            android:background="@color/colorGrey" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/monserrat_alternates_medium"
-                                android:gravity="center"
-                                android:padding="5dp"
-                                android:text="@string/total_jugado"
-                                android:textAlignment="center"
-                                android:textSize="18sp" />
-
-                            <TextView
-                                android:id="@+id/text_time_played"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/monserrat_alternates_medium"
-                                android:gravity="center"
-                                android:padding="5dp"
-                                android:textAlignment="center"
-                                android:textSize="18sp"
-                                tools:text="Tiempo" />
-
-                        </LinearLayout>
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_marginStart="40dp"
-                            android:layout_marginEnd="40dp"
-                            android:background="@color/colorGrey" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/monserrat_alternates_medium"
-                                android:gravity="center"
-                                android:padding="5dp"
-                                android:text="@string/mejor_puntaje"
-                                android:textAlignment="center"
-                                android:textSize="18sp" />
-
-                            <TextView
-                                android:id="@+id/text_best_point"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/monserrat_alternates_medium"
-                                android:gravity="center"
-                                android:padding="5dp"
-                                android:textAlignment="center"
-                                android:textSize="18sp"
-                                tools:text="Tiempo" />
-
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.core.widget.NestedScrollView>
+</ScrollView>

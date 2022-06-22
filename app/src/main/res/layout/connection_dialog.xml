@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:layout_gravity="center"
+    app:cardElevation="10dp"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp"
+        tools:ignore="UseCompoundDrawables,UselessParent">
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_info"
+          />
+
+        <TextView
+            android:layout_width="150dp"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/monserrat_alternates_medium"
+            android:text="Hay un error con los otros puntajes."
+            android:textSize="15sp" />
+
+
+<!--        <Button
+            android:text="Cerrar"
+            android:textSize="13sp"
+            android:background="@color/red_color_primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>-->
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
