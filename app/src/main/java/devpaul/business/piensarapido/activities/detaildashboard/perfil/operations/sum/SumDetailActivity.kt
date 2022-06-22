@@ -147,7 +147,7 @@ class SumDetailActivity : AppCompatActivity() {
 
     @SuppressLint("NotifyDataSetChanged")
     private fun getDatSumStudents() {
-        db.collection(Constants.PATH_POINTS_SUM).orderBy("lastname", Query.Direction.ASCENDING)
+        db.collection(Constants.PATH_POINTS_SUM).orderBy("bestPoints", Query.Direction.ASCENDING)
             .get()
             .addOnSuccessListener { documents ->
                 if(!documents.isEmpty){

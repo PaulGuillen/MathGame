@@ -39,7 +39,7 @@
 
         <TextView
             android:id="@+id/text_base"
-            android:layout_width="wrap_content"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
@@ -58,7 +58,7 @@
 
         <TextView
             android:id="@+id/textInicial"
-            android:layout_width="wrap_content"
+            android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@color/colorGrey"
@@ -71,25 +71,10 @@
             tools:ignore="RtlSymmetry"
             tools:text="@string/nombre" />
 
-        <TextView
-            android:id="@+id/text_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/colorGrey"
-            android:fontFamily="@font/monserrat_alternates_medium"
-            android:paddingStart="5dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/textInicial"
-            app:layout_constraintStart_toEndOf="@id/textInicial"
-            app:layout_constraintTop_toTopOf="@id/textInicial"
-            tools:ignore="RtlSymmetry"
-            tools:text="@string/nombre" />
 
         <TextView
             android:id="@+id/textInicialSecond"
-            android:layout_width="wrap_content"
+            android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@color/colorGrey"
@@ -102,25 +87,10 @@
             tools:ignore="RtlSymmetry"
             tools:text="@string/ultimo_puntaje" />
 
-        <TextView
-            android:id="@+id/text_lastTry"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="3dp"
-            android:background="@color/colorGrey"
-            android:fontFamily="@font/monserrat_alternates_medium"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/textInicialSecond"
-            app:layout_constraintStart_toEndOf="@id/textInicialSecond"
-            app:layout_constraintTop_toTopOf="@id/textInicialSecond"
-            tools:ignore="RtlSymmetry"
-            tools:text="20 puntos" />
 
         <TextView
             android:id="@+id/textInicialThird"
-            android:layout_width="wrap_content"
+            android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@color/colorGrey"
@@ -135,25 +105,8 @@
 
 
         <TextView
-            android:id="@+id/text_bestPoints"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="3dp"
-            android:background="@color/colorGrey"
-            android:fontFamily="@font/monserrat_alternates_medium"
-            android:paddingStart="5dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/textInicialThird"
-            app:layout_constraintStart_toEndOf="@id/textInicialThird"
-            app:layout_constraintTop_toTopOf="@id/textInicialThird"
-            tools:ignore="RtlSymmetry"
-            tools:text="25 puntos" />
-
-        <TextView
             android:id="@+id/text_lastimeplayed"
-            android:layout_width="wrap_content"
+            android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="3dp"
             android:layout_marginTop="10dp"
@@ -171,19 +124,6 @@
             tools:ignore="RtlSymmetry"
             tools:text="00/00/0000" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingBottom="10dp"
-            android:fontFamily="@font/monserrat_alternates_medium"
-            android:paddingStart="5dp"
-            android:paddingTop="10dp"
-            android:background="@color/colorGrey"
-            android:text="@string/ltima_vez_jugado"
-            android:textSize="15sp"
-            app:layout_constraintEnd_toStartOf="@+id/text_lastimeplayed"
-            app:layout_constraintTop_toTopOf="@+id/text_lastimeplayed"
-            tools:ignore="RtlSymmetry" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
