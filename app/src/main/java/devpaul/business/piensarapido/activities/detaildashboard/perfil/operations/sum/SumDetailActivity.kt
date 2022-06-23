@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -51,6 +52,7 @@ class SumDetailActivity : AppCompatActivity() {
     var txtLastTry : TextView? = null
     var txtBestPoints : TextView? = null
     var textlastTimePlayed : TextView? = null
+    var btnBack: Button ? = null
 
     @Suppress("DEPRECATION")
     var progressDialog: ProgressDialog? = null
@@ -78,6 +80,11 @@ class SumDetailActivity : AppCompatActivity() {
         shimmerFrameLayout = findViewById(R.id.shimmerFrameLayout)
 
         progressDialog = ProgressDialog(this)
+
+        btnBack = findViewById(R.id.btn_back)
+        btnBack?.setOnClickListener {
+
+        }
 
         recyclerViewAll = findViewById(R.id.recyclerView)
         recyclerViewAll?.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
