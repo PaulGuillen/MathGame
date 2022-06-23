@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,9 +7,10 @@
     android:fillViewport="true"
     tools:context=".activities.detaildashboard.perfil.PerfilActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
 
         <RelativeLayout
             android:id="@+id/rllay1"
@@ -20,6 +21,31 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:orientation="vertical"
+                tools:ignore="UselessParent">
+
+                <Button
+                    android:id="@+id/btn_salir"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/red_primary_dark"
+                    android:padding="10dp"
+                    android:text="@string/salir"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/guideline_inside"
+                    app:layout_constraintTop_toBottomOf="@id/view_dos" />
+
+            </LinearLayout>
 
             <RelativeLayout
                 android:id="@+id/imageUser"
@@ -220,12 +246,12 @@
                     <TextView
                         android:id="@+id/userId"
                         android:layout_width="wrap_content"
-                        android:layout_gravity="end"
-                        android:visibility="gone"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="end"
                         android:fontFamily="@font/monserrat_alternates_medium"
                         android:text="UserId"
-                        android:textSize="17sp" />
+                        android:textSize="17sp"
+                        android:visibility="gone" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -326,6 +352,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginTop="15dp"
+                        android:layout_marginBottom="20dp"
                         android:background="@color/grey_primary_dark" />
 
                 </LinearLayout>
@@ -334,34 +361,9 @@
 
         </RelativeLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:orientation="vertical"
-            tools:ignore="UselessParent">
-
-            <Button
-                android:id="@+id/btn_salir"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:backgroundTint="@color/red_primary_dark"
-                android:padding="10dp"
-                android:textAllCaps="false"
-                android:text="@string/salir"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@id/guideline_inside"
-                app:layout_constraintTop_toBottomOf="@id/view_dos" />
-
-        </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="bottom"
@@ -386,6 +388,9 @@
 
         </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+
+
+</ScrollView>
