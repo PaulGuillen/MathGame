@@ -28,7 +28,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:orientation="vertical"
-                tools:ignore="UselessParent">
+                tools:ignore="RelativeOverlap,UselessParent">
 
                 <Button
                     android:id="@+id/btn_salir"

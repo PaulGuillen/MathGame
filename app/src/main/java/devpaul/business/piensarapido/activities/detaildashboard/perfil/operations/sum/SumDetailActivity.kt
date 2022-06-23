@@ -126,21 +126,21 @@ class SumDetailActivity : AppCompatActivity() {
 
                     val name = document.getString("name")
                     val lastname = document.getString("lastname")
-                    val bestPoints = document.getString("bestPoints")
+                    val bestPoints = document.getLong("bestPoints")?.toInt()
                     val lastTry = document.getString("lastTry")
                     val lastTimePlayed = document.getString("lastTimePlayed")
 
                     txtName?.text = name
-                    txtBestPoints?.text = bestPoints
+                    txtBestPoints?.text = bestPoints.toString() + "\r" + "puntos"
                     txtLastTry?.text = lastTry
                     textlastTimePlayed?.text = lastTimePlayed
 
 
 
                 } else {
-                    txtName?.text = "Nombre"
-                    txtBestPoints?.text = "0"
-                    txtLastTry?.text = "0"
+                    txtName?.text = "Nombre del usuario"
+                    txtBestPoints?.text = "0 puntos"
+                    txtLastTry?.text = "0 puntos"
                     textlastTimePlayed?.text = "0000/00/00"
 
                 }
@@ -154,7 +154,8 @@ class SumDetailActivity : AppCompatActivity() {
 
     @SuppressLint("NotifyDataSetChanged")
     private fun getDatSumStudents() {
-        db.collection(Constants.PATH_POINTS_SUM).orderBy("bestPoints", Query.Direction.ASCENDING)
+        //PUNTAJE DE MAYOR A MENOR, CAMPO = MEJOR PUNTAJE
+        db.collection(Constants.PATH_POINTS_SUM).orderBy("bestPoints", Query.Direction.DESCENDING)
             .get()
             .addOnSuccessListener { documents ->
                 if(!documents.isEmpty){

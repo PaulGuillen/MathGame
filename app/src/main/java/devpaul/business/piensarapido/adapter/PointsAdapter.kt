@@ -1,5 +1,6 @@
 package devpaul.business.piensarapido.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.util.Log
@@ -21,11 +22,12 @@ class PointsAdapter (private val context: Context, private val pointsList: Mutab
         return MyViewHolder(itemVIew)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
         val category = pointsList[position]
         holder.textNombre.text = pointsList[position].name
-        holder.textMejorPuntaje.text = pointsList[position].bestPoints
+        holder.textMejorPuntaje.text = pointsList[position].bestPoints.toString() + "\r" + "puntos"
         holder.textUltimoIntento.text = pointsList[position].lastTry
         holder.textultimoacceso.text = pointsList[position].lastTimePlayed
 

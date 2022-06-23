@@ -104,7 +104,7 @@ class GameOverRestActivity : AppCompatActivity() {
         FirebaseAuth.getInstance().currentUser?.metadata?.apply {
 
             val uiduser = auth.currentUser?.uid
-            val bestPoints = tvHighScore?.text.toString() + "\r" + "puntos"
+            val bestPoints = tvHighScore?.text.toString().toInt()
             val lastTry = tvPoints?.text.toString() + "\r" + "puntos"
             val name = tvName?.text.toString()
             val lastname = tvLastname?.text.toString()
