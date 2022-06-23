@@ -290,7 +290,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/monserrat_alternates_medium"
-                        android:text="@string/fecha_de_creaci_n"
+                        android:text="@string/fecha_de_la_cuenta_creada"
                         android:textSize="17sp" />
 
                     <TextView

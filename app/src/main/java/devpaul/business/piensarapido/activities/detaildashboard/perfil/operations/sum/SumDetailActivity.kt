@@ -3,6 +3,7 @@ package devpaul.business.piensarapido.activities.detaildashboard.perfil.operatio
 import android.annotation.SuppressLint
 import android.app.Dialog
 import android.app.ProgressDialog
+import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.graphics.Color
 import android.net.ConnectivityManager
@@ -35,6 +36,8 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import devpaul.business.piensarapido.Constants
 import devpaul.business.piensarapido.R
+import devpaul.business.piensarapido.activities.MainActivity
+import devpaul.business.piensarapido.activities.detaildashboard.perfil.PerfilActivity
 import devpaul.business.piensarapido.adapter.PointsAdapter
 import devpaul.business.piensarapido.model.Points
 import java.lang.Exception
@@ -58,7 +61,6 @@ class SumDetailActivity : AppCompatActivity() {
     var progressDialog: ProgressDialog? = null
 
     var linearnoData: LinearLayout? = null
-    var linearData : LinearLayout? = null
 
     private var recyclerViewAll: RecyclerView? = null
     var shimmerFrameLayout : ShimmerFrameLayout? = null
@@ -83,7 +85,9 @@ class SumDetailActivity : AppCompatActivity() {
 
         btnBack = findViewById(R.id.btn_back)
         btnBack?.setOnClickListener {
-
+            val intent = Intent(this@SumDetailActivity, PerfilActivity::class.java)
+            finish()
+            startActivity(intent)
         }
 
         recyclerViewAll = findViewById(R.id.recyclerView)
@@ -118,7 +122,6 @@ class SumDetailActivity : AppCompatActivity() {
 
         val docRef = db.collection(Constants.PATH_POINTS_SUM).document(uiduser.toString())
 
-
         docRef.get().addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 val document = task.result
@@ -135,10 +138,8 @@ class SumDetailActivity : AppCompatActivity() {
                     txtLastTry?.text = lastTry
                     textlastTimePlayed?.text = lastTimePlayed
 
-
-
                 } else {
-                    txtName?.text = "Nombre del usuario"
+                    txtName?.text = "Tu nombre"
                     txtBestPoints?.text = "0 puntos"
                     txtLastTry?.text = "0 puntos"
                     textlastTimePlayed?.text = "0000/00/00"

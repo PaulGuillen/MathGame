@@ -19,6 +19,7 @@ import devpaul.business.piensarapido.Constants
 import devpaul.business.piensarapido.R
 import devpaul.business.piensarapido.activities.MainActivity
 import devpaul.business.piensarapido.model.User
+import java.text.SimpleDateFormat
 import java.util.*
 
 class RegisterActivity : AppCompatActivity() {
@@ -80,6 +81,8 @@ class RegisterActivity : AppCompatActivity() {
         val password = edtPassword?.text.toString()
         val confirmPassword = edtConfirmPassword?.text.toString()
         val rol = "alumno"
+        val date = getCurrentDateTime()
+        val created = date.toString("yyyy/MM/dd")
 
         if (isValidForm(
                 name = name,
@@ -96,7 +99,8 @@ class RegisterActivity : AppCompatActivity() {
                 lastname = lastname,
                 rol = rol,
                 email = email,
-                password = password
+                password = password,
+                created = created
             )
 
             progressDialog!!.show()
@@ -194,6 +198,16 @@ class RegisterActivity : AppCompatActivity() {
         val i = Intent(this, MainActivity::class.java)
         i.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK // Eliminar el historial de pantallas
         startActivity(i)
+    }
+
+
+    fun Date.toString(format: String, locale: Locale = Locale.getDefault()): String {
+        val formatter = SimpleDateFormat(format, locale)
+        return formatter.format(this)
+    }
+
+    private fun getCurrentDateTime(): Date {
+        return Calendar.getInstance().time
     }
 
 }

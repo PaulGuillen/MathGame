@@ -256,8 +256,8 @@
             android:paddingTop="20dp"
             android:paddingEnd="15dp"
             android:paddingBottom="10dp"
-            android:text="Todos los puntajes"
-            android:textSize="18sp"
+            android:text="@string/todos_los_puntajes_mayor_a_menor"
+            android:textSize="17sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cardview_top" />
@@ -313,6 +313,35 @@
             </LinearLayout>
 
         </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/linearlayout_nodata"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:background="@drawable/warning_person"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:textAlignment="center"
+                android:fontFamily="@font/monserrat_alternates_medium"
+                android:textSize="16sp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:text="@string/texto_largo_no_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
 
 
     </LinearLayout>

@@ -16,6 +16,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import devpaul.business.piensarapido.Constants
 import devpaul.business.piensarapido.R
+import devpaul.business.piensarapido.activities.MainActivity
 import devpaul.business.piensarapido.activities.detaildashboard.perfil.operations.sum.SumDetailActivity
 import devpaul.business.piensarapido.activities.login.LoginActivity
 import devpaul.business.piensarapido.model.User
@@ -130,11 +131,13 @@ class PerfilActivity : AppCompatActivity() {
                         val email = document.getString("email")
                         val password = document.getString("password")
                         val userId = document.getString("userId")
+                        val created = document.getString("created")
 
                         textfullname?.text = name.toString() +"\r"+lastname.toString()
                         textemail?.text = email.toString()
                         textpassword?.text = password.toString()
                         textuserId?.text = userId.toString()
+                        textlastTimePlayed?.text = created.toString()
                         progressDialog?.dismiss()
 
 
@@ -212,9 +215,12 @@ class PerfilActivity : AppCompatActivity() {
                     val lastTry = document.getString("lastTry")
                     val lastTimePlayed = document.getString("lastTimePlayed")
 
+                    val user = auth.currentUser
+                    val signUpDate = user?.metadata?.lastSignInTimestamp
+
                     textBestPoints?.text = bestPoints
                     textLastTry?.text = lastTry
-                    textlastTimePlayed?.text = lastTimePlayed
+                    textlastTimePlayed?.text = signUpDate.toString()
 
                 } else {
                     textBestPoints?.text = "0"
@@ -234,6 +240,13 @@ class PerfilActivity : AppCompatActivity() {
         textBestPoints?.text = "0"
         textLastTry?.text = "0"
         textlastTimePlayed?.text = "0000/00/00"
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val i = Intent(this@PerfilActivity , MainActivity::class.java)
+        startActivity(i)
+        finish()
     }
 
 }
