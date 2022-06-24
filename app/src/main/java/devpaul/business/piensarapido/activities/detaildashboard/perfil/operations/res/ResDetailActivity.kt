@@ -26,6 +26,7 @@ import com.google.firebase.ktx.Firebase
 import devpaul.business.piensarapido.Constants
 import devpaul.business.piensarapido.R
 import devpaul.business.piensarapido.activities.detaildashboard.perfil.PerfilActivity
+import devpaul.business.piensarapido.activities.detaildashboard.perfil.operations.historical.ViewHistoricalStudentActivity
 import devpaul.business.piensarapido.adapter.PointsAdapter
 import devpaul.business.piensarapido.model.Points
 import java.lang.Exception
@@ -39,11 +40,12 @@ class ResDetailActivity : AppCompatActivity() {
     lateinit var firestore: FirebaseFirestore
     private val db = Firebase.firestore
 
-    var txtName : TextView? = null
-    var txtLastTry : TextView? = null
-    var txtBestPoints : TextView? = null
-    var textlastTimePlayed : TextView? = null
+    var txtName: TextView? = null
+    var txtLastTry: TextView? = null
+    var txtBestPoints: TextView? = null
+    var textlastTimePlayed: TextView? = null
     var btnBack: Button? = null
+    var btnHistorical: Button? = null
 
     @Suppress("DEPRECATION")
     var progressDialog: ProgressDialog? = null
@@ -53,7 +55,7 @@ class ResDetailActivity : AppCompatActivity() {
     var cardviewData: CardView? = null
 
     private var recyclerViewAll: RecyclerView? = null
-    var shimmerFrameLayout : ShimmerFrameLayout? = null
+    var shimmerFrameLayout: ShimmerFrameLayout? = null
 
     //ViewAllSection
     var viewAllList = ArrayList<Points>()
@@ -74,6 +76,14 @@ class ResDetailActivity : AppCompatActivity() {
         shimmerFrameLayout = findViewById(R.id.shimmerFrameLayout)
 
         progressDialog = ProgressDialog(this)
+
+        btnHistorical = findViewById(R.id.view_history)
+        btnHistorical?.setOnClickListener {
+            val i = Intent(this@ResDetailActivity, ViewHistoricalStudentActivity::class.java)
+            i.putExtra("type", "Resta")
+            startActivity(i)
+
+        }
 
         btnBack = findViewById(R.id.btn_back)
         btnBack?.setOnClickListener {
@@ -97,10 +107,10 @@ class ResDetailActivity : AppCompatActivity() {
         textlastTimePlayed = findViewById(R.id.text_lastimeplayed)
 
 
-        if (isOnline()){
+        if (isOnline()) {
             restData()
             getDataResStudents()
-        }else{
+        } else {
             getConnectionValidation()
         }
 
@@ -108,11 +118,11 @@ class ResDetailActivity : AppCompatActivity() {
 
 
     @SuppressLint("SetTextI18n")
-    private fun restData(){
+    private fun restData() {
 
         val uiduser = auth.currentUser?.uid
 
-        val docRef =  db.collection(Constants.PATH_POINTS_RES).document(uiduser.toString())
+        val docRef = db.collection(Constants.PATH_POINTS_RES).document(uiduser.toString())
 
         docRef.get().addOnCompleteListener { task ->
             if (task.isSuccessful) {
@@ -152,7 +162,7 @@ class ResDetailActivity : AppCompatActivity() {
         db.collection(Constants.PATH_POINTS_RES).orderBy("bestPoints", Query.Direction.DESCENDING)
             .get()
             .addOnSuccessListener { documents ->
-                if(!documents.isEmpty){
+                if (!documents.isEmpty) {
                     for (document in documents) {
                         linearnoData?.visibility = View.GONE
                         shimmerFrameLayout?.visibility = View.GONE
@@ -161,7 +171,7 @@ class ResDetailActivity : AppCompatActivity() {
                         viewAllList.add(section)
                         viewAllAdapter?.notifyDataSetChanged()
                     }
-                }else{
+                } else {
                     linearnoData?.visibility = View.VISIBLE
                     shimmerFrameLayout?.visibility = View.GONE
                     recyclerViewAll?.visibility = View.GONE

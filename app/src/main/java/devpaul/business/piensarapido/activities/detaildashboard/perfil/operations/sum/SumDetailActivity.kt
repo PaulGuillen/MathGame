@@ -38,6 +38,7 @@ import devpaul.business.piensarapido.Constants
 import devpaul.business.piensarapido.R
 import devpaul.business.piensarapido.activities.MainActivity
 import devpaul.business.piensarapido.activities.detaildashboard.perfil.PerfilActivity
+import devpaul.business.piensarapido.activities.detaildashboard.perfil.operations.historical.ViewHistoricalStudentActivity
 import devpaul.business.piensarapido.adapter.PointsAdapter
 import devpaul.business.piensarapido.model.Points
 import java.lang.Exception
@@ -64,6 +65,7 @@ class SumDetailActivity : AppCompatActivity() {
 
     private var recyclerViewAll: RecyclerView? = null
     var shimmerFrameLayout : ShimmerFrameLayout? = null
+    var btnHistorical: Button? = null
 
     //ViewAllSection
     var viewAllList = ArrayList<Points>()
@@ -82,6 +84,14 @@ class SumDetailActivity : AppCompatActivity() {
         shimmerFrameLayout = findViewById(R.id.shimmerFrameLayout)
 
         progressDialog = ProgressDialog(this)
+
+        btnHistorical = findViewById(R.id.view_history)
+        btnHistorical?.setOnClickListener {
+            val i = Intent(this@SumDetailActivity, ViewHistoricalStudentActivity::class.java)
+            i.putExtra("type", "Suma")
+            startActivity(i)
+
+        }
 
         btnBack = findViewById(R.id.btn_back)
         btnBack?.setOnClickListener {
