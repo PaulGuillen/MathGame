@@ -66,20 +66,20 @@
             android:layout_height="2dp"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:layout_marginBottom="5dp"
             android:background="@color/colorGrey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_top" />
 
+
         <androidx.cardview.widget.CardView
             android:id="@+id/cardview_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
-            android:visibility="gone"
             app:cardCornerRadius="10dp"
             app:cardElevation="20dp">
 
@@ -251,6 +251,7 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardview_no_data"
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="210dp"
             android:layout_marginStart="10dp"

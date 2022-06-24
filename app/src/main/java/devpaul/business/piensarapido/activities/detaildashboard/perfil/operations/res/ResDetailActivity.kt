@@ -13,6 +13,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.facebook.shimmer.ShimmerFrameLayout
@@ -48,6 +49,8 @@ class ResDetailActivity : AppCompatActivity() {
     var progressDialog: ProgressDialog? = null
 
     var linearnoData: LinearLayout? = null
+    var cardViewNodata: CardView? = null
+    var cardviewData: CardView? = null
 
     private var recyclerViewAll: RecyclerView? = null
     var shimmerFrameLayout : ShimmerFrameLayout? = null
@@ -65,6 +68,8 @@ class ResDetailActivity : AppCompatActivity() {
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
         linearnoData = findViewById(R.id.linearlayout_nodata)
+        cardViewNodata = findViewById(R.id.cardview_no_data)
+        cardviewData = findViewById(R.id.cardview_top)
 
         shimmerFrameLayout = findViewById(R.id.shimmerFrameLayout)
 
@@ -111,6 +116,8 @@ class ResDetailActivity : AppCompatActivity() {
 
         docRef.get().addOnCompleteListener { task ->
             if (task.isSuccessful) {
+                cardViewNodata?.visibility = View.GONE
+                cardviewData?.visibility = View.VISIBLE
                 val document = task.result
                 if (document != null && document.exists()) {
 
@@ -127,14 +134,14 @@ class ResDetailActivity : AppCompatActivity() {
                     textlastTimePlayed?.text = lastTimePlayed
 
                 } else {
-                    txtName?.text = "Tu nombre"
-                    txtBestPoints?.text = "0 puntos"
-                    txtLastTry?.text = "0 puntos"
-                    textlastTimePlayed?.text = "0000/00/00"
+                    cardViewNodata?.visibility = View.VISIBLE
+                    cardviewData?.visibility = View.GONE
 
                 }
             } else {
-                Log.d(TAG, "get failed with ", task.exception)
+                cardViewNodata?.visibility = View.VISIBLE
+                cardviewData?.visibility = View.GONE
+
             }
         }
 
