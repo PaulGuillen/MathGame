@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/textInicial"
+            android:layout_width="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/monserrat_alternates_medium"
+            android:paddingStart="5dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="Nombre : "
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/text_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/monserrat_alternates_medium"
+            android:text="Nombre"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textInicial"
+            app:layout_constraintStart_toEndOf="@id/textInicial"
+            app:layout_constraintTop_toTopOf="@id/textInicial" />
+
+        <TextView
+            android:id="@+id/text_lastname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:fontFamily="@font/monserrat_alternates_medium"
+            android:text="Apellido"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/text_name"
+            app:layout_constraintStart_toEndOf="@id/text_name"
+            app:layout_constraintTop_toTopOf="@id/text_name" />
+
+        <TextView
+            android:id="@+id/textPuntaje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/monserrat_alternates_medium"
+            android:paddingStart="5dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="Puntos acertados :"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textInicial"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/text_puntaje_acertado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:fontFamily="@font/monserrat_alternates_medium"
+            android:paddingEnd="10dp"
+            android:text="puntaje"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textPuntaje"
+            app:layout_constraintStart_toEndOf="@id/textPuntaje"
+            app:layout_constraintTop_toTopOf="@id/textPuntaje" />
+
+        <TextView
+            android:id="@+id/text_incorrect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/monserrat_alternates_medium"
+            android:paddingStart="5dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="Puntos no acertados :"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textPuntaje"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/text_incorrect_answer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:fontFamily="@font/monserrat_alternates_medium"
+            android:paddingEnd="10dp"
+            android:text="puntaje"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/text_incorrect"
+            app:layout_constraintStart_toEndOf="@id/text_incorrect"
+            app:layout_constraintTop_toTopOf="@id/text_incorrect" />
+
+
+        <TextView
+            android:id="@+id/text_questions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/monserrat_alternates_medium"
+            android:paddingStart="5dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="Total de preguntas :"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_incorrect"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/text_total_questions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:fontFamily="@font/monserrat_alternates_medium"
+            android:paddingEnd="10dp"
+            android:text="puntaje"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/text_questions"
+            app:layout_constraintStart_toEndOf="@id/text_questions"
+            app:layout_constraintTop_toTopOf="@id/text_questions" />
+
+        <TextView
+            android:id="@+id/time_played"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/monserrat_alternates_medium"
+            android:paddingStart="5dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="Tiempo jugado :"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_questions"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/text_time_played"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:fontFamily="@font/monserrat_alternates_medium"
+            android:paddingEnd="10dp"
+            android:text="puntaje"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/time_played"
+            app:layout_constraintStart_toEndOf="@id/time_played"
+            app:layout_constraintTop_toTopOf="@id/time_played" />
+
+           <TextView
+               android:id="@+id/top_type"
+               app:layout_constraintStart_toStartOf="parent"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:fontFamily="@font/monserrat_alternates_medium"
+               android:paddingStart="5dp"
+               android:paddingTop="10dp"
+               android:paddingBottom="10dp"
+               android:text="Tipo:"
+               app:layout_constraintTop_toBottomOf="@id/time_played"
+               tools:ignore="RtlSymmetry" />
+
+
+           <TextView
+               android:id="@+id/text_tipo"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginStart="3dp"
+               android:fontFamily="@font/monserrat_alternates_medium"
+               android:text="Tipo"
+               android:textStyle="bold"
+               app:layout_constraintBottom_toBottomOf="@+id/top_type"
+               app:layout_constraintStart_toEndOf="@id/top_type"
+               app:layout_constraintTop_toTopOf="@id/top_type" />
+
+
+        <TextView
+            android:id="@+id/bot_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/monserrat_alternates_medium"
+            android:paddingStart="5dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="Nivel:"
+            app:layout_constraintEnd_toStartOf="@+id/text_level"
+            app:layout_constraintTop_toBottomOf="@id/top_type"
+            tools:ignore="RtlSymmetry" />
+
+
+        <TextView
+            android:id="@+id/text_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="5dp"
+            android:fontFamily="@font/monserrat_alternates_medium"
+            android:text="Nivel"
+            android:layout_marginEnd="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/bot_level"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/bot_level" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
