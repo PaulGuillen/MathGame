@@ -274,17 +274,22 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
-                        android:text="Lo sentimos"
+                        android:text="@string/lo_sentimos"
                         android:gravity="center"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/monserrat_alternates_medium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 
                     <TextView
-                        android:text="No hay datos que mostrar"
-                        android:gravity="center"
+                        android:text="@string/texto_no_data_own_data"
+                        android:gravity="center|bottom"
+                        android:padding="10dp"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/monserrat_alternates_medium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
-
 
                 </LinearLayout>
 
