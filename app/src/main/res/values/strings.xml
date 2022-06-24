@@ -89,4 +89,5 @@
     <string name="todos_los_puntajes_mayor_a_menor">Todos los puntajes (mayor a menor)</string>
     <string name="lo_sentimos">Lo sentimos :(</string>
     <string name="texto_no_data_own_data">Pa visualizar los datos debes haber jugado la operación seleccionada.</string>
+    <string name="ver_historial">Ver historial</string>
 </resources>

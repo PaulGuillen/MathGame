@@ -48,17 +48,37 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <TextView
-            android:id="@+id/text_top"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingStart="15dp"
-            android:paddingTop="20dp"
-            android:paddingEnd="15dp"
-            android:paddingBottom="10dp"
-            android:text="@string/tu_puntaje"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/text_top"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="17dp"
+                android:text="@string/tu_puntaje"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/view_history"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="17dp"
+                android:backgroundTint="#689F38"
+                android:text="@string/ver_historial"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         <View
             android:id="@+id/view_bottom_text_top"
@@ -76,10 +96,10 @@
             android:id="@+id/cardview_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
+            android:visibility="gone"
             app:cardCornerRadius="10dp"
             app:cardElevation="20dp">
 
@@ -121,7 +141,7 @@
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="RtlSymmetry" />
+                    tools:ignore="RtlSymmetry,TextContrastCheck" />
 
                 <TextView
                     android:id="@+id/textInicial"
@@ -251,12 +271,12 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardview_no_data"
-            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="210dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
+            android:visibility="gone"
             app:cardCornerRadius="10dp"
             app:cardElevation="20dp">
 
@@ -267,30 +287,30 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
                     android:gravity="center"
+                    android:orientation="vertical"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
-                        android:text="@string/lo_sentimos"
-                        android:gravity="center"
-                        android:textStyle="bold"
-                        android:textSize="20sp"
-                        android:fontFamily="@font/monserrat_alternates_medium"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/monserrat_alternates_medium"
+                        android:gravity="center"
+                        android:text="@string/lo_sentimos"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:text="@string/texto_no_data_own_data"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/monserrat_alternates_medium"
                         android:gravity="center|bottom"
                         android:padding="10dp"
-                        android:textSize="16sp"
-                        android:fontFamily="@font/monserrat_alternates_medium"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:text="@string/texto_no_data_own_data"
+                        android:textSize="16sp" />
 
                 </LinearLayout>
 
