@@ -116,7 +116,7 @@
                     android:paddingStart="5dp"
                     android:paddingEnd="5dp"
                     android:text="@string/ltimo_intento"
-                    android:textColor="@color/red_btn_bg_color"
+                    android:textColor="#E53935"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"

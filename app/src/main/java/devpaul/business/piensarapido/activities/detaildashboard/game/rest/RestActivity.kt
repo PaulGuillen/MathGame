@@ -9,7 +9,6 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import devpaul.business.piensarapido.R
-import devpaul.business.piensarapido.activities.detaildashboard.game.mult.GameOverMultiplicacionActivity
 import kotlin.random.Random
 
 class RestActivity : AppCompatActivity() {
@@ -22,7 +21,7 @@ class RestActivity : AppCompatActivity() {
 
     var tvTimer: TextView? = null
     var tvPoints: TextView? = null
-    var tvSum: TextView? = null
+    var tvRest: TextView? = null
     var tvResult: TextView? = null
     var btn0: Button? = null
     var btn1: Button? = null
@@ -51,7 +50,7 @@ class RestActivity : AppCompatActivity() {
         rest = 0
         tvTimer = findViewById(R.id.tvTimer)
         tvPoints = findViewById(R.id.tvPoints)
-        tvSum = findViewById(R.id.tvSum)
+        tvRest = findViewById(R.id.tvSum)
         tvResult = findViewById(R.id.tvResult)
 
         btn0 = findViewById(R.id.btn0)
@@ -121,16 +120,16 @@ class RestActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     private fun generateQuestionEasy() {
         numberofQuestions++
-        op1 = random.nextInt(25,55)
-        op2 = random.nextInt(1,24)
+        op1 = random.nextInt(20,45)
+        op2 = random.nextInt(5,19)
         rest = op1!! - op2!!
-        tvSum?.text = "$op1 - $op2 = "
+        tvRest?.text = "$op1 - $op2 = "
         correctAnswerPosition = random.nextInt(4)
         (findViewById<View>(btnIds[correctAnswerPosition]) as Button).text = "" + rest
         while (true) {
-            if (incorrectAnswers!!.size > 4) break
-            op1 = random.nextInt(25,55)
-            op2 = random.nextInt(1,24)
+            if (incorrectAnswers!!.size > 3) break
+            op1 = random.nextInt(20,45)
+            op2 = random.nextInt(5,19)
             restOther = op1!! - op2!!
             if (restOther == rest) {
                 continue
@@ -211,11 +210,11 @@ class RestActivity : AppCompatActivity() {
         op1 = random.nextInt(50,99)
         op2 = random.nextInt(12,49)
         rest = op1!! - op2!!
-        tvSum?.text = "$op1 - $op2 = "
+        tvRest?.text = "$op1 - $op2 = "
         correctAnswerPosition = random.nextInt(4)
         (findViewById<View>(btnIds[correctAnswerPosition]) as Button).text = "" + rest
         while (true) {
-            if (incorrectAnswers!!.size > 4) break
+            if (incorrectAnswers!!.size > 3) break
             op1 = random.nextInt(50,99)
             op2 = random.nextInt(12,49)
             restOther = op1!! - op2!!
@@ -271,7 +270,7 @@ class RestActivity : AppCompatActivity() {
         op1 = random.nextInt(105,180)
         op2 = random.nextInt(30,104)
         rest = op1!! - op2!!
-        tvSum?.text = "$op1 - $op2 = "
+        tvRest?.text = "$op1 - $op2 = "
         correctAnswerPosition = random.nextInt(4)
         (findViewById<View>(btnIds[correctAnswerPosition]) as Button).text = "" + rest
         while (true) {
@@ -331,7 +330,7 @@ class RestActivity : AppCompatActivity() {
         op1 = random.nextInt(199,310)
         op2 = random.nextInt(55,190)
         rest = op1!! - op2!!
-        tvSum?.text = "$op1 - $op2 = "
+        tvRest?.text = "$op1 - $op2 = "
         correctAnswerPosition = random.nextInt(4)
         (findViewById<View>(btnIds[correctAnswerPosition]) as Button).text = "" + rest
         while (true) {

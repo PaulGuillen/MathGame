@@ -123,8 +123,7 @@ class ResDetailActivity : AppCompatActivity() {
 
                     val name = document.getString("name")
                     val lastname = document.getString("lastname")
-
-                    val bestPoints = document.getString("bestPoints")
+                    val bestPoints = document.getLong("bestPoints")?.toInt()
                     val lastTry = document.getString("lastTry")
                     val lastTimePlayed = document.getString("lastTimePlayed")
 
