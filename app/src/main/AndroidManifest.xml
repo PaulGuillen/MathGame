@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PiensaRapido">
         <activity
+            android:name=".activities.detaildashboard.perfil.operations.res.ResDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.detaildashboard.perfil.operations.sum.SumDetailActivity"
             android:exported="false" />
         <activity

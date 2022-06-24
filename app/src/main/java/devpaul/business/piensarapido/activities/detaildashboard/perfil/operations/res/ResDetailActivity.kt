@@ -1,11 +1,10 @@
-package devpaul.business.piensarapido.activities.detaildashboard.perfil.operations.sum
+package devpaul.business.piensarapido.activities.detaildashboard.perfil.operations.res
 
 import android.annotation.SuppressLint
 import android.app.Dialog
 import android.app.ProgressDialog
 import android.content.Intent
 import android.content.pm.ActivityInfo
-import android.graphics.Color
 import android.net.ConnectivityManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -17,33 +16,21 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.facebook.shimmer.ShimmerFrameLayout
-import com.github.mikephil.charting.animation.Easing
-import com.github.mikephil.charting.charts.PieChart
-import com.github.mikephil.charting.components.Legend
-import com.github.mikephil.charting.data.PieData
-import com.github.mikephil.charting.data.PieDataSet
-import com.github.mikephil.charting.data.PieEntry
-import com.github.mikephil.charting.formatter.PercentFormatter
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.ValueEventListener
-import com.google.firebase.database.ktx.database
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import devpaul.business.piensarapido.Constants
 import devpaul.business.piensarapido.R
-import devpaul.business.piensarapido.activities.MainActivity
 import devpaul.business.piensarapido.activities.detaildashboard.perfil.PerfilActivity
 import devpaul.business.piensarapido.adapter.PointsAdapter
 import devpaul.business.piensarapido.model.Points
 import java.lang.Exception
-import java.util.*
+import java.util.ArrayList
 
-class SumDetailActivity : AppCompatActivity() {
+class ResDetailActivity : AppCompatActivity() {
 
     var TAG = "SumDetail"
 
@@ -55,7 +42,7 @@ class SumDetailActivity : AppCompatActivity() {
     var txtLastTry : TextView? = null
     var txtBestPoints : TextView? = null
     var textlastTimePlayed : TextView? = null
-    var btnBack: Button ? = null
+    var btnBack: Button? = null
 
     @Suppress("DEPRECATION")
     var progressDialog: ProgressDialog? = null
@@ -72,7 +59,7 @@ class SumDetailActivity : AppCompatActivity() {
     @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sum_detail)
+        setContentView(R.layout.activity_res_detail)
 
         //desactivar rotacion pantalla
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
@@ -85,7 +72,7 @@ class SumDetailActivity : AppCompatActivity() {
 
         btnBack = findViewById(R.id.btn_back)
         btnBack?.setOnClickListener {
-            val intent = Intent(this@SumDetailActivity, PerfilActivity::class.java)
+            val intent = Intent(this@ResDetailActivity, PerfilActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -106,21 +93,21 @@ class SumDetailActivity : AppCompatActivity() {
 
 
         if (isOnline()){
-            sumData()
-            getDatSumStudents()
+            restData()
+            getDataResStudents()
         }else{
             getConnectionValidation()
         }
 
-
     }
 
+
     @SuppressLint("SetTextI18n")
-    private fun sumData(){
+    private fun restData(){
 
         val uiduser = auth.currentUser?.uid
 
-        val docRef = db.collection(Constants.PATH_POINTS_SUM).document(uiduser.toString())
+        val docRef =  db.collection(Constants.PATH_POINTS_RES).document(uiduser.toString())
 
         docRef.get().addOnCompleteListener { task ->
             if (task.isSuccessful) {
@@ -129,7 +116,8 @@ class SumDetailActivity : AppCompatActivity() {
 
                     val name = document.getString("name")
                     val lastname = document.getString("lastname")
-                    val bestPoints = document.getLong("bestPoints")?.toInt()
+
+                    val bestPoints = document.getString("bestPoints")
                     val lastTry = document.getString("lastTry")
                     val lastTimePlayed = document.getString("lastTimePlayed")
 
@@ -147,16 +135,15 @@ class SumDetailActivity : AppCompatActivity() {
                 }
             } else {
                 Log.d(TAG, "get failed with ", task.exception)
-
             }
         }
 
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    private fun getDatSumStudents() {
+    private fun getDataResStudents() {
         //PUNTAJE DE MAYOR A MENOR, CAMPO = MEJOR PUNTAJE
-        db.collection(Constants.PATH_POINTS_SUM).orderBy("bestPoints", Query.Direction.DESCENDING)
+        db.collection(Constants.PATH_POINTS_RES).orderBy("bestPoints", Query.Direction.DESCENDING)
             .get()
             .addOnSuccessListener { documents ->
                 if(!documents.isEmpty){
@@ -228,7 +215,7 @@ class SumDetailActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        val intent = Intent(this@SumDetailActivity, PerfilActivity::class.java)
+        val intent = Intent(this@ResDetailActivity, PerfilActivity::class.java)
         startActivity(intent)
         finish()
     }

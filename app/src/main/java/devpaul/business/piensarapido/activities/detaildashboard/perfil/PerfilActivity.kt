@@ -17,6 +17,7 @@ import com.google.firebase.ktx.Firebase
 import devpaul.business.piensarapido.Constants
 import devpaul.business.piensarapido.R
 import devpaul.business.piensarapido.activities.MainActivity
+import devpaul.business.piensarapido.activities.detaildashboard.perfil.operations.res.ResDetailActivity
 import devpaul.business.piensarapido.activities.detaildashboard.perfil.operations.sum.SumDetailActivity
 import devpaul.business.piensarapido.activities.login.LoginActivity
 import devpaul.business.piensarapido.model.User
@@ -66,7 +67,7 @@ class PerfilActivity : AppCompatActivity() {
         }
         btnRestar = findViewById(R.id.restar_data)
         btnRestar?.setOnClickListener{
-            restData()
+            resView()
         }
         btnMultiplicar = findViewById(R.id.multiplicar_data)
         btnMultiplicar?.setOnClickListener{
@@ -163,41 +164,15 @@ class PerfilActivity : AppCompatActivity() {
     private fun sumView(){
         val i = Intent(this@PerfilActivity, SumDetailActivity::class.java)
         i.putExtra("userId", textuserId?.text)
-        i.putExtra("type", "suma")
         Log.v(TAG,"Data: ${textuserId?.text}")
         startActivity(i)
     }
 
-
-    private fun restData(){
-
-        val uiduser = auth.currentUser?.uid
-
-        val docRef =  db.collection(Constants.PATH_POINTS_RES).document(uiduser.toString())
-
-        docRef.get().addOnCompleteListener { task ->
-            if (task.isSuccessful) {
-                val document = task.result
-                if (document != null && document.exists()) {
-
-                    val bestPoints = document.getString("bestPoints")
-                    val lastTry = document.getString("lastTry")
-                    val lastTimePlayed = document.getString("lastTimePlayed")
-
-                    textBestPoints?.text = bestPoints
-                    textLastTry?.text = lastTry
-                    textlastTimePlayed?.text = lastTimePlayed
-
-                } else {
-                    textBestPoints?.text = "0"
-                    textLastTry?.text = "0"
-                    textlastTimePlayed?.text = "0000/00/00"
-                }
-            } else {
-                Log.d(TAG, "get failed with ", task.exception)
-            }
-        }
-
+    private fun resView(){
+        val i = Intent(this@PerfilActivity, ResDetailActivity::class.java)
+        i.putExtra("userId", textuserId?.text)
+        Log.v(TAG,"Data: ${textuserId?.text}")
+        startActivity(i)
     }
 
     private fun multData(){
