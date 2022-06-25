@@ -1,8 +1,6 @@
 # Game-Think-Fast
 
-_Este proyecto consta de un juego de matemáticas que tiene las operaciones básicas( suma, resta, multiplicación ), en el cual en una vista personalizada hay un contador determinado con las respuestas correctas e incorrectas marcadas._
-
-_El proyecto sigue cambiando..._
+_Proyecto con actualizaciones...._
 
 ## Comenzando 🚀
 
