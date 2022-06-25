@@ -96,6 +96,7 @@ _En este video se mostrará las demas funcionalidades de la app._
 
 ** Segunda versión
 
+_El video esta en progreso...._
 
 ## Contribuyendo 🖇️
 
