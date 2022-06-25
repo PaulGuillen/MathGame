@@ -88,6 +88,8 @@ _Perfil del usuario y ajustes, como podemos observar en el perfil del usuario po
 
 ## Video 📄
 
+** Primera versión
+
 _En este video se mostrará las demas funcionalidades de la app._
 
 [Piensa Rápido Game](https://user-images.githubusercontent.com/43099030/169093389-d48f1c99-cf94-4ea0-946f-294b64cd4300.mp4)
