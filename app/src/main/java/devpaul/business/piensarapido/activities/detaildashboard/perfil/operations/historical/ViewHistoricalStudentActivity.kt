@@ -66,16 +66,16 @@ class ViewHistoricalStudentActivity : AppCompatActivity() {
         if (type != null && type.equals("Suma", ignoreCase = true)) {
             progressDialog!!.show()
             progressDialog?.setContentView(R.layout.charge_dialog)
-            Objects.requireNonNull(progressDialog!!.window)?.setBackgroundDrawableResource(android.R.color.transparent)
-
-            val docRef = db.collection("AllResultsSum").whereEqualTo("userId",auth.currentUser!!.uid)
+            Objects.requireNonNull(progressDialog!!.window)
+                ?.setBackgroundDrawableResource(android.R.color.transparent)
+            val docRef =
+                db.collection("AllResultsSum").whereEqualTo("userId", auth.currentUser!!.uid)
             docRef.get()
                 .addOnSuccessListener { document ->
                     if (document != null) {
                         for (document in document) {
                             linearnoData?.visibility = View.GONE
                             recyclerViewAll?.visibility = View.VISIBLE
-                            shimmerFrameLayout?.visibility = View.GONE
                             progressDialog?.dismiss()
                             val section = document.toObject(PointsDetailed::class.java)
                             viewAllList.add(section)
@@ -84,7 +84,6 @@ class ViewHistoricalStudentActivity : AppCompatActivity() {
                     } else {
                         progressDialog?.dismiss()
                         linearnoData?.visibility = View.VISIBLE
-                        shimmerFrameLayout?.visibility = View.GONE
                         recyclerViewAll?.visibility = View.GONE
                         Log.d(TAG, "No such document")
                     }
@@ -92,7 +91,6 @@ class ViewHistoricalStudentActivity : AppCompatActivity() {
                 .addOnFailureListener { exception ->
                     progressDialog?.dismiss()
                     linearnoData?.visibility = View.VISIBLE
-                    shimmerFrameLayout?.visibility = View.GONE
                     recyclerViewAll?.visibility = View.GONE
                     Log.d(TAG, "get failed with ", exception)
                 }
@@ -102,14 +100,14 @@ class ViewHistoricalStudentActivity : AppCompatActivity() {
         if (type != null && type.equals("Resta", ignoreCase = true)) {
             progressDialog!!.show()
             progressDialog?.setContentView(R.layout.charge_dialog)
-            Objects.requireNonNull(progressDialog!!.window)?.setBackgroundDrawableResource(android.R.color.transparent)
-
-            val docRef = db.collection("AllResultsRest").whereEqualTo("userId",auth.currentUser!!.uid)
+            Objects.requireNonNull(progressDialog!!.window)
+                ?.setBackgroundDrawableResource(android.R.color.transparent)
+            val docRef =
+                db.collection("AllResultsRest").whereEqualTo("userId", auth.currentUser!!.uid)
             docRef.get()
                 .addOnSuccessListener { document ->
                     if (document != null) {
                         for (document in document) {
-                            shimmerFrameLayout?.visibility = View.GONE
                             linearnoData?.visibility = View.GONE
                             recyclerViewAll?.visibility = View.VISIBLE
                             progressDialog?.dismiss()
@@ -119,7 +117,6 @@ class ViewHistoricalStudentActivity : AppCompatActivity() {
                         }
                     } else {
                         progressDialog?.dismiss()
-                        shimmerFrameLayout?.visibility = View.GONE
                         linearnoData?.visibility = View.VISIBLE
                         recyclerViewAll?.visibility = View.GONE
                         Log.d(TAG, "No such document")
@@ -129,7 +126,6 @@ class ViewHistoricalStudentActivity : AppCompatActivity() {
                     progressDialog?.dismiss()
                     linearnoData?.visibility = View.VISIBLE
                     recyclerViewAll?.visibility = View.GONE
-                    shimmerFrameLayout?.visibility = View.GONE
                     Log.d(TAG, "get failed with ", exception)
                 }
 
