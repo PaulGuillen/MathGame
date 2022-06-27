@@ -77,10 +77,15 @@ class ResDetailActivity : AppCompatActivity() {
 
         progressDialog = ProgressDialog(this)
 
+        val idUser = intent.getStringExtra("userId")
+        val type = intent.getStringExtra("type")
+
         btnHistorical = findViewById(R.id.view_history)
         btnHistorical?.setOnClickListener {
             val i = Intent(this@ResDetailActivity, ViewHistoricalStudentActivity::class.java)
-            i.putExtra("type", "Resta")
+            i.putExtra("type", type)
+            i.putExtra("userId", idUser)
+            Log.d(TAG,"Data : $idUser+$type" )
             startActivity(i)
 
         }

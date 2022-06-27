@@ -163,6 +163,7 @@ class PerfilActivity : AppCompatActivity() {
 
     private fun sumView(){
         val i = Intent(this@PerfilActivity, SumDetailActivity::class.java)
+        i.putExtra("type", "Suma")
         i.putExtra("userId", textuserId?.text)
         Log.v(TAG,"Data: ${textuserId?.text}")
         startActivity(i)
@@ -170,6 +171,7 @@ class PerfilActivity : AppCompatActivity() {
 
     private fun resView(){
         val i = Intent(this@PerfilActivity, ResDetailActivity::class.java)
+        i.putExtra("type", "Resta")
         i.putExtra("userId", textuserId?.text)
         Log.v(TAG,"Data: ${textuserId?.text}")
         startActivity(i)

@@ -90,10 +90,15 @@ class SumDetailActivity : AppCompatActivity() {
 
         progressDialog = ProgressDialog(this)
 
+        val idUser = intent.getStringExtra("userId")
+        val type = intent.getStringExtra("type")
+
         btnHistorical = findViewById(R.id.view_history)
         btnHistorical?.setOnClickListener {
             val i = Intent(this@SumDetailActivity, ViewHistoricalStudentActivity::class.java)
-            i.putExtra("type", "Suma")
+            i.putExtra("type", type)
+            i.putExtra("userId", idUser)
+            Log.d(TAG,"Data : $idUser+$type" )
             startActivity(i)
 
         }
@@ -145,8 +150,8 @@ class SumDetailActivity : AppCompatActivity() {
             if (task.isSuccessful) {
                 val document = task.result
                 if (document != null && document.exists()) {
-
                     progressDialog?.dismiss()
+                    cardviewData?.visibility = View.VISIBLE
                     val name = document.getString("name")
                     val lastname = document.getString("lastname")
                     val bestPoints = document.getLong("bestPoints")?.toInt()

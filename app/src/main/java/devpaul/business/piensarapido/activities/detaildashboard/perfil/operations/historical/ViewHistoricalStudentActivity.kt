@@ -11,6 +11,7 @@ import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.facebook.shimmer.ShimmerFrameLayout
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -42,6 +43,8 @@ class ViewHistoricalStudentActivity : AppCompatActivity() {
     var linearnoData: LinearLayout? = null
     var shimmerFrameLayout: ShimmerFrameLayout? = null
 
+    var ladeboardData: FloatingActionButton ? = null
+
     @SuppressLint("SourceLockedOrientationActivity", "NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,6 +67,7 @@ class ViewHistoricalStudentActivity : AppCompatActivity() {
         viewAllAdapter = PointsDetailedAdapter(this, viewAllList)
         recyclerViewAll?.adapter = viewAllAdapter
 
+        val idUser = intent.getStringExtra("userId")
         val type = intent.getStringExtra("type")
 
         if (type != null && type.equals("Suma", ignoreCase = true)) {
