@@ -30,7 +30,7 @@ import devpaul.business.piensarapido.activities.detaildashboard.perfil.operation
 import devpaul.business.piensarapido.adapter.PointsAdapter
 import devpaul.business.piensarapido.model.Points
 import java.lang.Exception
-import java.util.ArrayList
+import java.util.*
 
 class ResDetailActivity : AppCompatActivity() {
 
@@ -124,6 +124,10 @@ class ResDetailActivity : AppCompatActivity() {
 
         val docRef = db.collection(Constants.PATH_POINTS_RES).document(uiduser.toString())
 
+        progressDialog!!.show()
+        progressDialog?.setContentView(R.layout.charge_dialog)
+        Objects.requireNonNull(progressDialog!!.window)?.setBackgroundDrawableResource(android.R.color.transparent)
+
         docRef.get().addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 cardViewNodata?.visibility = View.GONE
@@ -131,6 +135,7 @@ class ResDetailActivity : AppCompatActivity() {
                 val document = task.result
                 if (document != null && document.exists()) {
 
+                    progressDialog?.dismiss()
                     val name = document.getString("name")
                     val lastname = document.getString("lastname")
                     val bestPoints = document.getLong("bestPoints")?.toInt()
@@ -143,6 +148,7 @@ class ResDetailActivity : AppCompatActivity() {
                     textlastTimePlayed?.text = lastTimePlayed
 
                 } else {
+                    progressDialog?.dismiss()
                     cardViewNodata?.visibility = View.VISIBLE
                     cardviewData?.visibility = View.GONE
 
