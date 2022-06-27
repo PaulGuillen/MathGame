@@ -101,34 +101,32 @@ class ViewHistoricalStudentActivity : AppCompatActivity() {
             progressDialog?.setContentView(R.layout.charge_dialog)
             Objects.requireNonNull(progressDialog!!.window)
                 ?.setBackgroundDrawableResource(android.R.color.transparent)
-            val docRef =
-                db.collection("AllResultsRest").whereEqualTo("userId", auth.currentUser!!.uid)
-            docRef.get()
-                .addOnSuccessListener { document ->
-                    if (document != null) {
-                        for (document in document) {
+            db.collection("AllResultsRest").whereEqualTo("userId", auth.currentUser!!.uid)
+                .addSnapshotListener { value, error ->
+                    if (value?.isEmpty!!) {
+                        progressDialog?.dismiss()
+                        linearnoData?.visibility = View.VISIBLE
+                    } else {
+                        for (doc in value.documentChanges) {
+                            progressDialog?.dismiss()
                             linearnoData?.visibility = View.GONE
                             recyclerViewAll?.visibility = View.VISIBLE
-                            progressDialog?.dismiss()
-                            val section = document.toObject(PointsDetailed::class.java)
+                            val section = doc.document.toObject(PointsDetailed::class.java)
                             viewAllList.add(section)
                             viewAllAdapter?.notifyDataSetChanged()
                         }
-                    } else {
-                        progressDialog?.dismiss()
-                        linearnoData?.visibility = View.VISIBLE
-                        recyclerViewAll?.visibility = View.GONE
-                        Log.d(TAG, "No such document")
                     }
-                }
-                .addOnFailureListener { exception ->
-                    progressDialog?.dismiss()
-                    linearnoData?.visibility = View.VISIBLE
-                    recyclerViewAll?.visibility = View.GONE
-                    Log.d(TAG, "get failed with ", exception)
+                    if (error != null) {
+                        linearnoData?.visibility = View.VISIBLE
+                        Log.v(TAG, "Error $error")
+                        progressDialog?.dismiss()
+                        return@addSnapshotListener
+                    }
                 }
 
         }
-
     }
+
+
+
 }
