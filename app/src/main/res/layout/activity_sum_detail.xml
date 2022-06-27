@@ -50,6 +50,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
+            android:layout_margin="10dp"
             android:layout_height="wrap_content">
 
             <TextView
@@ -79,17 +80,18 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+
         <View
             android:id="@+id/view_bottom_text_top"
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:layout_marginBottom="5dp"
             android:background="@color/colorGrey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_top" />
+
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardview_top"
@@ -98,6 +100,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
+            android:visibility="gone"
             app:cardCornerRadius="10dp"
             app:cardElevation="20dp">
 
@@ -134,12 +137,12 @@
                     android:paddingStart="5dp"
                     android:paddingEnd="5dp"
                     android:text="@string/ltimo_intento"
-                    android:textColor="@color/red_btn_bg_color"
+                    android:textColor="#E53935"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="RtlSymmetry" />
+                    tools:ignore="RtlSymmetry,TextContrastCheck" />
 
                 <TextView
                     android:id="@+id/textInicial"
@@ -267,6 +270,56 @@
 
         </androidx.cardview.widget.CardView>
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview_no_data"
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:visibility="gone"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="20dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/monserrat_alternates_medium"
+                        android:gravity="center"
+                        android:text="@string/lo_sentimos"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/monserrat_alternates_medium"
+                        android:gravity="center|bottom"
+                        android:padding="10dp"
+                        android:text="@string/texto_no_data_own_data"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
         <TextView
             android:id="@+id/textview_bottom"
             android:layout_width="wrap_content"
@@ -297,8 +350,8 @@
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
             tools:listitem="@layout/item_sum_detail" />
 
         <com.facebook.shimmer.ShimmerFrameLayout
@@ -334,31 +387,31 @@
         </com.facebook.shimmer.ShimmerFrameLayout>
 
         <LinearLayout
-            android:visibility="gone"
             android:id="@+id/linearlayout_nodata"
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:gravity="center"
             android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
             tools:ignore="UseCompoundDrawables">
 
             <ImageView
-                android:background="@drawable/warning_person"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
+                android:background="@drawable/warning_person"
                 tools:ignore="ContentDescription" />
 
             <TextView
-                android:textAlignment="center"
-                android:fontFamily="@font/monserrat_alternates_medium"
-                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:textStyle="bold"
+                android:fontFamily="@font/monserrat_alternates_medium"
                 android:padding="10dp"
                 android:text="@string/texto_largo_no_data"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 

@@ -14,6 +14,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.facebook.shimmer.ShimmerFrameLayout
@@ -62,6 +63,8 @@ class SumDetailActivity : AppCompatActivity() {
     var progressDialog: ProgressDialog? = null
 
     var linearnoData: LinearLayout? = null
+    var cardViewNodata: CardView? = null
+    var cardviewData: CardView? = null
 
     private var recyclerViewAll: RecyclerView? = null
     var shimmerFrameLayout : ShimmerFrameLayout? = null
@@ -80,6 +83,8 @@ class SumDetailActivity : AppCompatActivity() {
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
         linearnoData = findViewById(R.id.linearlayout_nodata)
+        cardViewNodata = findViewById(R.id.cardview_no_data)
+        cardviewData = findViewById(R.id.cardview_top)
 
         shimmerFrameLayout = findViewById(R.id.shimmerFrameLayout)
 
@@ -132,11 +137,16 @@ class SumDetailActivity : AppCompatActivity() {
 
         val docRef = db.collection(Constants.PATH_POINTS_SUM).document(uiduser.toString())
 
+        progressDialog!!.show()
+        progressDialog?.setContentView(R.layout.charge_dialog)
+        Objects.requireNonNull(progressDialog!!.window)?.setBackgroundDrawableResource(android.R.color.transparent)
+
         docRef.get().addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 val document = task.result
                 if (document != null && document.exists()) {
 
+                    progressDialog?.dismiss()
                     val name = document.getString("name")
                     val lastname = document.getString("lastname")
                     val bestPoints = document.getLong("bestPoints")?.toInt()
@@ -149,10 +159,9 @@ class SumDetailActivity : AppCompatActivity() {
                     textlastTimePlayed?.text = lastTimePlayed
 
                 } else {
-                    txtName?.text = "Tu nombre"
-                    txtBestPoints?.text = "0 puntos"
-                    txtLastTry?.text = "0 puntos"
-                    textlastTimePlayed?.text = "0000/00/00"
+                    progressDialog?.dismiss()
+                    cardViewNodata?.visibility = View.VISIBLE
+                    cardviewData?.visibility = View.GONE
 
                 }
             } else {
