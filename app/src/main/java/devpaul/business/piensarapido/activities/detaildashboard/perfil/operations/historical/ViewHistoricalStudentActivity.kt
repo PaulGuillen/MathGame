@@ -2,11 +2,13 @@ package devpaul.business.piensarapido.activities.detaildashboard.perfil.operatio
 
 import android.annotation.SuppressLint
 import android.app.ProgressDialog
+import android.content.Intent
 import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,6 +22,10 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import devpaul.business.piensarapido.Constants
 import devpaul.business.piensarapido.R
+import devpaul.business.piensarapido.activities.detaildashboard.perfil.PerfilActivity
+import devpaul.business.piensarapido.activities.detaildashboard.perfil.operations.laderboard.LaderboardActivity
+import devpaul.business.piensarapido.activities.detaildashboard.perfil.operations.res.ResDetailActivity
+import devpaul.business.piensarapido.activities.detaildashboard.perfil.operations.sum.SumDetailActivity
 import devpaul.business.piensarapido.adapter.PointsDetailedAdapter
 import devpaul.business.piensarapido.model.NewsGame
 import devpaul.business.piensarapido.model.PointsDetailed
@@ -42,8 +48,9 @@ class ViewHistoricalStudentActivity : AppCompatActivity() {
 
     var linearnoData: LinearLayout? = null
     var shimmerFrameLayout: ShimmerFrameLayout? = null
+    var btnBack: Button ? = null
 
-    var ladeboardData: FloatingActionButton ? = null
+    var ladeboardData: Button ? = null
 
     @SuppressLint("SourceLockedOrientationActivity", "NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,6 +65,39 @@ class ViewHistoricalStudentActivity : AppCompatActivity() {
         @Suppress("DEPRECATION")
         progressDialog = ProgressDialog(this)
 
+        val idUser = intent.getStringExtra("userId")
+        val type = intent.getStringExtra("type")
+
+        btnBack = findViewById(R.id.btn_back)
+        btnBack?.setOnClickListener {
+            onBackPressed()
+        }
+
+
+        ladeboardData = findViewById(R.id.laderboard)
+        ladeboardData?.setOnClickListener {
+            if (type == "Suma"){
+                val i = Intent(this, LaderboardActivity::class.java)
+                i.putExtra("type", type)
+                i.putExtra("userId", idUser)
+                startActivity(i)
+            }
+
+            if (type == "Resta"){
+                val i = Intent(this, LaderboardActivity::class.java)
+                i.putExtra("type", type)
+                i.putExtra("userId", idUser)
+                startActivity(i)
+            }
+
+            if (type == "Multiplicacion"){
+                val i = Intent(this, LaderboardActivity::class.java)
+                i.putExtra("type", type)
+                i.putExtra("userId", idUser)
+                startActivity(i)
+            }
+        }
+
         shimmerFrameLayout = findViewById(R.id.shimmerFrameLayout)
 
         linearnoData = findViewById(R.id.linearlayout_nodata)
@@ -66,9 +106,6 @@ class ViewHistoricalStudentActivity : AppCompatActivity() {
         recyclerViewAll?.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         viewAllAdapter = PointsDetailedAdapter(this, viewAllList)
         recyclerViewAll?.adapter = viewAllAdapter
-
-        val idUser = intent.getStringExtra("userId")
-        val type = intent.getStringExtra("type")
 
         if (type != null && type.equals("Suma", ignoreCase = true)) {
             progressDialog!!.show()

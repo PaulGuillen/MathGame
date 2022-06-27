@@ -63,7 +63,7 @@
     <string name="number_last_point">18</string>
     <string name="ultimo_puntaje">Ultimo puntaje</string>
     <string name="best_points">24</string>
-    <string name="mejor_puntaje">Mejor puntaje</string>
+    <string name="mejor_puntaje">Mejor puntaje :</string>
     <string name="suma">Suma</string>
     <string name="resta">Resta</string>
     <string name="multiplicaci_n">Multiplicación</string>
@@ -90,4 +90,9 @@
     <string name="lo_sentimos">Lo sentimos :(</string>
     <string name="texto_no_data_own_data">Pa visualizar los datos debes haber jugado la operación seleccionada.</string>
     <string name="ver_historial">Ver historial</string>
+    <string name="pastel">Pastel</string>
+    <string name="estad_sticas">Estadísticas</string>
+    <string name="operaciones">Operaciones</string>
+    <string name="historial">Historial</string>
+    <string name="no_hay_historial_que_mostrar">No hay historial que mostrar</string>
 </resources>
