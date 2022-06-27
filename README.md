@@ -1,8 +1,6 @@
 # Game-Think-Fast
 
-_Este proyecto consta de un juego de matemáticas que tiene las operaciones básicas( suma, resta, multiplicación ), en el cual en una vista personalizada hay un contador determinado con las respuestas correctas e incorrectas marcadas._
-
-_El proyecto sigue cambiando..._
+_Proyecto con actualizaciones...._
 
 ## Comenzando 🚀
 
@@ -22,7 +20,7 @@ _Tener instalado Android Studio, conocer sobre kotlin, consultas con firestore, 
 
 ## Usuario test 🖇️
 
-_En este caso usaremos el usuario TEST, para que ustedes puedan realizar sus pruebas._
+_En este caso usaremos el usuario TEST, para que ustedes puedan realizar sus pruebas (actualmente usuario eliminado)_
 
 ```
 . correo = test@gmail.com
@@ -90,9 +88,15 @@ _Perfil del usuario y ajustes, como podemos observar en el perfil del usuario po
 
 ## Video 📄
 
+** Primera versión
+
 _En este video se mostrará las demas funcionalidades de la app._
 
 [Piensa Rápido Game](https://user-images.githubusercontent.com/43099030/169093389-d48f1c99-cf94-4ea0-946f-294b64cd4300.mp4)
+
+** Segunda versión
+
+_El video esta en progreso...._
 
 ## Contribuyendo 🖇️
 
