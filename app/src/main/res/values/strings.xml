@@ -78,7 +78,7 @@
     <string name="estad_stica">Estadística</string>
     <string name="datos">Datos:</string>
     <string name="ltima_vez_jugado">última vez jugado:</string>
-    <string name="texto_largo_no_data">Lamentablemente los usuarios aun no registran avances en esta operación.</string>
+    <string name="texto_largo_no_data">Lamentablemente aun no registras avances en esta operación.</string>
     <string name="total_de_preguntas">Total de preguntas :</string>
     <string name="total_de_incorrectas">Total de incorrectas :</string>
     <string name="total_de_correctas">Total de correctas :</string>
@@ -88,11 +88,12 @@
     <string name="fecha_de_la_cuenta_creada">Fecha de la cuenta creada</string>
     <string name="todos_los_puntajes_mayor_a_menor">Todos los puntajes (mayor a menor)</string>
     <string name="lo_sentimos">Lo sentimos :(</string>
-    <string name="texto_no_data_own_data">Pa visualizar los datos debes haber jugado la operación seleccionada.</string>
+    <string name="texto_no_data_own_data">Para visualizar los datos debes haber jugado la operación seleccionada.</string>
     <string name="ver_historial">Ver historial</string>
     <string name="pastel">Pastel</string>
     <string name="estad_sticas">Estadísticas</string>
     <string name="operaciones">Operaciones</string>
     <string name="historial">Historial</string>
     <string name="no_hay_historial_que_mostrar">No hay historial que mostrar</string>
+    <string name="gr_fico_de_pastel"><![CDATA[Gráfico de Pastel ->]]></string>
 </resources>
