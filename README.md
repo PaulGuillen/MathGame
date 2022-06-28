@@ -96,9 +96,7 @@ _En este video se mostrará las demas funcionalidades de la app._
 
 ** Segunda versión
 
-** Redimensionamiento en diferentes dispositivos
-
-_La aplicación movil tiene el redimensionamiento, utilizando un scrollview o nestedscrollview dependiendo si es linearlayout o constraintlayout._
+_La aplicación movil tiene redimensionamiento visual, utilizando un scrollview o nestedscrollview dependiendo si es linearlayout o constraintlayout._
 
 [Diferentes dispositivos móviles](https://user-images.githubusercontent.com/43099030/176303171-ea7387b5-c34e-487c-9f34-158811293182.mp4)
 
