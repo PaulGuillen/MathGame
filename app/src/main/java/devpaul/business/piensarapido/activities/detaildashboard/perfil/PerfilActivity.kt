@@ -17,6 +17,7 @@ import com.google.firebase.ktx.Firebase
 import devpaul.business.piensarapido.Constants
 import devpaul.business.piensarapido.R
 import devpaul.business.piensarapido.activities.MainActivity
+import devpaul.business.piensarapido.activities.detaildashboard.perfil.operations.mul.MulDetailActivity
 import devpaul.business.piensarapido.activities.detaildashboard.perfil.operations.res.ResDetailActivity
 import devpaul.business.piensarapido.activities.detaildashboard.perfil.operations.sum.SumDetailActivity
 import devpaul.business.piensarapido.activities.login.LoginActivity
@@ -71,7 +72,7 @@ class PerfilActivity : AppCompatActivity() {
         }
         btnMultiplicar = findViewById(R.id.multiplicar_data)
         btnMultiplicar?.setOnClickListener{
-            multData()
+            mulView()
         }
 
 
@@ -177,40 +178,13 @@ class PerfilActivity : AppCompatActivity() {
         startActivity(i)
     }
 
-    private fun multData(){
-
-        val uiduser = auth.currentUser?.uid
-
-        val docRef = db.collection(Constants.PATH_POINTS_MUL).document(uiduser.toString())
-
-        docRef.get().addOnCompleteListener { task ->
-            if (task.isSuccessful) {
-                val document = task.result
-                if (document != null && document.exists()) {
-
-                    val bestPoints = document.getString("bestPoints")
-                    val lastTry = document.getString("lastTry")
-                    val lastTimePlayed = document.getString("lastTimePlayed")
-
-                    val user = auth.currentUser
-                    val signUpDate = user?.metadata?.lastSignInTimestamp
-
-                    textBestPoints?.text = bestPoints
-                    textLastTry?.text = lastTry
-                    textlastTimePlayed?.text = signUpDate.toString()
-
-                } else {
-                    textBestPoints?.text = "0"
-                    textLastTry?.text = "0"
-                    textlastTimePlayed?.text = "0000/00/00"
-                }
-            } else {
-                Log.d(TAG, "get failed with ", task.exception)
-            }
-        }
-
+    private fun mulView(){
+        val i = Intent(this@PerfilActivity, MulDetailActivity::class.java)
+        i.putExtra("type", "Resta")
+        i.putExtra("userId", textuserId?.text)
+        Log.v(TAG,"Data: ${textuserId?.text}")
+        startActivity(i)
     }
-
 
     override fun onStart() {
         super.onStart()

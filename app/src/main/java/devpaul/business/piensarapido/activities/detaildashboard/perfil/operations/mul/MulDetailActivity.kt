@@ -1,4 +1,4 @@
-package devpaul.business.piensarapido.activities.detaildashboard.perfil.operations.res
+package devpaul.business.piensarapido.activities.detaildashboard.perfil.operations.mul
 
 import android.annotation.SuppressLint
 import android.app.Dialog
@@ -32,7 +32,7 @@ import devpaul.business.piensarapido.model.Points
 import java.lang.Exception
 import java.util.*
 
-class ResDetailActivity : AppCompatActivity() {
+class MulDetailActivity : AppCompatActivity() {
 
     var TAG = "ResDetail"
 
@@ -61,10 +61,11 @@ class ResDetailActivity : AppCompatActivity() {
     var viewAllList = ArrayList<Points>()
     private var viewAllAdapter: PointsAdapter? = null
 
+
     @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_res_detail)
+        setContentView(R.layout.activity_mul_detail)
 
         //desactivar rotacion pantalla
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
@@ -82,7 +83,7 @@ class ResDetailActivity : AppCompatActivity() {
 
         btnHistorical = findViewById(R.id.view_history)
         btnHistorical?.setOnClickListener {
-            val i = Intent(this@ResDetailActivity, ViewHistoricalStudentActivity::class.java)
+            val i = Intent(this@MulDetailActivity, ViewHistoricalStudentActivity::class.java)
             i.putExtra("type", type)
             i.putExtra("userId", idUser)
             Log.d(TAG,"Data : $idUser+$type" )
@@ -92,7 +93,7 @@ class ResDetailActivity : AppCompatActivity() {
 
         btnBack = findViewById(R.id.btn_back)
         btnBack?.setOnClickListener {
-            val intent = Intent(this@ResDetailActivity, PerfilActivity::class.java)
+            val intent = Intent(this@MulDetailActivity, PerfilActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -113,21 +114,20 @@ class ResDetailActivity : AppCompatActivity() {
 
 
         if (isOnline()) {
-            restData()
-            getDataResStudents()
+            mulData()
+            getDatamMulStudents()
         } else {
             getConnectionValidation()
         }
 
     }
 
-
     @SuppressLint("SetTextI18n")
-    private fun restData() {
+    private fun mulData() {
 
         val uiduser = auth.currentUser?.uid
 
-        val docRef = db.collection(Constants.PATH_POINTS_RES).document(uiduser.toString())
+        val docRef = db.collection(Constants.PATH_POINTS_MUL).document(uiduser.toString())
 
         progressDialog!!.show()
         progressDialog?.setContentView(R.layout.charge_dialog)
@@ -168,9 +168,9 @@ class ResDetailActivity : AppCompatActivity() {
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    private fun getDataResStudents() {
+    private fun getDatamMulStudents() {
         //PUNTAJE DE MAYOR A MENOR, CAMPO = MEJOR PUNTAJE
-        db.collection(Constants.PATH_POINTS_RES).orderBy("bestPoints", Query.Direction.DESCENDING)
+        db.collection(Constants.PATH_POINTS_MUL).orderBy("bestPoints", Query.Direction.DESCENDING)
             .get()
             .addOnSuccessListener { documents ->
                 if (!documents.isEmpty) {
@@ -242,9 +242,8 @@ class ResDetailActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        val intent = Intent(this@ResDetailActivity, PerfilActivity::class.java)
+        val intent = Intent(this@MulDetailActivity, PerfilActivity::class.java)
         startActivity(intent)
         finish()
     }
-
 }
