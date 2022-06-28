@@ -95,5 +95,5 @@
     <string name="operaciones">Operaciones</string>
     <string name="historial">Historial</string>
     <string name="no_hay_historial_que_mostrar">No hay historial que mostrar</string>
-    <string name="gr_fico_de_pastel"><![CDATA[Gráfico de Pastel ->]]></string>
+    <string name="gr_fico_de_pastel">Ver datos</string>
 </resources>
