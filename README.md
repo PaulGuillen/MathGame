@@ -88,11 +88,6 @@ _Perfil del usuario y ajustes, como podemos observar en el perfil del usuario po
 
 ## Video 📄
 
-** Redimensionamiento en diferentes dispositivos
-
-[Diferentes dispositivos móviles](https://user-images.githubusercontent.com/43099030/176303171-ea7387b5-c34e-487c-9f34-158811293182.mp4)
-
-
 ** Primera versión
 
 _En este video se mostrará las demas funcionalidades de la app._
@@ -101,7 +96,11 @@ _En este video se mostrará las demas funcionalidades de la app._
 
 ** Segunda versión
 
-_El video esta en progreso...._
+** Redimensionamiento en diferentes dispositivos
+
+_La aplicación movil tiene el redimensionamiento, utilizando un scrollview o nestedscrollview dependiendo si es linearlayout o constraintlayout._
+
+[Diferentes dispositivos móviles](https://user-images.githubusercontent.com/43099030/176303171-ea7387b5-c34e-487c-9f34-158811293182.mp4)
 
 ## Contribuyendo 🖇️
 
