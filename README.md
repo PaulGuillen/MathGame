@@ -8,7 +8,7 @@ _Mira **Usuario test** para conocer el usuario asignado para esta prueba de dise
 
 ### Pre-requisitos 📋
 
-_Tener instalado Android Studio, conocer sobre kotlin, consultas con firestore, firebase database, gráfico de pastel._
+_Tener instalado Android Studio, conocer sobre kotlin, consultas con firestore, firebase database, gráfico de pastel, sweet alert , glide._
 
 ```
 . MinSdk =  22
