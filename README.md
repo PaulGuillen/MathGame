@@ -20,15 +20,15 @@ _Tener instalado Android Studio, conocer sobre kotlin, consultas con firestore, 
 
 ## Usuario test 🖇️
 
-_En este caso usaremos el usuario TEST, para que ustedes puedan realizar sus pruebas (actualmente usuario eliminado)_
+_En este caso usaremos el usuario TEST, para que ustedes puedan realizar sus pruebas_
 
 ```
-. correo = test@gmail.com
+. correo = usertest@gmail.com
 . contraseña = 123456
 ```
 
 <p align="center">
- <img src="https://i.postimg.cc/W3f7bTK2/Usuario.png"/>
+ <img src="https://user-images.githubusercontent.com/43099030/176563630-36647153-970e-4b85-bc81-9f9488b41ba5.png"/>
 </p>
 
 
