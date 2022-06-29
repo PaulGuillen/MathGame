@@ -1,6 +1,6 @@
 # Game-Think-Fast
 
-_Proyecto con actualizaciones...._
+_En este proyecto mostraremos como un simple juego puede mostrar datos analíticos por usuario._
 
 ## Comenzando 🚀
 
