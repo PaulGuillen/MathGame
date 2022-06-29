@@ -1,6 +1,6 @@
 # Game-Think-Fast
 
-_En este proyecto mostraremos como un simple juego puede mostrar datos analíticos por usuario._
+_En este proyecto mostraremos como un simple juego puede mostrar datos analíticos por usuario, en base a las operaciones suma , resta y multiplicación_
 
 ## Comenzando 🚀
 
