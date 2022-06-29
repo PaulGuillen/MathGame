@@ -1,6 +1,6 @@
 # Game-Think-Fast
 
-_En este proyecto mostraremos como un simple juego de matemáticas, en el cual podremos visualizar datos analíticos por usuario, en base a las operaciones suma , resta y multiplicación_
+_En este proyecto mostraremos como un simple juego de matemáticas puede servir como herramienta de análisis de de datos, en el cual podremos visualizar datos  por usuario, en base a las operaciones suma , resta y multiplicación_
 
 ## Comenzando 🚀
 
