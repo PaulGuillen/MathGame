@@ -1,6 +1,6 @@
-# Game-Think-Fast
+# MathGame
 
-_En este proyecto mostraremos como un simple juego de matemáticas puede servir como herramienta de análisis de de datos, en el cual podremos visualizar datos  por usuario, en base a las operaciones suma , resta y multiplicación. ádemas, veremos nuestra información en una pestaña personalizada, la aplicación tendra ajustes, también, la sección noticias es por parte del creador de la app podrá imformar a los usuarios acerca de algunos cambios que efecutará._
+_En este proyecto mostraremos como un simple juego de matemáticas puede servir como herramienta de análisis, en el cual podremos visualizar datos  por usuario, en base a las operaciones suma , resta y multiplicación. ádemas, veremos nuestra información en una pestaña personalizada, la aplicación tendra ajustes, también, la sección noticias es por parte del creador de la app podrá imformar a los usuarios acerca de algunos cambios que efecutará._
 
 ## Comenzando 🚀
 
@@ -80,8 +80,30 @@ _Aca observamos la lógica del juego el cual cuenta con un contador y la cantida
 _Perfil del usuario y ajustes, como podemos observar en el perfil del usuario podemos ver nuestros puntajes registrados por cada juego._
 
 <p align="center">
- <img src="https://i.postimg.cc/qRTrW49j/Screenshot-1652891264.png"/>
+ <img src="https://i.postimg.cc/T166WRK7/Screenshot-1656551246.png"/>
  <img src="https://i.postimg.cc/9XkX15Lw/Screenshot-1652891220.png"/>
+</p>
+
+---
+
+_En la parte de perfil , cada botón muestra un tipo diferente de operación, veremos un ejemplos de cada imagen desde tu mejor puntaje, hasta los mejores puntajes de las demás personas, por usuario mostrará un historial con sus respectivas estadísticas._
+
+<p align="center">
+
+ <img src="https://i.postimg.cc/25thQ5Nx/Screenshot-1656551754.png"/>
+ <img src="https://i.postimg.cc/tTVP2HXG/Screenshot-1656551757.png"/>
+ <img src="https://i.postimg.cc/hvWmY3jz/Screenshot-1656551764.png"/>
+</p>
+
+---
+
+_Aca veremos como funciona las validaciones de la aplicación movil, empezamos con la pregunta ¿Que pasa si un usuario aun no ha registrado una operación?, entonces en ese momento aparece las buenas prácticas, condicionales lo cual nos ayudará bastante, en firebase nos facilita esta opción, si existe o no un documento._
+
+<p align="center">
+
+ <img src="https://i.postimg.cc/QdNPFfbr/Screenshot-1656552054.png"/>
+ <img src="https://i.postimg.cc/QdNPFfbr/Screenshot-1656552054.png"/>
+ <img src="https://i.postimg.cc/52PrL87Q/Screenshot-1656552056.png"/>
 </p>
 
 ---
