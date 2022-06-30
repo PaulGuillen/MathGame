@@ -1,6 +1,6 @@
 # Game-Think-Fast
 
-_Proyecto con actualizaciones...._
+_En este proyecto mostraremos como un simple juego de matemáticas puede servir como herramienta de análisis de de datos, en el cual podremos visualizar datos  por usuario, en base a las operaciones suma , resta y multiplicación. ádemas, veremos nuestra información en una pestaña personalizada, la aplicación tendra ajustes, también, la sección noticias es por parte del creador de la app podrá imformar a los usuarios acerca de algunos cambios que efecutará._
 
 ## Comenzando 🚀
 
@@ -8,7 +8,7 @@ _Mira **Usuario test** para conocer el usuario asignado para esta prueba de dise
 
 ### Pre-requisitos 📋
 
-_Tener instalado Android Studio, conocer sobre kotlin, consultas con firestore, firebase database, gráfico de pastel._
+_Tener instalado Android Studio, conocer sobre kotlin, consultas con firestore, firebase database, gráfico de pastel, sweet alert , glide._
 
 ```
 . MinSdk =  22
@@ -20,15 +20,15 @@ _Tener instalado Android Studio, conocer sobre kotlin, consultas con firestore, 
 
 ## Usuario test 🖇️
 
-_En este caso usaremos el usuario TEST, para que ustedes puedan realizar sus pruebas (actualmente usuario eliminado)_
+_En este caso usaremos el usuario TEST, para que ustedes puedan realizar sus pruebas_
 
 ```
-. correo = test@gmail.com
+. correo = usertest@gmail.com
 . contraseña = 123456
 ```
 
 <p align="center">
- <img src="https://i.postimg.cc/W3f7bTK2/Usuario.png"/>
+ <img src="https://user-images.githubusercontent.com/43099030/176563630-36647153-970e-4b85-bc81-9f9488b41ba5.png"/>
 </p>
 
 
@@ -54,7 +54,7 @@ _Dashboard principal de la app, se utilizó cardviews para realizar este diseño
 _La aplicación movil cuenta con 4 niveles, los cuales se muestran en la siguiente imagen._
 
 <p align="center">
- <img src="https://i.postimg.cc/xCxfWWY7/Screenshot-1652891210.png"/>
+ <img src="https://i.postimg.cc/90v3dCgw/Screenshot-1656548731.png)](https://postimg.cc/ctM5ZySd"/>
 </p>
 
 ---
@@ -96,11 +96,13 @@ _En este video se mostrará las demas funcionalidades de la app._
 
 ** Segunda versión
 
-_El video esta en progreso...._
+_La aplicación movil tiene redimensionamiento visual, utilizando un scrollview o nestedscrollview dependiendo si es linearlayout o constraintlayout, ádemas de verificar el usuario correspondiente._
+
+[Diferentes dispositivos móviles](https://user-images.githubusercontent.com/43099030/176303171-ea7387b5-c34e-487c-9f34-158811293182.mp4)
 
 ## Contribuyendo 🖇️
 
-_Agradecer a las personas que participaron en este proyecto, ya que fueron parte esenciales para el maquetado de esta aplicación móvil._
+_Agradecer a las personas que participaron en este proyecto, ya que fueron parte esenciales para el maquetado de esta aplicación móvil_
 
 ## Autor ✒️
 
