@@ -180,7 +180,7 @@ class PerfilActivity : AppCompatActivity() {
 
     private fun mulView(){
         val i = Intent(this@PerfilActivity, MulDetailActivity::class.java)
-        i.putExtra("type", "Resta")
+        i.putExtra("type", "Multiplicacion")
         i.putExtra("userId", textuserId?.text)
         Log.v(TAG,"Data: ${textuserId?.text}")
         startActivity(i)

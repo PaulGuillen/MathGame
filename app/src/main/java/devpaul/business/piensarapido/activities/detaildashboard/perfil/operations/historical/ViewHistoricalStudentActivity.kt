@@ -166,6 +166,37 @@ class ViewHistoricalStudentActivity : AppCompatActivity() {
                 }
 
         }
+
+        if (type != null && type.equals("Multiplicacion", ignoreCase = true)) {
+            progressDialog!!.show()
+            progressDialog?.setContentView(R.layout.charge_dialog)
+            Objects.requireNonNull(progressDialog!!.window)
+                ?.setBackgroundDrawableResource(android.R.color.transparent)
+            db.collection("AllResultsMul").whereEqualTo("userId", auth.currentUser!!.uid)
+                .addSnapshotListener { value, error ->
+                    if (value?.isEmpty!!) {
+                        progressDialog?.dismiss()
+                        linearnoData?.visibility = View.VISIBLE
+                    } else {
+                        for (doc in value.documentChanges) {
+                            progressDialog?.dismiss()
+                            linearnoData?.visibility = View.GONE
+                            recyclerViewAll?.visibility = View.VISIBLE
+                            val section = doc.document.toObject(PointsDetailed::class.java)
+                            viewAllList.add(section)
+                            viewAllAdapter?.notifyDataSetChanged()
+                        }
+                    }
+                    if (error != null) {
+                        linearnoData?.visibility = View.VISIBLE
+                        Log.v(TAG, "Error $error")
+                        progressDialog?.dismiss()
+                        return@addSnapshotListener
+                    }
+                }
+
+        }
+
     }
 
 
