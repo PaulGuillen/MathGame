@@ -120,7 +120,16 @@ _En este video se mostrará las demas funcionalidades de la app._
 
 _La aplicación movil tiene redimensionamiento visual, utilizando un scrollview o nestedscrollview dependiendo si es linearlayout o constraintlayout, ádemas de verificar el usuario correspondiente._
 
+
 [Diferentes dispositivos móviles](https://user-images.githubusercontent.com/43099030/176303171-ea7387b5-c34e-487c-9f34-158811293182.mp4)
+
+---
+
+_Esta parte muestra las validaciones._
+
+[Parte principal](https://user-images.githubusercontent.com/43099030/176734327-4146cdf1-af96-45f3-a031-5cb80512c60f.mp4)
+
+---
 
 ## Contribuyendo 🖇️
 
