@@ -127,7 +127,7 @@ _La aplicación movil tiene redimensionamiento visual, utilizando un scrollview 
 
 ---
 
-_Esta parte muestra el puntaje personal y el puntaje de los demas usuarios para así crear una atmosfera competitiva, adicional a esto, mostraremos el historial de las operaciones_
+_Esta parte muestra el puntaje personal y el puntaje de los demas usuarios para así crear una atmosfera competitiva, adicional a esto, mostraremos el historial de las operaciones por usuario_
 
 [Parte principal](https://user-images.githubusercontent.com/43099030/176734327-4146cdf1-af96-45f3-a031-5cb80512c60f.mp4)
 
