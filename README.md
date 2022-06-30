@@ -86,7 +86,7 @@ _Perfil del usuario y ajustes, como podemos observar en el perfil del usuario po
 
 ---
 
-_En la parte de perfil , cada botón muestra un tipo diferente de operación, veremos un ejemplos de cada imagen desde tu mejor puntaje, hasta los mejores puntajes de las demas personas, por usuario mostrará un historial con sus respectivas estadísticas._
+_En la parte de perfil , cada botón muestra un tipo diferente de operación, veremos un ejemplos de cada imagen desde tu mejor puntaje, hasta los mejores puntajes de las demás personas, por usuario mostrará un historial con sus respectivas estadísticas._
 
 <p align="center">
 
