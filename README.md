@@ -54,7 +54,7 @@ _Dashboard principal de la app, se utilizó cardviews para realizar este diseño
 _La aplicación movil cuenta con 4 niveles, los cuales se muestran en la siguiente imagen._
 
 <p align="center">
- <img src="https://i.postimg.cc/xCxfWWY7/Screenshot-1652891210.png"/>
+ <img src="https://i.postimg.cc/90v3dCgw/Screenshot-1656548731.png)](https://postimg.cc/ctM5ZySd"/>
 </p>
 
 ---
