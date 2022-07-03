@@ -4,7 +4,7 @@ _En este proyecto mostraremos como un simple juego de matemáticas puede servir 
 
 ## Comenzando 🚀
 
-_Mira **Usuario test** para conocer el usuario asignado para esta prueba de diseños de la app._
+_Mira **Usuario test** para conocer el usuario asignado para esta prueba de diseños de la aplicación._
 
 ### Pre-requisitos 📋
 
