@@ -6,6 +6,9 @@ _En este proyecto mostraremos como un simple juego de matemáticas puede servir 
 
 _Mira **Usuario test** para conocer el usuario asignado para esta prueba de diseños de la aplicación._
 
+_Puedes visualziar la app en Google Play [Math Game]()._
+
+
 ### Pre-requisitos 📋
 
 _Tener instalado Android Studio, conocer sobre kotlin, consultas con firestore, firebase database, gráfico de pastel, sweet alert , glide._
