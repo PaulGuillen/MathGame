@@ -6,7 +6,7 @@ _En este proyecto mostraremos como un simple juego de matemáticas puede servir 
 
 _Mira **Usuario test** para conocer el usuario asignado para esta prueba de diseños de la aplicación._
 
-_Puedes visualizar la aplicación móvil en Google Play [Math Game]()-En progreso......-._
+_Puedes visualizar la aplicación móvil en Google Play [Math Game](https://play.google.com/store/apps/details?id=devpaul.business.piensarapido)_
 
 
 ### Pre-requisitos 📋
