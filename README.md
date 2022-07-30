@@ -1,6 +1,6 @@
 # MathGame
 
-_En este proyecto se mostrará como un simple juego de matemáticas puede servir como herramienta de análisis de datos, en el cual podremos visualizar datos  por usuario, en base a las operaciones suma , resta y multiplicación. ádemas, veremos nuestra información en una pestaña personalizada, la aplicación tendra ajustes, también, la sección noticias es por parte del creador de la aplicación móvil podrá imformar a los usuarios acerca de algunos cambios que efecutara_
+_En este proyecto se mostrará como un simple juego de matemáticas puede servir como herramienta de análisis de datos, en el cual podremos visualizar datos  por usuario, en base a las operaciones suma , resta y multiplicación. ádemas, veremos nuestra información en una pestaña personalizada, la aplicación tendra ajustes, también, la sección noticias es por parte del creador de la aplicación móvil podrá imformar a los usuarios acerca de algunos cambios que efecutara._
 
 ## Comenzando 🚀
 
